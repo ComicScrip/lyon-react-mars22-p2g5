@@ -1,0 +1,61 @@
+* {
+  font-size: x-large;
+}
+
+.quiz {
+  display: grid;
+  grid-template-rows: 3fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  border: 3px solid black;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.question {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+  border: 1px solid red;
+  margin: 1%;
+  border-radius: 5px;
+}
+
+.reponses {
+  grid-column: 1 / 3;
+  grid-row: 2 / 4;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.answerOne {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  border: 1px solid blue;
+  margin: 1%;
+  border-radius: 5px;
+}
+
+.answerTwo {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  border: 1px solid blue;
+  margin: 1%;
+  border-radius: 5px;
+}
+
+.answerThree {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  border: 1px solid blue;
+  margin: 1%;
+  border-radius: 5px;
+}
+
+.answerFour {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  border: 1px solid blue;
+  margin: 1%;
+  border-radius: 5px;
+}

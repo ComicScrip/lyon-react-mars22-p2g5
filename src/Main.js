@@ -1,4 +1,6 @@
+import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import QuizAPI from './components/QuizAPI';
 import Home from './Home';
 
 export default function Main() {
@@ -6,6 +8,7 @@ export default function Main() {
     <main>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/QuizPage" element={<QuizAPI />} />
       </Routes>
     </main>
   );
