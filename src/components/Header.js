@@ -11,6 +11,7 @@ export default function Header() {
         <ul className="navbar_links">
           <li className="navbar_item">
             <a href="/" className="navbar_link">Accueil</a>
+            <Link to="/">Home</Link>
           </li>
           <li className="navbar_item">
             <a href="/" className="navbar_link">Catégorie</a>
@@ -29,6 +30,3 @@ export default function Header() {
     </header>
   );
 }
-
-//  <Link to="/">Home</Link>
- 
