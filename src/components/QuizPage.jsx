@@ -19,18 +19,3 @@ function QuizPage({ quizComponent }) {
 }
 
 export default QuizPage;
-
-/* function QuizPage() {
-  return (
-    <div className="quiz">
-      <div className="question">Qu'est-ce qu'un chat dans l'espace</div>
-      <div className="reponses">
-        <div className="answerOne">Un chat-tellite</div>
-        <div className="answerTwo">Une chat-vette spaciale</div>
-        <div className="answerThree">Un Cat-Cat</div>
-        <div className="answerFour">Chat-lon Musk</div>
-      </div>
-    </div>
-  );
-}
-export default QuizPage; */
