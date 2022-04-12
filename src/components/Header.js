@@ -5,6 +5,7 @@ export default function Header() {
     <header>
       <nav>
         <Link to="/">Home</Link>
+        <Link to="/ResultPage">Result Page</Link>
       </nav>
     </header>
   );
