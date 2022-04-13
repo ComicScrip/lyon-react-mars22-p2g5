@@ -24,24 +24,22 @@ function QuizAPI() {
   };
   const [timer, setTimer] = useState(20);
   useEffect(() => {
-    console.log(timer);
-    let interval = null;
-    if (interval === null) {
+    let interval;
+    if (timer === 0) clearInterval(interval);
+    else {
       interval = setInterval(() => {
         setTimer((second) => second - 1);
-        if (timer === 0) {
-          clearInterval(interval);
-        }
       }, 1000);
     }
-  }, []);
+    return () => clearInterval(interval);
+  }, [timer]);
   return (
     <>
       <QuizPage quizComponent={quizQuestions} />
       <button type="button" onClick={getQuestions}>
         Get Questions
       </button>
-      <ProgressBar bgColor="#6a1b9a" completed={timer} />
+      <ProgressBar bgColor="#b31212" completed={timer} />
     </>
   );
 }
