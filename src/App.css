@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
 
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,11 +7,10 @@
 }
 
 html {
-  background-image:url("./assets/backmobile.png");
+  background-image: url('./assets/backmobile.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
-
 
 body {
   margin: 0;
@@ -20,11 +18,11 @@ body {
 }
 
 @font-face {
-  font-family:'organic_relief';
+  font-family: 'organic_relief';
   src: url(./assets/organic_relief.ttf);
 }
 
-
 h1 {
   font-family: 'organic_Relief';
+  text-align: center;
 }
