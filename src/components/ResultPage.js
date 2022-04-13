@@ -19,7 +19,6 @@ function ResultPage() {
           alt="bon score"
         />
       </div>
-
       <h2 className="details-quiz">Détails de vos réponses</h2>
       <div className="details" />
     </div>

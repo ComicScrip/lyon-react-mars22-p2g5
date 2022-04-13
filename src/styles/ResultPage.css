@@ -1,6 +1,4 @@
 .resultpage {
-  background-image: url(../assets/background-img.png);
-  background-size: cover;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -12,6 +10,7 @@
   height: 60px;
   border-radius: 50%;
   margin-top: 30px;
+  background-color: #78c0e0;
 }
 
 .animation-quiz {
