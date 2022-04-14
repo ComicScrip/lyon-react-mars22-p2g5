@@ -13,9 +13,14 @@ export default function Header() {
                 <img src={logo} alt={logo} className="logoImage" />
               </Link>
             </div>
+            <div className="burger-button">
+              <Link to="/" className="toggle-button">
+                <span className="bar2" />
+              </Link>
+            </div>
             <div className="menu">
               <li className="navbar_item">
-                <Link to="/" className="navbar_link">
+                <Link to="/" className="navbar_link active">
                   Accueil
                 </Link>
               </li>
@@ -25,19 +30,19 @@ export default function Header() {
                 </Link>
               </li>
               <li className="navbar_item">
-                <Link to="/" className="navbar_link">
+                <Link to="/ResultPage" className="navbar_link">
                   Score
                 </Link>
               </li>
               <li className="navbar_item">
-                <Link to="/" className="navbar_link">
+                <Link to="/ContactPage" className="navbar_link">
                   About Us
                 </Link>
               </li>
             </div>
           </ul>
-          {/* <button className="navbar_burger">
-          <span className="burgerBar"></span>
+          {/* <button type="button" className="navbar_burger">
+            <span className="burgerBar" />
           </button> */}
         </div>
       </nav>
