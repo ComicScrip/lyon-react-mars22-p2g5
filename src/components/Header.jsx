@@ -1,8 +1,14 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import logo from '../assets/logo.png';
 
 export default function Header() {
+  const [active, setActive] = React.useState(false);
+  const handleChangeClick = () => {
+    setActive(!active);
+  };
+
   return (
     <header>
       <nav className="navbar">
@@ -14,11 +20,16 @@ export default function Header() {
               </Link>
             </div>
             <div className="burger-button">
-              <Link to="/" className="toggle-button">
+              <Link
+                to="/"
+                // className="toggle-button"
+                onClick={handleChangeClick}
+                className={`toggle-button ${active && 'open'}`}
+              >
                 <span className="bar2" />
               </Link>
             </div>
-            <div className="menu">
+            <div className={`menu ${active && 'open'}`}>
               <li className="navbar_item">
                 <Link to="/" className="navbar_link active">
                   Accueil
