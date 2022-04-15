@@ -25,3 +25,11 @@ h1 {
   font-family: 'organic_Relief';
   text-align: center;
 }
+
+@media screen and (min-width: 1200px) {
+  html {
+    background-image: url('./assets/backdesktop.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}

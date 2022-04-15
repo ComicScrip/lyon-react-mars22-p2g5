@@ -1,7 +1,10 @@
 export default function Home() {
   return (
     <div>
-      <h1>INQUIZ'ITOR</h1>
+      <h1>
+        INQUIZ' <br />
+        ITOR
+      </h1>
     </div>
   );
 }

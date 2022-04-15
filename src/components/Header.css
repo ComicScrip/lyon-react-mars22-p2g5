@@ -129,12 +129,33 @@ li {
     width: 50px;
   }
 
-  toggle-button {
+  .toggle-button {
     display: none;
   }
 
   .menu {
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
+    right: +100%;
+    background-color: transparent;
+    position: initial;
+    transition: none;
+    height: 0%;
+    min-width: fit-content;
+  }
+
+  .navbarAbout {
+    display: flex;
+    flex-wrap: nowrap;
+    min-width: fit-content;
+  }
+
+  li {
+    font-size: medium;
+  }
+
+  .navbar_links {
+    width: 100%;
   }
 }

@@ -22,7 +22,6 @@ export default function Header() {
             <div className="burger-button">
               <Link
                 to="/"
-                // className="toggle-button"
                 onClick={handleChangeClick}
                 className={`toggle-button ${active && 'open'}`}
               >
@@ -45,7 +44,7 @@ export default function Header() {
                   Score
                 </Link>
               </li>
-              <li className="navbar_item">
+              <li className="navbar_item navbarAbout">
                 <Link to="/ContactPage" className="navbar_link">
                   About Us
                 </Link>
