@@ -13,10 +13,27 @@
   },
   "plugins": ["react"],
   "rules": {
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "required": {
+          "some": ["nesting", "id"]
+        }
+      }
+    ],
+    "jsx-a11y/label-has-for": [
+      "error",
+      {
+        "required": {
+          "some": ["nesting", "id"]
+        }
+      }
+    ],
     "react/jsx-filename-extension": "off",
     "no-console": "warn",
     "no-debugger": "warn",
     "react/react-in-jsx-scope": "off",
+    "react/destructuring-assignment": "off",
     "react/no-unescaped-entities": "off",
     "react/prop-types": "off",
     "react/jsx-curly-newline": "off",
