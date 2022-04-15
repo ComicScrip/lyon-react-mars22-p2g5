@@ -24,7 +24,7 @@ a {
 
 .navbar_links {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .menu {
@@ -47,7 +47,7 @@ a {
 
 .navbar_item {
   display: flex;
-  justify-content: center;
+  width: 60%;
 }
 
 li {
@@ -76,7 +76,7 @@ li {
 .logoMenu {
   width: 50px;
   height: 50px;
-  margin-right: 10px;
+  margin-right: 40px;
   display: flex;
 }
 
@@ -136,16 +136,10 @@ li {
     display: none;
   }
 
-  .menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    right: +100%;
-    background-color: transparent;
-    position: initial;
-    transition: none;
-    height: 10%;
-    min-width: fit-content;
+  .logoImage {
+    width: 80px;
+    height: 80px;
+    padding-left: 10px;
   }
 
   .navbarAbout {
@@ -155,27 +149,33 @@ li {
   }
 
   li {
-    font-size: medium;
+    font-size: large;
   }
 
-  .logoImage {
-    width: 80px;
-    height: 80px;
-    padding-left: 10px;
+  .menu {
+    display: flex;
+    position: initial;
+    flex-direction: row;
+    align-items: center;
+    right: +100%;
+    height: 8%;
+    background-color: transparent;
+    margin-top: 10px;
+    transition: none;
+    min-width: fit-content;
   }
 
   .logoMenu {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-right: 10px;
+    margin-top: 5px;
     width: 30px;
     height: 30px;
-    margin-right: 5px;
   }
 
-  .navbar_links {
+  .navbarLogo {
     display: flex;
-    justify-content: center;
     align-items: center;
+    /* justify-content: space-between; */
   }
 }
