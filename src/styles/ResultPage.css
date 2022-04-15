@@ -34,4 +34,9 @@ h2 .details-quiz {
   border-radius: 50%;
   margin-top: 30px;
   background-color: #78c0e0;
+  cursor: pointer;
+}
+
+.restart:hover {
+  background-color: #30afe6;
 }

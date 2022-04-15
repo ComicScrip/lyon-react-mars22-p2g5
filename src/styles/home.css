@@ -18,6 +18,11 @@
   background-color: #78c0e0;
   margin-top: 200px;
   font-size: large;
+  cursor: pointer;
+}
+
+.letsGo:hover {
+  background-color: #30afe6;
 }
 
 .joke-of-the-day {
