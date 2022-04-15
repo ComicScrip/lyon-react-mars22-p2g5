@@ -36,7 +36,7 @@ a {
   height: calc(100vh - 50px);
   position: fixed;
   transition: all 0.5s ease-in-out;
-  background-color: rgba(233, 233, 225, 0.9);
+  background-color: rgba(233, 232, 225, 0.9);
   top: 50px;
   right: -100%;
 }
@@ -70,6 +70,13 @@ li {
 }
 
 .navbar-links.active {
+  display: flex;
+}
+
+.logoMenu {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
   display: flex;
 }
 
@@ -125,10 +132,6 @@ li {
 }
 
 @media screen and (min-width: 1200px) {
-  .navbar_links {
-    width: 50px;
-  }
-
   .toggle-button {
     display: none;
   }
@@ -141,7 +144,7 @@ li {
     background-color: transparent;
     position: initial;
     transition: none;
-    height: 0%;
+    height: 10%;
     min-width: fit-content;
   }
 
@@ -155,7 +158,24 @@ li {
     font-size: medium;
   }
 
+  .logoImage {
+    width: 80px;
+    height: 80px;
+    padding-left: 10px;
+  }
+
+  .logoMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+  }
+
   .navbar_links {
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
