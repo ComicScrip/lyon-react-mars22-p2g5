@@ -175,11 +175,12 @@ li {
   }
 
   .logoMenu {
-    display: flex;
+    /* display: flex;
     margin-right: 10px;
     margin-top: 5px;
     width: 30px;
-    height: 30px;
+    height: 30px; */
+    display: none;
   }
 
   .navbarLogo {
