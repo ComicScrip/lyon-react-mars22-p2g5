@@ -1,10 +1,16 @@
 import React from 'react';
 import Slider from './Slider';
+import SelectBar from './SelectBar';
 
 function Carrousel() {
   return (
     <div>
-      <Slider />
+      <div>
+        <Slider />
+      </div>
+      <div>
+        <SelectBar />
+      </div>
     </div>
   );
 }
