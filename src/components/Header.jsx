@@ -60,9 +60,6 @@ export default function Header() {
               </li>
             </div>
           </ul>
-          {/* <button type="button" className="navbar_burger">
-            <span className="burgerBar" />
-          </button> */}
         </div>
       </nav>
     </header>

@@ -9,9 +9,9 @@ export default function Main() {
     <main>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="./components/ContactPage" element={<ContactPage />} />
-        <Route path="./components/ResultPage" element={<ResultPage />} />
-        <Route path="./components/QuizPage" element={<QuizPage />} />
+        <Route path="./ContactPage" element={<ContactPage />} />
+        <Route path="./ResultPage" element={<ResultPage />} />
+        <Route path="./QuizPage" element={<QuizPage />} />
       </Routes>
     </main>
   );
