@@ -32,7 +32,7 @@ export default function Header() {
               <NavLink
                 to="/"
                 style={(isActive) => ({
-                  color: isActive ? 'white' : 'black',
+                  color: isActive ? 'black' : 'white',
                 })}
                 onClick={handleChangeClick}
                 className={`toggle-button ${active && 'open'}`}
@@ -48,7 +48,7 @@ export default function Header() {
                   to="/"
                   className="navbar_link active"
                   style={(isActive) => ({
-                    color: isActive ? 'white' : 'black',
+                    color: isActive ? 'black' : 'white',
                   })}
                 >
                   Accueil
@@ -60,7 +60,7 @@ export default function Header() {
                   to="/"
                   className="navbar_link"
                   style={(isActive) => ({
-                    color: isActive ? 'white' : 'black',
+                    color: isActive ? 'black' : 'white',
                   })}
                 >
                   Catégorie
@@ -72,7 +72,7 @@ export default function Header() {
                   to="/ResultPage"
                   className="navbar_link"
                   style={(isActive) => ({
-                    color: isActive ? 'white' : 'black',
+                    color: isActive ? 'black' : 'white',
                   })}
                 >
                   Score
@@ -84,7 +84,7 @@ export default function Header() {
                   to="/ContactPage"
                   className="navbar_link"
                   style={(isActive) => ({
-                    color: isActive ? 'white' : 'black',
+                    color: isActive ? 'black' : 'white',
                   })}
                 >
                   About Us
