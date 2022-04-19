@@ -132,6 +132,14 @@ li {
 }
 
 @media screen and (min-width: 1200px) {
+  .navbar_links {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .navbar_item {
+    width: auto;
+  }
   .toggle-button {
     display: none;
   }
@@ -163,6 +171,7 @@ li {
     margin-top: 10px;
     transition: none;
     min-width: fit-content;
+    justify-content: right;
   }
 
   .logoMenu {

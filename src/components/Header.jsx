@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Header.css';
 import logo from '../assets/logo.png';
 import accueil from '../assets/accueil.png';
@@ -19,44 +19,66 @@ export default function Header() {
         <div className="navbarLogo">
           <ul className="navbar_links">
             <div className="logoImageLogo">
-              <Link to="/">
+              <NavLink
+                to="/"
+                style={{style={isActive => ({
+                  color: isActive ? "white" : "black"
+                })}
+              >
                 <img src={logo} alt={logo} className="logoImage" />
-              </Link>
+              </NavLink>
             </div>
             <div className="burger-button">
-              <Link
+              <NavLink
                 to="/"
+                activeStyle={{ color: 'white', fontWeight: 'bold' }}
                 onClick={handleChangeClick}
                 className={`toggle-button ${active && 'open'}`}
               >
                 <span className="bar2" />
-              </Link>
+              </NavLink>
             </div>
             <div className={`menu ${active && 'open'}`}>
               <li className="navbar_item">
                 {' '}
                 <img src={accueil} alt={accueil} className="logoMenu" />
-                <Link to="/" className="navbar_link active">
+                <NavLink
+                  to="/"
+                  className="navbar_link active"
+                  activeStyle={{ color: 'white', fontWeight: 'bold' }}
+                >
                   Accueil
-                </Link>
+                </NavLink>
               </li>
               <li className="navbar_item">
                 <img src={categorie} alt={categorie} className="logoMenu" />
-                <Link to="/" className="navbar_link">
+                <NavLink
+                  to="/"
+                  className="navbar_link"
+                  activeStyle={{ color: 'white', fontWeight: 'bold' }}
+                >
                   Catégorie
-                </Link>
+                </NavLink>
               </li>
               <li className="navbar_item">
                 <img src={evaluation} alt={evaluation} className="logoMenu" />
-                <Link to="/ResultPage" className="navbar_link">
+                <NavLink
+                  to="/ResultPage"
+                  className="navbar_link"
+                  activeStyle={{ color: 'white', fontWeight: 'bold' }}
+                >
                   Score
-                </Link>
+                </NavLink>
               </li>
               <li className="navbar_item navbarAbout">
                 <img src={avatar} alt={avatar} className="logoMenu" />
-                <Link to="/ContactPage" className="navbar_link">
+                <NavLink
+                  to="/ContactPage"
+                  className="navbar_link"
+                  activeStyle={{ color: 'white', fontWeight: 'bold' }}
+                >
                   About Us
-                </Link>
+                </NavLink>
               </li>
             </div>
           </ul>
