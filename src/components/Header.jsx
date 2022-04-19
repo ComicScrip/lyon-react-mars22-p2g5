@@ -21,8 +21,8 @@ export default function Header() {
             <div className="logoImageLogo">
               <NavLink
                 to="/"
-                style={{style={isActive => ({
-                  color: isActive ? "white" : "black"
+                style={(isActive) => ({
+                  color: isActive ? 'white' : 'black',
                 })}
               >
                 <img src={logo} alt={logo} className="logoImage" />
@@ -31,7 +31,9 @@ export default function Header() {
             <div className="burger-button">
               <NavLink
                 to="/"
-                activeStyle={{ color: 'white', fontWeight: 'bold' }}
+                style={(isActive) => ({
+                  color: isActive ? 'white' : 'black',
+                })}
                 onClick={handleChangeClick}
                 className={`toggle-button ${active && 'open'}`}
               >
@@ -45,7 +47,9 @@ export default function Header() {
                 <NavLink
                   to="/"
                   className="navbar_link active"
-                  activeStyle={{ color: 'white', fontWeight: 'bold' }}
+                  style={(isActive) => ({
+                    color: isActive ? 'white' : 'black',
+                  })}
                 >
                   Accueil
                 </NavLink>
@@ -55,7 +59,9 @@ export default function Header() {
                 <NavLink
                   to="/"
                   className="navbar_link"
-                  activeStyle={{ color: 'white', fontWeight: 'bold' }}
+                  style={(isActive) => ({
+                    color: isActive ? 'white' : 'black',
+                  })}
                 >
                   Catégorie
                 </NavLink>
@@ -65,7 +71,9 @@ export default function Header() {
                 <NavLink
                   to="/ResultPage"
                   className="navbar_link"
-                  activeStyle={{ color: 'white', fontWeight: 'bold' }}
+                  style={(isActive) => ({
+                    color: isActive ? 'white' : 'black',
+                  })}
                 >
                   Score
                 </NavLink>
@@ -75,7 +83,9 @@ export default function Header() {
                 <NavLink
                   to="/ContactPage"
                   className="navbar_link"
-                  activeStyle={{ color: 'white', fontWeight: 'bold' }}
+                  style={(isActive) => ({
+                    color: isActive ? 'white' : 'black',
+                  })}
                 >
                   About Us
                 </NavLink>
