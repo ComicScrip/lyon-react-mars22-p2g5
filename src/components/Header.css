@@ -48,6 +48,7 @@ a {
 .navbar_item {
   display: flex;
   width: 60%;
+  align-items: center;
 }
 
 li {
