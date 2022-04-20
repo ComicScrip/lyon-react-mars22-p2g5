@@ -18,7 +18,8 @@ function QuizAPI() {
   const [currentQuestion, setCurrentQuestion] = useState(sampleQuestion[0]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(1);
   const [answerChoice, setAnswerChoice] = useState([]);
-  let quizEnded = false;
+  const [quizEnded, setQuizEnded] = useState(false);
+  // const [score, setScore] = useState(0);
   const getQuestions = () => {
     axios
       .get('https://opentdb.com/api.php?amount=15')
@@ -29,20 +30,24 @@ function QuizAPI() {
       });
   };
   const handleChoiceAnswer = (value) => {
-    console.log('value', value);
     setAnswerChoice((table) => [...table, value]);
     if (currentQuestionIndex < quizQuestions.length) {
       setCurrentQuestionIndex((count) => count + 1);
       setCurrentQuestion(quizQuestions[currentQuestionIndex]);
-      console.log('currentQuestionIndex', currentQuestionIndex);
     }
     if (currentQuestionIndex === quizQuestions.length) {
-      quizEnded = true;
+      setQuizEnded(true);
+      for (let i = 0; i < quizQuestions.length; i += 1) {
+        console.log(answerChoice[i]);
+        console.log(quizQuestions[i].correct_answer);
+        // answerChoice.forEach(answer =>
+        // answer === quizQuestions[i].correct_answer ? setScore(count => count + 1) : '');
+      }
     }
-    console.log(quizEnded);
+    // console.log(score);
   };
-  console.log('quizQuestion', quizQuestions);
-  console.log('anwserChoice Table', answerChoice);
+  console.log(quizQuestions);
+  console.log(answerChoice);
   //   const [timer, setTimer] = useState(20);
   //   useEffect(() => {
   //     let interval;
@@ -64,7 +69,7 @@ function QuizAPI() {
       ) : (
         <>
           {/* <ShowQuestions questionItem={quizQuestions[currentQuestion]} /> */}
-          <div className="quiz">
+          <div className={quizEnded ? 'hiddenQuiz' : 'quiz'}>
             <div className="question">
               {he.decode(currentQuestion.question)}
             </div>
