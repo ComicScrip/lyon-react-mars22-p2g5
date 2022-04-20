@@ -8,7 +8,7 @@ export default function Main() {
     <main>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/QuizPage" element={<QuizAPI />} />
+        <Route path="/QuizQuestions" element={<QuizAPI />} />
       </Routes>
     </main>
   );
