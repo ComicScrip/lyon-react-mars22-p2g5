@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './Home';
 import ContactPage from './ContactPage';
 import ResultPage from './ResultPage';
-import QuizPage from './QuizPage';
+import QuizAPI from './QuizAPI';
 
 export default function Main() {
   return (
@@ -11,7 +11,8 @@ export default function Main() {
         <Route path="/" element={<Home />} />
         <Route path="./ContactPage" element={<ContactPage />} />
         <Route path="./ResultPage" element={<ResultPage />} />
-        <Route path="./QuizPage" element={<QuizPage />} />
+        <Route path="./QuizPage" element={<QuizAPI />} />
+        <Route path="./QuizPage" element={<RandomQuiz />} />
       </Routes>
     </main>
   );

@@ -8,7 +8,7 @@ import evaluation from '../assets/evaluation.png';
 import avatar from '../assets/avatar.png';
 
 const getActiveLinkStyle = ({ isActive }) => ({
-  textDecoration: isActive ? 'underline' : 'null',
+  textDecoration: isActive ? 'underline' : 'none',
 });
 
 export default function Header() {
