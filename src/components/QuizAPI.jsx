@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import '../App.css';
 // import ProgressBar from './progress-bar';
 import '../styles/QuizPage.css';
 import he from 'he';
