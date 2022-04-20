@@ -12,7 +12,6 @@ export default function Main() {
         <Route path="./ContactPage" element={<ContactPage />} />
         <Route path="./ResultPage" element={<ResultPage />} />
         <Route path="./QuizPage" element={<QuizAPI />} />
-        <Route path="./QuizPage" element={<RandomQuiz />} />
       </Routes>
     </main>
   );
