@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 // import ProgressBar from './progress-bar';
-// import ShowQuestions from './QuizPage';
 import '../styles/QuizPage.css';
 import he from 'he';
 import ResultDummy from './ResultDummy';
@@ -19,7 +18,6 @@ function QuizAPI() {
   const currentQuestion = quizQuestions[currentQuestionIndex];
   const [answerChoice, setAnswerChoice] = useState([]);
   const quizEnded = currentQuestionIndex === quizQuestions.length;
-  // const [score, setScore] = useState(0);
   const getQuestions = () => {
     axios
       .get('https://opentdb.com/api.php?amount=15')
@@ -54,7 +52,6 @@ function QuizAPI() {
         ''
       ) : (
         <>
-          {/* <ShowQuestions questionItem={quizQuestions[currentQuestion]} /> */}
           {quizEnded ? (
             <ResultDummy answer={answerChoice} questions={quizQuestions} />
           ) : (
@@ -98,7 +95,7 @@ function QuizAPI() {
               </div>
             </div>
           )}
-          ;{/* <ProgressBar bgColor="#b31212" completed={timer} /> */}
+          {/* <ProgressBar bgColor="#b31212" completed={timer} /> */}
         </>
       )}
     </>
