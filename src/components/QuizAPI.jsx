@@ -17,7 +17,7 @@ function QuizAPI() {
   const [quizQuestions, setQuizQuestions] = useState(sampleQuestion);
   const [currentQuestion, setCurrentQuestion] = useState(sampleQuestion[0]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(1);
-  // const answerChoice = [];
+  const [answerChoice, setAnswerChoice] = useState([]);
   let quizEnded = false;
   const getQuestions = () => {
     axios
@@ -28,18 +28,21 @@ function QuizAPI() {
         setCurrentQuestion(data.results[0]);
       });
   };
-  const handleChoiceAnswer = () => {
+  const handleChoiceAnswer = (value) => {
+    console.log('value', value);
+    setAnswerChoice((table) => [...table, value]);
     if (currentQuestionIndex < quizQuestions.length) {
       setCurrentQuestionIndex((count) => count + 1);
       setCurrentQuestion(quizQuestions[currentQuestionIndex]);
-      console.log(currentQuestionIndex);
+      console.log('currentQuestionIndex', currentQuestionIndex);
     }
     if (currentQuestionIndex === quizQuestions.length) {
       quizEnded = true;
     }
     console.log(quizEnded);
   };
-  console.log(quizQuestions);
+  console.log('quizQuestion', quizQuestions);
+  console.log('anwserChoice Table', answerChoice);
   //   const [timer, setTimer] = useState(20);
   //   useEffect(() => {
   //     let interval;
@@ -69,7 +72,7 @@ function QuizAPI() {
               <button
                 type="submit"
                 className="answers answerOne"
-                onClick={handleChoiceAnswer}
+                onClick={(event) => handleChoiceAnswer(event.target.value)}
                 value={currentQuestion.correct_answer}
               >
                 {currentQuestion.correct_answer}
@@ -77,21 +80,24 @@ function QuizAPI() {
               <button
                 type="submit"
                 className="answers answerTwo"
-                onClick={handleChoiceAnswer}
+                onClick={(event) => handleChoiceAnswer(event.target.value)}
+                value={currentQuestion.incorrect_answers[0]}
               >
                 {currentQuestion.incorrect_answers[0]}
               </button>
               <button
                 type="submit"
                 className="answers answerThree"
-                onClick={handleChoiceAnswer}
+                onClick={(event) => handleChoiceAnswer(event.target.value)}
+                value={currentQuestion.incorrect_answers[1]}
               >
                 {currentQuestion.incorrect_answers[1]}
               </button>
               <button
                 type="submit"
                 className="answers answerFour"
-                onClick={handleChoiceAnswer}
+                onClick={(event) => handleChoiceAnswer(event.target.value)}
+                value={currentQuestion.incorrect_answers[2]}
               >
                 {currentQuestion.incorrect_answers[2]}
               </button>

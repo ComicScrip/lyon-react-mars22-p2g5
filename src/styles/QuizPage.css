@@ -47,6 +47,12 @@ button:hover {
   cursor: pointer;
   background-color: rgb(88, 182, 198, 0.5);
 }
+
+button:active {
+  cursor: pointer;
+  background-color: chartreuse;
+}
+
 .answerOne {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
