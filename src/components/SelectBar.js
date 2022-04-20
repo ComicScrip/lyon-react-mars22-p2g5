@@ -27,7 +27,7 @@ function SelectBar() {
         <Select options={categories} onChange={change} />
       </div>
       <div className={!selectedCat ? '' : 'category-box'}>
-        <h1>{selectedCat}</h1>
+        <h1>{!selectedCat ? '' : `Quizz ${selectedCat}`}</h1>
       </div>
     </div>
   );
