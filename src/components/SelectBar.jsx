@@ -1,3 +1,3 @@
 export default function SelectPage() {
-  return <div>toto</div>;
+  return <div>test</div>;
 }

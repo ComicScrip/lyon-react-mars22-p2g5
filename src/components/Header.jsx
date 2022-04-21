@@ -54,11 +54,11 @@ export default function Header() {
               <li className="navbar_item">
                 <img src={categorie} alt={categorie} className="logoMenu" />
                 <NavLink
-                  to="/SelectBar"
+                  to="/QuizAPI"
                   className="navbar_link"
                   style={getActiveLinkStyle}
                 >
-                  Catégorie
+                  Quiz (temporaire)
                 </NavLink>
               </li>
               <li className="navbar_item">

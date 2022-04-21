@@ -1,13 +1,15 @@
 import React from 'react';
 
-function ResultDummy({ answer, questions }) {
+function ResultDummy({ answers, questions }) {
   return (
     <div>
-      <div>Tu es con comme ton père et moche comme ta mère</div>;
       {questions.map((question) => (
-        <p>{question.question}</p>
+        <div>
+          <p>{question.question}</p>
+          <p>{question.correct_answer}</p>
+        </div>
       ))}
-      <div>{answer}</div>
+      <div>{answers}</div>
     </div>
   );
 }

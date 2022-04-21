@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import '../App.css';
-// import ProgressBar from './progress-bar';
 import '../styles/QuizPage.css';
 import he from 'he';
 import ResultDummy from './ResultDummy';
@@ -33,17 +32,6 @@ function QuizAPI() {
       setCurrentQuestionIndex((index) => index + 1);
     }
   };
-  //   const [timer, setTimer] = useState(20);
-  //   useEffect(() => {
-  //     let interval;
-  //     if (timer === 0) clearInterval(interval);
-  //     else {
-  //       interval = setInterval(() => {
-  //         setTimer((second) => second - 1);
-  //       }, 1000);
-  //     }
-  //     return () => clearInterval(interval);
-  //   }, [timer]);
   return (
     <>
       <button type="button" onClick={getQuestions}>
@@ -52,9 +40,9 @@ function QuizAPI() {
       {quizQuestions[0].question === '' ? (
         ''
       ) : (
-        <>
+        <div>
           {quizEnded ? (
-            <ResultDummy answer={answerChoice} questions={quizQuestions} />
+            <ResultDummy answers={answerChoice} questions={quizQuestions} />
           ) : (
             <div className={quizEnded ? 'hiddenQuiz' : 'quiz'}>
               <div className="question">
@@ -96,8 +84,7 @@ function QuizAPI() {
               </div>
             </div>
           )}
-          {/* <ProgressBar bgColor="#b31212" completed={timer} /> */}
-        </>
+        </div>
       )}
     </>
   );
