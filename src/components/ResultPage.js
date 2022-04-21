@@ -38,15 +38,15 @@ function ResultPage() {
     currentAnswer === questions[index].correct_answer ? s + 1 : s;
   const score = answers.reduce(countScore, 0);
 
-  function gifanim(s) {
-    if (s < 4) return animation.bad;
-    if (s < 7) return animation.medium;
+  function gifanim(anim) {
+    if (anim < 4) return animation.bad;
+    if (anim < 7) return animation.medium;
     return animation.good;
   }
 
-  function resultSentence(s) {
-    if (s < 4) return resultTitle.wrong;
-    if (s < 7) return resultTitle.middle;
+  function resultSentence(answ) {
+    if (answ < 4) return resultTitle.wrong;
+    if (answ < 7) return resultTitle.middle;
     return resultTitle.great;
   }
 
