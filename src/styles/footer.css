@@ -2,3 +2,15 @@
   width: 30px;
   height: 30px;
 }
+
+footer {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  justify-content: center;
+}
+
+.footerText {
+  padding-top: 6px;
+}

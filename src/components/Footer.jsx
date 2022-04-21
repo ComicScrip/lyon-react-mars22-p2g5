@@ -8,7 +8,7 @@ export default function Footer() {
       <Link to="/">
         <img src={logo} alt="logo" className="logoImage" />
       </Link>
-      <p>Inquiz'itor © 2022 Tous droits réservés.</p>
+      <p className="footerText">Inquiz'itor © 2022 Tous droits réservés.</p>
     </footer>
   );
 }
