@@ -25,6 +25,10 @@
   background-color: #30afe6;
 }
 
+.letsGo:active {
+  box-shadow: inset 0px 20px 20px rgba(0, 0, 0, 0.5);
+}
+
 .joke-of-the-day {
   margin-top: 200px;
 }
