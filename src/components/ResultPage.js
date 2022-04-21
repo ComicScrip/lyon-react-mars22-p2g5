@@ -3,19 +3,19 @@ import '../styles/ResultPage.css';
 
 const questions = [
   {
-    question1: '1 + 1 = ?',
+    question: '1 + 1 = ?',
     answer: [3, 4, 5],
-    correctAnswer: 2,
+    correct_answer: 2,
   },
   {
-    question2: 'couleur du soleil?',
+    question: 'couleur du soleil?',
     answer: ['green', 'red', 'blue'],
-    correctAnswer: 'jaune',
+    correct_answer: 'jaune',
   },
   {
-    question3: '2 + 2 = ?',
+    question: '2 + 2 = ?',
     answer: [5, 7, 6],
-    correctAnswer: 4,
+    correct_answer: 4,
   },
 ];
 
@@ -35,7 +35,7 @@ const resultTitle = {
 
 function ResultPage() {
   const countScore = (s, currentAnswer, index) =>
-    currentAnswer === questions[index].correctAnswer ? s + 1 : s;
+    currentAnswer === questions[index].correct_answer ? s + 1 : s;
   const score = answers.reduce(countScore, 0);
 
   function gifanim(s) {
@@ -52,12 +52,25 @@ function ResultPage() {
 
   return (
     <div className="resultpage">
-      <h1 className="result-title">{resultSentence(score)}</h1>
+      <h2 className="result-title">{resultSentence(score)}</h2>
+      <h3 className="scoreResult">
+        {' '}
+        Score: {score} / {questions.length}{' '}
+      </h3>
       <div className="animation-quiz">
         <img src={gifanim(score)} alt=" animation end quiz" />
       </div>
       <h2 className="details-quiz">Détails de vos réponses</h2>
-      <div className="details" />
+      <div className="details">
+        {questions.map((question, i) => (
+          <div>
+            <p>
+              Question {i + 1} : {question.question}
+            </p>
+            <p>Bonne réponse: {question.correct_answer}</p>
+          </div>
+        ))}
+      </div>
       <button className="restart" type="button">
         Recommencer
       </button>
