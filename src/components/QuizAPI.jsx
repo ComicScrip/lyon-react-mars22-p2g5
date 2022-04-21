@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import '../styles/App.css';
+import '../App.css';
 import '../styles/QuizPage.css';
 import he from 'he';
 import ResultDummy from './ResultDummy';
