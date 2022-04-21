@@ -1,0 +1,78 @@
+* {
+  font-size: 1rem;
+}
+
+.quiz {
+  display: grid;
+  grid-template-rows: 3fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  width: 80vw;
+  height: 70vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.question {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+  border: 1px solid black;
+  margin: 1%;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  background-color: rgb(250, 250, 241, 0.5);
+}
+
+.reponses {
+  grid-column: 1 / 3;
+  grid-row: 2 / 4;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  text-align: center;
+}
+
+.answers {
+  border: 1px solid black;
+  margin: 1%;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px black;
+  background-color: rgb(250, 250, 241, 0.5);
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: rgb(88, 182, 198, 0.5);
+}
+
+button:active {
+  cursor: pointer;
+  background-color: chartreuse;
+}
+
+.answerOne {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.answerTwo {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.answerThree {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.answerFour {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.hiddenQuiz {
+  visibility: hidden;
+}
