@@ -10,10 +10,10 @@ export default function Main() {
     <main>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="./ContactPage" element={<ContactPage />} />
-        <Route path="./ResultPage" element={<ResultPage />} />
-        <Route path="./QuizPage" element={<QuizAPI />} />
-        <Route path="./SelectBar" element={<SelectBar />} />
+        <Route path="/ContactPage" element={<ContactPage />} />
+        <Route path="/ResultPage" element={<ResultPage />} />
+        <Route path="/QuizPage" element={<QuizAPI />} />
+        <Route path="/SelectBar" element={<SelectBar />} />
       </Routes>
     </main>
   );
