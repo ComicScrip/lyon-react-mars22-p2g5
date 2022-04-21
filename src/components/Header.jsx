@@ -58,7 +58,7 @@ export default function Header() {
                   className="navbar_link"
                   style={getActiveLinkStyle}
                 >
-                  Quiz (temporaire)
+                  Catégories
                 </NavLink>
               </li>
               <li className="navbar_item">
