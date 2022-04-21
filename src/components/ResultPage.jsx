@@ -55,7 +55,7 @@ function ResultPage() {
       <h2 className="result-title">{resultSentence(score)}</h2>
       <h3 className="scoreResult">
         {' '}
-        Score: {score} / {questions.length}{' '}
+        Score: {score} sur {questions.length}{' '}
       </h3>
       <div className="animation-quiz">
         <img src={gifanim(score)} alt=" animation end quiz" />
