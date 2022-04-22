@@ -74,7 +74,7 @@ export default function Header() {
               <li className="navbar_item navbarAbout">
                 <img src={avatar} alt={avatar} className="logoMenu" />
                 <NavLink
-                  to="/ContactPage"
+                  to="/Contact"
                   className="navbar_link"
                   style={getActiveLinkStyle}
                 >
