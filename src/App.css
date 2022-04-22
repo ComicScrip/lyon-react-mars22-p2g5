@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-image: url('./assets/backmobile.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+@font-face {
+  font-family: 'organic_relief';
+  src: url(./assets/organic_relief.ttf);
+}
+
+h1 {
+  font-family: 'organic_Relief';
+  text-align: center;
+}
+
+@media screen and (min-width: 1200px) {
+  html {
+    background-image: url('./assets/backdesktop.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}

@@ -1,15 +1,19 @@
 import { Route, Routes } from 'react-router-dom';
 import Home from './Home';
-import Contact from './Contact';
-import Carrousel from './Carrousel';
+import ContactPage from './ContactPage';
+import ResultPage from './ResultPage';
+import QuizAPI from './QuizAPI';
+import SelectBar from './SelectBar';
 
 export default function Main() {
   return (
     <main>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/categories" element={<Carrousel />} />
+        <Route path="/ContactPage" element={<ContactPage />} />
+        <Route path="/ResultPage" element={<ResultPage />} />
+        <Route path="/QuizAPI" element={<QuizAPI />} />
+        <Route path="/SelectBar" element={<SelectBar />} />
       </Routes>
     </main>
   );
