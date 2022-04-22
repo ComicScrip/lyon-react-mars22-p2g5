@@ -28,9 +28,9 @@ const animation = {
 };
 
 const resultTitle = {
-  great: 'Bien joué !!!',
+  great: 'Bien joué ',
   middle: 'Pas trop mal',
-  wrong: 'Il y a du boulot',
+  wrong: 'Il y a du boulot !',
 };
 
 function ResultPage() {

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import '../styles/home.css';
 
 export default function Home() {
@@ -5,9 +6,11 @@ export default function Home() {
     <div className="homepage">
       <h1>INQUIZ'ITOR</h1>
       <div>
-        <button className="letsGo" type="button">
-          Let's Quizz
-        </button>
+        <Link to="/QuizAPI">
+          <button className="letsGo" type="button">
+            Let's Quizz
+          </button>
+        </Link>
       </div>
       <div className="joke-of-the-day" />
     </div>
