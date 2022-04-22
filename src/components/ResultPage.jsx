@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/ResultPage.css';
+import { Link } from 'react-router-dom';
 
 const questions = [
   {
@@ -65,15 +66,17 @@ function ResultPage() {
         {questions.map((question, i) => (
           <div>
             <p>
-              Question {i + 1} : {question.question}
+              Question {i + 1} / {question.question}
             </p>
             <p>Bonne réponse: {question.correct_answer}</p>
           </div>
         ))}
       </div>
-      <button className="restart" type="button">
-        Recommencer
-      </button>
+      <Link to="/Home">
+        <button className="restart" type="button">
+          Recommencer
+        </button>
+      </Link>
     </div>
   );
 }
