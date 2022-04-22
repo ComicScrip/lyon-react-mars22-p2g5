@@ -57,6 +57,9 @@ export default function Header() {
                   to="/QuizAPI"
                   className="navbar_link"
                   style={getActiveLinkStyle}
+                  onClick={() => {
+                    setActive(false);
+                  }}
                 >
                   Catégories
                 </NavLink>
@@ -67,6 +70,9 @@ export default function Header() {
                   to="/ResultPage"
                   className="navbar_link"
                   style={getActiveLinkStyle}
+                  onClick={() => {
+                    setActive(false);
+                  }}
                 >
                   Score
                 </NavLink>
@@ -77,6 +83,9 @@ export default function Header() {
                   to="/ContactPage"
                   className="navbar_link"
                   style={getActiveLinkStyle}
+                  onClick={() => {
+                    setActive(false);
+                  }}
                 >
                   About Us
                 </NavLink>
