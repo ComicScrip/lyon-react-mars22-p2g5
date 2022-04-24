@@ -4,6 +4,7 @@ import Contact from './Contact';
 import ResultPage from './ResultPage';
 import QuizAPI from './QuizAPI';
 import SelectBar from './SelectBar';
+import Categories from './Categories';
 
 export default function Main() {
   return (
@@ -14,6 +15,7 @@ export default function Main() {
         <Route path="/ResultPage" element={<ResultPage />} />
         <Route path="/QuizAPI" element={<QuizAPI />} />
         <Route path="/SelectBar" element={<SelectBar />} />
+        <Route path="/Categories" element={<Categories />} />
       </Routes>
     </main>
   );
