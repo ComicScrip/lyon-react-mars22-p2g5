@@ -1,4 +1,5 @@
 import React from 'react';
+import SelectBar from './SelectBar';
 import Slider from './Slider';
 
 function Categories() {
@@ -8,6 +9,7 @@ function Categories() {
         <Slider />
       </div>
       <div className="Selectbar" />
+      <SelectBar />
     </div>
   );
 }

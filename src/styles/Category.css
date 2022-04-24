@@ -1,0 +1,7 @@
+.category-box {
+  display: flex;
+  justify-content: center;
+  padding: 10%;
+  margin: 10%;
+  background-color: aliceblue;
+}
