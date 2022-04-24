@@ -58,6 +58,16 @@ export default function Header() {
                   className="navbar_link"
                   style={getActiveLinkStyle}
                 >
+                  Quiz
+                </NavLink>
+              </li>
+              <li className="navbar_item">
+                <img src={categorie} alt={categorie} className="logoMenu" />
+                <NavLink
+                  to="/Categories"
+                  className="navbar_link"
+                  style={getActiveLinkStyle}
+                >
                   Catégories
                 </NavLink>
               </li>
