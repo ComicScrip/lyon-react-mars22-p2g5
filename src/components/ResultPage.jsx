@@ -3,72 +3,6 @@ import '../styles/ResultPage.css';
 import { Link } from 'react-router-dom';
 import arrow from '../assets/arrow.png';
 
-const questions = [
-  {
-    question: 'De quelle couleur est le soleil ?',
-    answer: ['green', 'red', 'blue'],
-    correct_answer: 'jaune',
-  },
-  {
-    question: 'De quelle couleur est le soleil ?',
-    answer: ['green', 'red', 'blue'],
-    correct_answer: 'jaune',
-  },
-  {
-    question: 'De quelle couleur est le soleil ?',
-    answer: ['green', 'red', 'blue'],
-    correct_answer: 'jaune',
-  },
-  {
-    question: 'De quelle couleur est le soleil ?',
-    answer: ['green', 'red', 'blue'],
-    correct_answer: 'jaune',
-  },
-  {
-    question: 'De quelle couleur est le soleil ?',
-    answer: ['green', 'red', 'blue'],
-    correct_answer: 'jaune',
-  },
-  {
-    question: 'De quelle couleur est le soleil ?',
-    answer: ['green', 'red', 'blue'],
-    correct_answer: 'jaune',
-  },
-  {
-    question: 'De quelle couleur est le soleil ?',
-    answer: ['green', 'red', 'blue'],
-    correct_answer: 'jaune',
-  },
-  {
-    question: 'De quelle couleur est le soleil ?',
-    answer: ['green', 'red', 'blue'],
-    correct_answer: 'jaune',
-  },
-  {
-    question: 'De quelle couleur est le soleil ?',
-    answer: ['green', 'red', 'blue'],
-    correct_answer: 'jaune',
-  },
-  {
-    question: 'De quelle couleur est le soleil ?',
-    answer: ['green', 'red', 'blue'],
-    correct_answer: 'jaune',
-  },
-];
-
-const answers = [
-  'jaune',
-  'jaune',
-  'jaune',
-  'jaune',
-  'jaune',
-  'jaune',
-  'jaune',
-  'jaune',
-  'jaune',
-  'jaune',
-];
-
 const animation = {
   good: 'https://media.giphy.com/media/l3q2XhfQ8oCkm1Ts4/giphy.gif',
   medium: 'https://media.giphy.com/media/sB4Z9U3yErt9S/giphy.gif',
@@ -81,7 +15,7 @@ const resultTitle = {
   wrong: 'Il y a du boulot !',
 };
 
-function ResultPage() {
+function ResultPage({ answers, questions }) {
   const countScore = (s, currentAnswer, index) =>
     currentAnswer === questions[index].correct_answer ? s + 1 : s;
   const score = answers.reduce(countScore, 0);
