@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/ResultPage.css';
 import { Link } from 'react-router-dom';
+import he from 'he';
 
 const animation = {
   good: 'https://media.giphy.com/media/l3q2XhfQ8oCkm1Ts4/giphy.gif',
@@ -20,8 +21,8 @@ function ResultPage({ answers, questions }) {
   const score = answers.reduce(countScore, 0);
 
   function gifanim(anim) {
-    if (anim < 4) return animation.bad;
-    if (anim < 7) return animation.medium;
+    if (anim < 5) return animation.bad;
+    if (anim < 10) return animation.medium;
     return animation.good;
   }
 
@@ -47,7 +48,7 @@ function ResultPage({ answers, questions }) {
         {questions.map((question, i) => (
           <div className="text-align">
             <p>
-              {i + 1} ={'>'} {question.question}
+              {i + 1} ={'>'} {he.decode(question.question)}
             </p>
             <p>Bonne réponse : {question.correct_answer}</p>
           </div>
