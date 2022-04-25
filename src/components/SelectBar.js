@@ -1,5 +1,5 @@
 import Select from 'react-select';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import '../styles/Categories.css';
 import { Link } from 'react-router-dom';
 
@@ -28,10 +28,6 @@ function SelectBar() {
   ];
 
   const [selectedCat, setSelectedCat] = useState(categories.label);
-
-  useEffect(() => {
-    console.log('Youhou you clicked');
-  });
 
   const change = (e) => {
     setSelectedCat(e.label, e.value);
