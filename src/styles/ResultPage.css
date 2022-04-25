@@ -38,19 +38,13 @@ img {
   width: 50%;
   height: 50%;
   border: solid black 2px;
-  border-radius: 50px;
+  border-radius: 40px;
   background: rgba(255, 253, 185, 0.5);
   margin-bottom: 10px;
   text-align: justify;
   font-weight: 800;
   line-height: 1.8em;
   padding: 50px;
-}
-
-.arrow {
-  width: 15px;
-  margin: 0;
-  padding-left: 5px;
 }
 
 .text-align {
@@ -71,4 +65,15 @@ img {
 
 .restart:hover {
   background-color: #30afe6;
+}
+
+@media screen and (max-width: 800px) {
+  .details {
+    width: 80%;
+    height: 80%;
+    text-align: justify;
+    font-weight: 600;
+    line-height: 1.1em;
+    padding: 10px;
+  }
 }
