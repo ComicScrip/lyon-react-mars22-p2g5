@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../styles/Slider.css';
 import BtnSlider from './BtnSlider';
 import dataSlider from './DataSlider';
+import { Link } from 'react-router-dom';
 
 function Slider() {
   const [slideIndex, setSlideIndex] = useState(1);
@@ -32,10 +33,12 @@ function Slider() {
           key={obj.id}
           className={slideIndex === index + 1 ? 'slide active-anim' : 'slide'}
         >
-          <img
-            src={`${process.env.PUBLIC_URL}/img/img${index + 1}.png`}
-            alt={'img'}
-          />
+          <Link to="/QuizAPI">
+            <img
+              src={`${process.env.PUBLIC_URL}/img/img${index + 1}.png`}
+              alt={'img'}
+            />{' '}
+          </Link>
           <h1 className="card-title">{obj.title}</h1>
         </div>
       ))}
