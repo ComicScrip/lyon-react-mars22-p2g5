@@ -1,9 +1,9 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../App.css';
 import '../styles/QuizPage.css';
 import he from 'he';
-import ResultDummy from './ResultDummy';
+import ResultPage from './ResultPage';
 
 function QuizAPI() {
   const sampleQuestion = [
@@ -18,14 +18,14 @@ function QuizAPI() {
   const currentQuestion = quizQuestions[currentQuestionIndex];
   const [answerChoice, setAnswerChoice] = useState([]);
   const quizEnded = currentQuestionIndex === quizQuestions.length;
-  const getQuestions = () => {
+  useEffect(() => {
     axios
       .get('https://opentdb.com/api.php?amount=15')
       .then((response) => response.data)
       .then((data) => {
         setQuizQuestions(data.results);
       });
-  };
+  }, []);
   const handleChoiceAnswer = (value) => {
     setAnswerChoice((table) => [...table, value]);
     if (currentQuestionIndex < quizQuestions.length) {
@@ -33,16 +33,13 @@ function QuizAPI() {
     }
   };
   return (
-    <>
-      <button type="button" onClick={getQuestions}>
-        Get Questions
-      </button>
+    <div>
       {quizQuestions[0].question === '' ? (
         ''
       ) : (
         <div>
           {quizEnded ? (
-            <ResultDummy answers={answerChoice} questions={quizQuestions} />
+            <ResultPage answers={answerChoice} questions={quizQuestions} />
           ) : (
             <div className={quizEnded ? 'hiddenQuiz' : 'quiz'}>
               <div className="question">
@@ -86,7 +83,7 @@ function QuizAPI() {
           )}
         </div>
       )}
-    </>
+    </div>
   );
 }
 export default QuizAPI;
