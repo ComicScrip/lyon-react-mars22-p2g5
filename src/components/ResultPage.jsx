@@ -1,7 +1,6 @@
 import React from 'react';
 import '../styles/ResultPage.css';
 import { Link } from 'react-router-dom';
-import arrow from '../assets/arrow.png';
 
 const animation = {
   good: 'https://media.giphy.com/media/l3q2XhfQ8oCkm1Ts4/giphy.gif',
@@ -48,9 +47,7 @@ function ResultPage({ answers, questions }) {
         {questions.map((question, i) => (
           <div className="text-align">
             <p>
-              {i + 1}
-              <img className="arrow" src={arrow} alt="arrow" />{' '}
-              {question.question}
+              {i + 1} ={'>'} {question.question}
             </p>
             <p>Bonne réponse : {question.correct_answer}</p>
           </div>
