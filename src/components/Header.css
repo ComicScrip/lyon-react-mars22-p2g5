@@ -1,0 +1,189 @@
+/* Navbar */
+
+.navbar {
+  align-items: center;
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+li {
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.navbar_links {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 50px);
+  position: fixed;
+  transition: all 0.5s ease-in-out;
+  background-color: rgba(233, 232, 225, 0.95);
+  top: 50px;
+  right: -100%;
+}
+
+.open {
+  right: 0;
+}
+
+.navbar_item {
+  display: flex;
+  width: 60%;
+  align-items: center;
+}
+
+li {
+  font-family: 'organic_relief';
+  font-size: xx-large;
+  margin: 0.6em;
+}
+
+.logoImage {
+  width: 60px;
+  height: 60px;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.navbar_link {
+  transition: all 0.4s ease-in-out;
+}
+
+.navbar_link:hover {
+  letter-spacing: 3px;
+}
+
+.navbar-links.active {
+  display: flex;
+}
+
+.logoMenu {
+  width: 50px;
+  height: 50px;
+  margin-right: 40px;
+  display: flex;
+}
+
+/* Menu Burger */
+
+.toggle-button {
+  position: absolute;
+  top: 1.7rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  margin-top: 5px;
+}
+
+.toggle-button .bar2 {
+  height: 3px;
+  width: 100%;
+  background-color: black;
+  border-radius: 10px;
+  transition: 0.5s ease;
+}
+
+.toggle-button .bar2::before,
+.toggle-button .bar2::after {
+  content: '';
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background-color: black;
+  border-radius: 10px;
+  transition: all 0.5s ease-in-out;
+}
+
+.toggle-button .bar2::before {
+  transform: translateY(-10px);
+}
+.toggle-button .bar2::after {
+  transform: translateY(10px);
+}
+
+/* ANIMATION CROIX */
+
+.toggle-button.open .bar2 {
+  background: transparent;
+}
+.toggle-button.open .bar2::before {
+  transform: rotate(45deg);
+}
+.toggle-button.open .bar2::after {
+  transform: rotate(-45deg);
+}
+
+@media screen and (min-width: 1000px) {
+  .navbar_links {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .navbar_item {
+    width: auto;
+  }
+  .toggle-button {
+    display: none;
+  }
+
+  .logoImage {
+    width: 80px;
+    height: 80px;
+    padding-left: 10px;
+  }
+
+  .navbarAbout {
+    display: flex;
+    flex-wrap: nowrap;
+    min-width: fit-content;
+  }
+
+  li {
+    font-size: large;
+  }
+
+  .menu {
+    display: flex;
+    position: initial;
+    flex-direction: row;
+    align-items: center;
+    right: +100%;
+    height: 8%;
+    background-color: transparent;
+    margin-top: 10px;
+    transition: none;
+    min-width: fit-content;
+    justify-content: right;
+  }
+
+  .logoMenu {
+    display: none;
+  }
+
+  .navbarLogo {
+    display: flex;
+    align-items: center;
+  }
+}
