@@ -1,26 +1,73 @@
 import React from 'react';
 import '../styles/ResultPage.css';
 import { Link } from 'react-router-dom';
+import arrow from '../assets/arrow.png';
 
 const questions = [
   {
-    question: '1 + 1 = ?',
-    answer: [3, 4, 5],
-    correct_answer: 2,
-  },
-  {
-    question: 'couleur du soleil?',
+    question: 'De quelle couleur est le soleil ?',
     answer: ['green', 'red', 'blue'],
     correct_answer: 'jaune',
   },
   {
-    question: '2 + 2 = ?',
-    answer: [5, 7, 6],
-    correct_answer: 4,
+    question: 'De quelle couleur est le soleil ?',
+    answer: ['green', 'red', 'blue'],
+    correct_answer: 'jaune',
+  },
+  {
+    question: 'De quelle couleur est le soleil ?',
+    answer: ['green', 'red', 'blue'],
+    correct_answer: 'jaune',
+  },
+  {
+    question: 'De quelle couleur est le soleil ?',
+    answer: ['green', 'red', 'blue'],
+    correct_answer: 'jaune',
+  },
+  {
+    question: 'De quelle couleur est le soleil ?',
+    answer: ['green', 'red', 'blue'],
+    correct_answer: 'jaune',
+  },
+  {
+    question: 'De quelle couleur est le soleil ?',
+    answer: ['green', 'red', 'blue'],
+    correct_answer: 'jaune',
+  },
+  {
+    question: 'De quelle couleur est le soleil ?',
+    answer: ['green', 'red', 'blue'],
+    correct_answer: 'jaune',
+  },
+  {
+    question: 'De quelle couleur est le soleil ?',
+    answer: ['green', 'red', 'blue'],
+    correct_answer: 'jaune',
+  },
+  {
+    question: 'De quelle couleur est le soleil ?',
+    answer: ['green', 'red', 'blue'],
+    correct_answer: 'jaune',
+  },
+  {
+    question: 'De quelle couleur est le soleil ?',
+    answer: ['green', 'red', 'blue'],
+    correct_answer: 'jaune',
   },
 ];
 
-const answers = [2, 'jaune', 5];
+const answers = [
+  'jaune',
+  'jaune',
+  'jaune',
+  'jaune',
+  'jaune',
+  'jaune',
+  'jaune',
+  'jaune',
+  'jaune',
+  'jaune',
+];
 
 const animation = {
   good: 'https://media.giphy.com/media/l3q2XhfQ8oCkm1Ts4/giphy.gif',
@@ -67,9 +114,11 @@ function ResultPage() {
         {questions.map((question, i) => (
           <div className="text-align">
             <p>
-              {i + 1} = {question.question}
+              {i + 1}
+              <img className="arrow" src={arrow} alt="arrow" />{' '}
+              {question.question}
             </p>
-            <p>Bonne réponse: {question.correct_answer}</p>
+            <p>Bonne réponse : {question.correct_answer}</p>
           </div>
         ))}
       </div>

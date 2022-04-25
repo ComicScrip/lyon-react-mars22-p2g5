@@ -6,7 +6,7 @@ export default function Home() {
     <div className="homepage">
       <h1>INQUIZ'ITOR</h1>
       <div>
-        <Link to="/QuizAPI">
+        <Link to="/Categorie">
           <button className="letsGo" type="button">
             Let's Quizz
           </button>
