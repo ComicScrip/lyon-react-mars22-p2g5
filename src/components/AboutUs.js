@@ -1,11 +1,11 @@
 import React from 'react';
 import '../styles/Contact.css';
 
-function AboutUs(props) {
+function AboutUs(avatar) {
   return (
     <div>
-      <img src={props.img} alt="avatar" className="avatar" />
-      <h2 className="avatar-title">{props.name}</h2>
+      <img src={avatar.img} alt="avatar" className="avatar" />
+      <h2 className="avatar-title">{avatar.name}</h2>
     </div>
   );
 }
