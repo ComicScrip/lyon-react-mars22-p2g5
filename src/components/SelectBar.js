@@ -36,7 +36,20 @@ function SelectBar() {
   return (
     <div>
       <div className="select-bar">
-        <Select options={categories} onChange={change} />
+        <select name="" id="" onChange={change}>
+          <option
+            key={categories.value}
+            value={categories.value}
+            onChange={change}
+          >
+            {categories.label}
+          </option>
+        </select>
+        <Select
+          options={categories}
+          onChange={change}
+          className="react-select"
+        />
       </div>
       <Link to="/QuizAPI">
         <div className={!selectedCat ? '' : 'category-box'}>

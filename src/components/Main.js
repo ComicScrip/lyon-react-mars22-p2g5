@@ -11,7 +11,7 @@ export default function Main() {
     <main>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Contact" element={<Contact />} />
+        <Route path="/ContactPage" element={<Contact />} />
         <Route path="/ResultPage" element={<ResultPage />} />
         <Route path="/QuizAPI" element={<QuizAPI />} />
         <Route path="/SelectBar" element={<SelectBar />} />
