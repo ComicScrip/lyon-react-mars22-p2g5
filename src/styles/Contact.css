@@ -1,3 +1,9 @@
+:root {
+  --input-color: rgba(255, 255, 255, 30%);
+  --input-border: 1px solid black;
+  --input-box-shadow: 2px 3px 3px rgb(85, 83, 83);
+}
+
 .contact-form {
   flex: 1 1 auto;
   margin: 0;
@@ -16,28 +22,58 @@
 
 #name {
   width: 100%;
+  height: 30px;
   margin: 10px 0;
-  padding: 5px 7px;
+  padding: 5px 15px;
+  border-radius: 20px;
+  background-color: var(--input-color);
+  border: var(--input-border);
+  box-shadow: var(--input-box-shadow);
+  font-size: 1.2rem;
 }
 
 #email {
   width: 100%;
+  height: 30px;
   margin: 10px 0;
-  padding: 5px 7px;
+  padding: 5px 15px;
+  border-radius: 20px;
+  background-color: var(--input-color);
+  border: var(--input-border);
+  box-shadow: var(--input-box-shadow);
+  font-size: 1.2rem;
 }
 
 #text-area {
   width: 100%;
-  height: 200px;
+  height: 250px;
   margin: 10px 0;
-  padding: 5px 7px;
+  padding: 15px 15px;
+  border-radius: 20px;
+  background-color: var(--input-color);
+  border: var(--input-border);
+  box-shadow: var(--input-box-shadow);
+  font-size: 1.2rem;
 }
 
 .submit {
   margin-top: 10px;
   width: 30%;
+  padding: 7px 7px;
   margin-bottom: 50px;
   align-self: center;
+  background-color: rgba(59, 61, 65, 0.3);
+  border: var(--input-border);
+  border-radius: 20px;
+  box-shadow: var(--input-box-shadow);
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: 0.3s ease;
+}
+
+.submit:hover {
+  filter: brightness(160%);
+  transform: translateX(3px);
 }
 
 .contact-title {
