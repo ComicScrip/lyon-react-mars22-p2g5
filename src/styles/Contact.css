@@ -36,6 +36,8 @@
 .submit {
   margin-top: 10px;
   width: 30%;
+  margin-bottom: 50px;
+  align-self: center;
 }
 
 .contact-title {
