@@ -27,8 +27,8 @@ function ResultPage({ answers, questions }) {
   }
 
   function resultSentence(answ) {
-    if (answ < 4) return resultTitle.wrong;
-    if (answ < 7) return resultTitle.middle;
+    if (answ < 5) return resultTitle.wrong;
+    if (answ < 10) return resultTitle.middle;
     return resultTitle.great;
   }
 
