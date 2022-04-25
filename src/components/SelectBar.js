@@ -40,15 +40,6 @@ function SelectBar() {
   return (
     <div>
       <div className="select-bar">
-        <select name="" id="" onChange={change}>
-          <option
-            key={categories.value}
-            value={categories.value}
-            onChange={change}
-          >
-            {categories.label}
-          </option>
-        </select>
         <Select
           options={categories}
           onChange={change}
