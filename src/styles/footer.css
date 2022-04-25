@@ -5,10 +5,8 @@
 
 footer {
   display: flex;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
   justify-content: center;
+  bottom: 0;
 }
 
 .footerText {
