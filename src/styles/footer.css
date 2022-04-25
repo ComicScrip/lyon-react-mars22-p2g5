@@ -9,6 +9,7 @@ footer {
   position: absolute;
   bottom: 0;
   justify-content: center;
+  height: auto;
 }
 
 .footerText {
