@@ -2,7 +2,7 @@
   max-width: 700px;
   height: 500px;
   position: relative;
-  margin: 100px auto 100px;
+  margin: 100px auto 50px;
   overflow: hidden;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }

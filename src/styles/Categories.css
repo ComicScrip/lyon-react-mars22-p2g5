@@ -7,5 +7,13 @@
 }
 
 .select-bar {
-  margin: 10% 10%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+@media screen and (min-width: 500px) {
+  .select-bar {
+    margin-left: 30%;
+    margin-right: 30%;
+  }
 }
