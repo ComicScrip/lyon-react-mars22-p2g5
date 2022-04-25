@@ -11,7 +11,11 @@ html {
   background-repeat: no-repeat;
 }
 
-body {
+.main {
+  margin-bottom: 30px;
+}
+
+.main body {
   margin: 0;
   font-family: 'Raleway', sans-serif;
 }
