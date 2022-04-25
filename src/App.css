@@ -18,6 +18,11 @@ html {
 .main body {
   margin: 0;
   font-family: 'Raleway', sans-serif;
+  height: 100%;
+}
+
+main {
+  min-height: 80vh;
 }
 
 @font-face {
@@ -30,7 +35,7 @@ h1 {
   text-align: center;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1000px) {
   html {
     background-image: url('./assets/backdesktop.png');
     background-size: cover;
