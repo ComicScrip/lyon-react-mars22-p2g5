@@ -9,14 +9,16 @@ html {
   background-image: url('./assets/backmobile.png');
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100%;
-  width: 100%;
 }
 
 body {
   margin: 0;
   font-family: 'Raleway', sans-serif;
   height: 100%;
+}
+
+main {
+  min-height: 80vh;
 }
 
 @font-face {
