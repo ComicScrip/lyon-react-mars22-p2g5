@@ -7,7 +7,9 @@ function App() {
   return (
     <>
       <Header />
-      <Main />
+      <div className="main">
+        <Main />
+      </div>
       <Footer />
     </>
   );

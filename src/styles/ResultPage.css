@@ -5,6 +5,14 @@
   align-items: center;
 }
 
+.result-title {
+  font-size: x-large;
+}
+
+.scoreResult {
+  font-size: large;
+}
+
 .animation-quiz {
   display: flex;
   justify-content: center;
@@ -15,11 +23,13 @@
 img {
   width: 90%;
   height: 90%;
+  border-radius: 20px;
 }
 
 .details-quiz {
   margin-top: 15px;
   text-decoration: underline;
+  margin-bottom: 40px;
 }
 
 .details {
@@ -27,9 +37,19 @@ img {
   flex-direction: column;
   align-items: center;
   width: 70%;
-  height: 400px;
+  height: 50%;
   border: solid black 2px;
+  border-radius: 50px;
+  background: rgba(255, 253, 185, 0.5);
   margin-bottom: 10px;
+  text-align: justify;
+  font-weight: 800;
+  line-height: 1.8em;
+  padding: 10px;
+}
+
+.text-align {
+  margin-bottom: 25px;
 }
 
 .restart {

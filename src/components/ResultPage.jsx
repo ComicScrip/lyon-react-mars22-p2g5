@@ -54,9 +54,10 @@ function ResultPage() {
   return (
     <div className="resultpage">
       <h2 className="result-title">{resultSentence(score)}</h2>
+      <br />
       <h3 className="scoreResult">
         {' '}
-        Score: {score} sur {questions.length}{' '}
+        Score: {score} / {questions.length}{' '}
       </h3>
       <div className="animation-quiz">
         <img src={gifanim(score)} alt=" animation end quiz" />
@@ -64,15 +65,15 @@ function ResultPage() {
       <h2 className="details-quiz">Détails de vos réponses</h2>
       <div className="details">
         {questions.map((question, i) => (
-          <div>
+          <div className="text-align">
             <p>
-              Question {i + 1} / {question.question}
+              {i + 1} = {question.question}
             </p>
             <p>Bonne réponse: {question.correct_answer}</p>
           </div>
         ))}
       </div>
-      <Link to="/Home">
+      <Link to="/">
         <button className="restart" type="button">
           Recommencer
         </button>
