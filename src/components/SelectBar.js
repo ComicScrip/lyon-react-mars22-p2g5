@@ -12,7 +12,11 @@ function SelectBar() {
   ];
 
   const [selectedCat, setSelectedCat] = useState(sampleCategory);
-  /* const [results, setResults] = useState([]); */
+  const [category, getCategory] = useState('');
+
+  const handleChange = (e) => {
+    getCategory(e.target.value);
+  };
 
   useEffect(() => {
     axios
@@ -22,25 +26,30 @@ function SelectBar() {
 
   return (
     <div>
-      <div className="select-bar">
+      <div>
         <select
+          className="select-bar"
           name="category-selection"
-          onChange={(e) => setSelectedCat(e.target.value)}
-          value={selectedCat}
+          value={category}
+          onChange={handleChange}
         >
           <option key={''} value={''}>
             --Choose a category--
           </option>
-          {selectedCat.map((label) => (
-            <option key={label.id} value={label.name}>
-              {label.name}
+          {selectedCat.map((cat) => (
+            <option key={cat.id} value={cat.name}>
+              {cat.name}
             </option>
           ))}
         </select>
       </div>
       <Link to="/QuizAPI">
-        <div className={!selectedCat ? '' : 'category-box'}>
-          <h1>{`Quizz ${selectedCat.name}`}</h1>
+        <div>
+          {selectedCat.map((cat) => (
+            <div key={cat.id} className="category-box">
+              <h3>{cat.name}</h3>
+            </div>
+          ))}
         </div>
       </Link>
     </div>
