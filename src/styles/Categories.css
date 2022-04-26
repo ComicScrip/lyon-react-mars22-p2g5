@@ -26,12 +26,17 @@
   margin-right: 10%;
   margin-top: 25px;
   width: 70%;
-  height: 30px;
+  height: 40px;
   padding: 5px 15px;
+  font-size: 1.2rem;
   background: var(--input-color);
   border: var(--input-border);
   box-shadow: var(--input-box-shadow);
   border-radius: 20px;
+}
+
+.select-bar-before {
+  margin-bottom: 410px;
 }
 
 @media screen and (min-width: 500px) {

@@ -12,10 +12,11 @@ function SelectBar() {
   ];
 
   const [selectedCat, setSelectedCat] = useState(sampleCategory);
-  const [category, getCategory] = useState('');
+  const [category, getCategory] = useState(false);
 
   const handleChange = (e) => {
-    getCategory(e.target.value);
+    const cat = e.target.value;
+    getCategory(cat);
   };
 
   useEffect(() => {
@@ -44,12 +45,8 @@ function SelectBar() {
         </select>
       </div>
       <Link to="/QuizAPI">
-        <div>
-          {selectedCat.map((cat) => (
-            <div key={cat.id} className="category-box">
-              <h3>{cat.name}</h3>
-            </div>
-          ))}
+        <div className={!category ? 'select-bar-before' : 'category-box'}>
+          <h1>{category}</h1>
         </div>
       </Link>
     </div>
@@ -57,3 +54,11 @@ function SelectBar() {
 }
 
 export default SelectBar;
+
+/* const test = () => {
+    selectedCat.map((cat) => (
+      <div key={cat.id} className="category-box">
+        <h2>{cat.name}</h2>
+      </div>
+    ));
+  }; */
