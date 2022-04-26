@@ -1,7 +1,7 @@
 .containerStyle {
   height: 20;
   width: 80vw;
-  background-color: white;
+  background-color: #148718;
   border-radius: 5px;
   border: 2px solid black;
   margin-left: auto;
@@ -15,8 +15,6 @@
 
 .labelStyle {
   padding: 5;
-  color: white;
+  color: black;
   font-weight: bold;
 }
-
-/* #b3121 */

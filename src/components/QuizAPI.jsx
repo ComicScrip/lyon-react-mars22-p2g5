@@ -7,62 +7,62 @@ import ResultPage from './ResultPage';
 import ProgressBar from './progress-bar';
 
 function QuizAPI() {
-  const sampleQuestion = [
-    {
-      question: '',
-      correct_answer: '',
-      incorrect_answers: ['', '', ''],
-    },
-  ];
-  const [quizQuestions, setQuizQuestions] = useState(sampleQuestion);
+  // const sampleQuestion = [
+  //   {
+  //     question: '',
+  //     correct_answer: '',
+  //     incorrect_answers: ['', '', ''],
+  //   },
+  // ];
+  const [quizQuestions, setQuizQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const currentQuestion = quizQuestions[currentQuestionIndex];
   const [answerChoice, setAnswerChoice] = useState([]);
   const quizEnded = currentQuestionIndex === quizQuestions.length;
-  const [timer, setTimer] = useState(20);
+  const initTime = 5;
+  const [timer, setTimer] = useState(initTime);
   useEffect(() => {
     axios
-      .get('https://opentdb.com/api.php?amount=15')
+      .get('https://opentdb.com/api.php?amount=5')
       .then((response) => response.data)
       .then((data) => {
+        console.log(quizQuestions);
         setQuizQuestions(data.results);
       });
   }, []);
   const handleChoiceAnswer = (value) => {
     setAnswerChoice((table) => [...table, value]);
-    setTimer(20);
-    console.log(answerChoice);
+    setTimer(initTime);
     if (currentQuestionIndex < quizQuestions.length) {
       setCurrentQuestionIndex((index) => index + 1);
     }
   };
   useEffect(() => {
     let interval;
-    if (timer === 0) {
-      clearInterval(interval);
-      setAnswerChoice((table) => [...table, '']);
-      console.log(answerChoice);
-      setCurrentQuestionIndex((index) => index + 1);
-      setTimer(20);
-    } else {
-      interval = setInterval(() => {
-        setTimer((second) => second - 1);
-      }, 1000);
+    if (quizQuestions.length !== 0) {
+      if (timer === 0) {
+        clearInterval(interval);
+        setAnswerChoice((table) => [...table, '']);
+        setCurrentQuestionIndex((index) => index + 1);
+        setTimer(initTime);
+      } else {
+        interval = setInterval(() => {
+          setTimer((second) => second - 1);
+        }, 1000);
+      }
     }
     if (currentQuestionIndex === quizQuestions.length) {
-      setTimer(0);
+      setCurrentQuestionIndex(quizQuestions.length);
     }
     return () => clearInterval(interval);
-  }, [timer]);
+  }, [timer, quizQuestions]);
   return (
     <div>
-      {quizQuestions[0].question === '' ? (
-        ''
+      {quizEnded ? (
+        <ResultPage answers={answerChoice} questions={quizQuestions} />
       ) : (
         <div>
-          {quizEnded ? (
-            <ResultPage answers={answerChoice} questions={quizQuestions} />
-          ) : (
+          {currentQuestion && (
             <div className={quizEnded ? 'hiddenQuiz' : 'quiz'}>
               <div className="question">
                 {he.decode(currentQuestion.question)}
@@ -101,7 +101,7 @@ function QuizAPI() {
                   {currentQuestion.incorrect_answers[2]}
                 </button>
               </div>
-              <ProgressBar bgColor="#148718" completed={timer} />
+              <ProgressBar bgColor="#FFFFFF" completed={timer} />
             </div>
           )}
         </div>
