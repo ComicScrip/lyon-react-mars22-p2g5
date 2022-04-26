@@ -4,6 +4,7 @@ import '../App.css';
 import '../styles/QuizPage.css';
 import he from 'he';
 import ResultPage from './ResultPage';
+import ProgressBar from './progress-bar';
 
 function QuizAPI() {
   const sampleQuestion = [
@@ -18,6 +19,7 @@ function QuizAPI() {
   const currentQuestion = quizQuestions[currentQuestionIndex];
   const [answerChoice, setAnswerChoice] = useState([]);
   const quizEnded = currentQuestionIndex === quizQuestions.length;
+  const [timer, setTimer] = useState(20);
   useEffect(() => {
     axios
       .get('https://opentdb.com/api.php?amount=15')
@@ -28,10 +30,30 @@ function QuizAPI() {
   }, []);
   const handleChoiceAnswer = (value) => {
     setAnswerChoice((table) => [...table, value]);
+    setTimer(20);
+    console.log(answerChoice);
     if (currentQuestionIndex < quizQuestions.length) {
       setCurrentQuestionIndex((index) => index + 1);
     }
   };
+  useEffect(() => {
+    let interval;
+    if (timer === 0) {
+      clearInterval(interval);
+      setAnswerChoice((table) => [...table, '']);
+      console.log(answerChoice);
+      setCurrentQuestionIndex((index) => index + 1);
+      setTimer(20);
+    } else {
+      interval = setInterval(() => {
+        setTimer((second) => second - 1);
+      }, 1000);
+    }
+    if (currentQuestionIndex === quizQuestions.length) {
+      setTimer(0);
+    }
+    return () => clearInterval(interval);
+  }, [timer]);
   return (
     <div>
       {quizQuestions[0].question === '' ? (
@@ -79,6 +101,7 @@ function QuizAPI() {
                   {currentQuestion.incorrect_answers[2]}
                 </button>
               </div>
+              <ProgressBar bgColor="#148718" completed={timer} />
             </div>
           )}
         </div>

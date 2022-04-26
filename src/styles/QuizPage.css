@@ -1,18 +1,18 @@
 .quiz {
   display: grid;
-  grid-template-rows: 3fr 1fr 1fr;
+  grid-template-rows: 3fr 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr;
-  width: 80vw;
-  height: 70vh;
+  width: 95vw;
+  height: 80vh;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 2vh;
 }
 
 .question {
   grid-column: 1 / 3;
   grid-row: 1 / 2;
   border: 1px solid black;
-  margin: 1%;
   border-radius: 5px;
   box-shadow: 3px 3px 3px black;
   display: flex;
@@ -20,6 +20,8 @@
   align-items: center;
   height: 80%;
   background-color: rgb(250, 250, 241, 0.5);
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .reponses {
@@ -28,15 +30,18 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+  align-items: center;
   text-align: center;
+  gap: 10px;
 }
 
 .answers {
   border: 1px solid black;
-  margin: 1%;
   border-radius: 5px;
   box-shadow: 3px 3px 3px black;
   background-color: rgb(250, 250, 241, 0.5);
+  height: 100%;
+  width: 100%;
 }
 
 button:hover {
