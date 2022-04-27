@@ -9,7 +9,7 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5000/jokes')
+      .get('http://localhost:5000/jokes/random')
       .then((response) => response.data)
       .then((data) => {
         setJokesOfTheDay(data[0]);
