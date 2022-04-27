@@ -18,7 +18,10 @@ function QuizAPI() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const currentQuestion = quizQuestions[currentQuestionIndex];
   const [answerChoice, setAnswerChoice] = useState([]);
-  const quizEnded = currentQuestionIndex === quizQuestions.length;
+  // eslint-disable-next-line max-len
+  const quizEnded = quizQuestions.length === 0
+    ? false
+    : currentQuestionIndex === quizQuestions.length;
   const initTime = 5;
   const [timer, setTimer] = useState(initTime);
   useEffect(() => {
@@ -56,6 +59,7 @@ function QuizAPI() {
     }
     return () => clearInterval(interval);
   }, [timer, quizQuestions]);
+  console.log(quizEnded);
   return (
     <div>
       {quizEnded ? (
