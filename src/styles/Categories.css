@@ -44,10 +44,6 @@
   background-size: 35px;
 }
 
-.select-bar-before {
-  margin-bottom: 410px;
-}
-
 @media screen and (min-width: 500px) {
   .select-bar {
     margin-left: 30%;

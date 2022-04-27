@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import React, { useState, useEffect } from 'react';
 import '../styles/Categories.css';
 import { Link } from 'react-router-dom';
@@ -35,7 +36,7 @@ function SelectBar() {
           onChange={handleChange}
         >
           <option key={''} value={''}>
-            --Choose a category--
+            --All--
           </option>
           {selectedCat.map((cat) => (
             <option key={cat.id} value={cat.name}>
@@ -45,20 +46,20 @@ function SelectBar() {
         </select>
       </div>
       <Link to="/QuizAPI">
-        <div className={!category ? 'select-bar-before' : 'category-box'}>
+        <div className={!category ? '' : 'category-box'}>
           <h1>{category}</h1>
         </div>
+        {!category
+          ? selectedCat.map((cat) => (
+              // eslint-disable-next-line react/jsx-indent
+              <div className="category-box">
+                <h1>{cat.name}</h1>
+              </div>
+            ))
+          : ''}
       </Link>
     </div>
   );
 }
 
 export default SelectBar;
-
-/* const test = () => {
-    selectedCat.map((cat) => (
-      <div key={cat.id} className="category-box">
-        <h2>{cat.name}</h2>
-      </div>
-    ));
-  }; */
