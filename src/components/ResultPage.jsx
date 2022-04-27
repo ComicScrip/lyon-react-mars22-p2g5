@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/ResultPage.css';
 import { Link } from 'react-router-dom';
 import he from 'he';
+import check2 from '../assets/check2.png';
+import wrong2 from '../assets/wrong2.png';
 
 const animation = {
   good: 'https://media.giphy.com/media/l3q2XhfQ8oCkm1Ts4/giphy.gif',
@@ -10,10 +12,12 @@ const animation = {
 };
 
 const resultTitle = {
-  great: 'Bien joué ',
-  middle: 'Pas trop mal',
-  wrong: 'Il y a du boulot !',
+  great: 'BIEN JOUÉ ',
+  middle: 'PAS TROP MAL',
+  wrong: 'IL Y A DU BOULOT !',
 };
+
+const [check, setcheck] = useState(true);
 
 function ResultPage({ answers, questions }) {
   const countScore = (s, currentAnswer, index) =>
@@ -21,36 +25,47 @@ function ResultPage({ answers, questions }) {
   const score = answers.reduce(countScore, 0);
 
   function gifanim(anim) {
-    if (anim < 5) return animation.bad;
-    if (anim < 10) return animation.medium;
+    if (anim < questions.length * 0.33) return animation.bad;
+    if (anim < questions.length * 0.66) return animation.medium;
     return animation.good;
   }
 
   function resultSentence(answ) {
-    if (answ < 5) return resultTitle.wrong;
-    if (answ < 10) return resultTitle.middle;
+    if (answ < questions.length * 0.33) return resultTitle.wrong;
+    if (answ < questions.length * 0.66) return resultTitle.middle;
     return resultTitle.great;
+  }
+
+  function goodOrWrong() {
+    if (check === answers.correct_answer) return setcheck;
+    return setcheck(false);
   }
 
   return (
     <div className="resultpage">
-      <h2 className="result-title">{resultSentence(score)}</h2>
+      <h1 className="result-title">{resultSentence(score)}</h1>
       <br />
-      <h3 className="scoreResult">
+      <h2 className="scoreResult">
         {' '}
         Score: {score} / {questions.length}{' '}
-      </h3>
+      </h2>
       <div className="animation-quiz">
         <img src={gifanim(score)} alt=" animation end quiz" />
       </div>
       <h2 className="details-quiz">Détails de vos réponses</h2>
       <div className="details">
         {questions.map((question, i) => (
-          <div className="text-align">
+          <div className="text-align" key={question.question}>
             <p>
               {i + 1} ={'>'} {he.decode(question.question)}
             </p>
-            <p>Bonne réponse : {question.correct_answer}</p>
+            <p>Votre réponse : {answers[i]} .</p>
+            {goodOrWrong() ? (
+              <img className="check" src={check2} alt="good" />
+            ) : (
+              <img className="wrong" src={wrong2} alt="wrong" />
+            )}
+            <p>Bonne réponse : {question.correct_answer}.</p>
           </div>
         ))}
       </div>
