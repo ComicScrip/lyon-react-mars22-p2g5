@@ -1,6 +1,16 @@
 .jokesContainer {
+  display: flex;
   font-family: 'Raleway', sans-serif;
   margin-bottom: 50px;
-  font-size: large;
+  font-size: x-large;
   font-style: italic;
+  align-items: center;
+  flex-direction: column;
+}
+
+.buttonAnswer {
+  align-items: center;
+  margin: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
 }
