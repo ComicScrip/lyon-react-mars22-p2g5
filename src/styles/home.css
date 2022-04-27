@@ -9,13 +9,14 @@
 }
 
 .letsGo {
-  width: 300px;
-  height: 100px;
+  width: 600px;
+  height: 300px;
   border-radius: 50%;
   margin-top: 30px;
-  background-color: #78c0e0;
+  background-color: #9dc9dc;
   margin-top: 200px;
   font-size: large;
+  font-family: 'organic_Relief';
   cursor: pointer;
 }
 
