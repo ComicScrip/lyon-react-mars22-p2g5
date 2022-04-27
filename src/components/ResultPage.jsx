@@ -45,7 +45,7 @@ function ResultPage({ answers, questions }) {
       <h2 className="details-quiz">Détails de vos réponses</h2>
       <div className="details">
         {questions.map((question, i) => (
-          <div className="text-align">
+          <div className="text-align" key={question.question}>
             <p>
               {i + 1} ={'>'} {question.question}
             </p>

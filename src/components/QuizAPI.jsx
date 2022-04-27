@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import '../App.css';
@@ -7,18 +8,10 @@ import ResultPage from './ResultPage';
 import ProgressBar from './progress-bar';
 
 function QuizAPI() {
-  // const sampleQuestion = [
-  //   {
-  //     question: '',
-  //     correct_answer: '',
-  //     incorrect_answers: ['', '', ''],
-  //   },
-  // ];
   const [quizQuestions, setQuizQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const currentQuestion = quizQuestions[currentQuestionIndex];
   const [answerChoice, setAnswerChoice] = useState([]);
-  // eslint-disable-next-line max-len
   const quizEnded = quizQuestions.length === 0
     ? false
     : currentQuestionIndex === quizQuestions.length;
@@ -29,7 +22,6 @@ function QuizAPI() {
       .get('https://opentdb.com/api.php?amount=5')
       .then((response) => response.data)
       .then((data) => {
-        console.log(quizQuestions);
         setQuizQuestions(data.results);
       });
   }, []);
@@ -42,7 +34,10 @@ function QuizAPI() {
   };
   useEffect(() => {
     let interval;
-    if (quizQuestions.length !== 0) {
+    if (
+      quizQuestions.length !== 0
+      && currentQuestionIndex !== quizQuestions.length
+    ) {
       if (timer === 0) {
         clearInterval(interval);
         setAnswerChoice((table) => [...table, '']);
@@ -54,12 +49,8 @@ function QuizAPI() {
         }, 1000);
       }
     }
-    if (currentQuestionIndex === quizQuestions.length) {
-      setCurrentQuestionIndex(quizQuestions.length);
-    }
     return () => clearInterval(interval);
   }, [timer, quizQuestions]);
-  console.log(quizEnded);
   return (
     <div>
       {quizEnded ? (
