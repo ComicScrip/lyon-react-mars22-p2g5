@@ -33,13 +33,13 @@ function Slider() {
           key={obj.id}
           className={slideIndex === index + 1 ? 'slide active-anim' : 'slide'}
         >
+          <h1 className="card-title">{obj.title}</h1>
           <Link to="/QuizAPI">
             <img
               src={`${process.env.PUBLIC_URL}/img/img${index + 1}.png`}
               alt={'img'}
             />{' '}
           </Link>
-          <h1 className="card-title">{obj.title}</h1>
         </div>
       ))}
       <BtnSlider moveSlide={nextSlide} direction={'next'} />

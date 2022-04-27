@@ -17,22 +17,31 @@
   display: flex;
   justify-content: center;
   padding: 10%;
-  margin: 10% 20%;
+  margin: 10% 10%;
   background-color: aliceblue;
+  background: var(--input-color);
+  border: var(--input-border);
+  box-shadow: var(--input-box-shadow);
+  border-radius: 20px;
 }
 
 .select-bar {
   margin-left: 10%;
   margin-right: 10%;
   margin-top: 25px;
-  width: 70%;
+  width: 80%;
   height: 40px;
   padding: 5px 15px;
   font-size: 1.2rem;
   background: var(--input-color);
-  border: var(--input-border);
+  border: 2px solid black;
   box-shadow: var(--input-box-shadow);
   border-radius: 20px;
+  -webkit-appearance: none;
+  background-image: url('../img/dropdown.png');
+  background-repeat: no-repeat;
+  background-position: calc(100% - 10px) center;
+  background-size: 35px;
 }
 
 .select-bar-before {
@@ -41,8 +50,11 @@
 
 @media screen and (min-width: 500px) {
   .select-bar {
-    margin-left: 25%;
-    margin-right: 25%;
-    width: 50%;
+    margin-left: 30%;
+    margin-right: 30%;
+    width: 40%;
+  }
+  .category-box {
+    margin: 10% 30%;
   }
 }

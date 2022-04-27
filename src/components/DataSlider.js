@@ -1,22 +1,22 @@
 const dataSlider = [
   {
     id: 0,
-    title: 'Lorem ipsum',
+    title: "Quiz de l'Equipe",
     subTitle: 'Lorem',
   },
   {
     id: 1,
-    title: 'Lorem ipsum',
+    title: 'Quiz aléatoire',
     subTitle: 'Lorem',
   },
   {
     id: 2,
-    title: 'Lorem ipsum',
+    title: 'Quiz',
     subTitle: 'Lorem',
   },
   {
     id: 3,
-    title: 'Lorem ipsum',
+    title: 'Quiz',
     subTitle: 'Lorem',
   },
 ];
