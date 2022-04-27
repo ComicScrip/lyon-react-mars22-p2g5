@@ -44,17 +44,22 @@ img {
   background: rgba(255, 253, 185, 0.5);
   margin-bottom: 10px;
   text-align: justify;
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.8em;
   padding: 50px;
+  box-shadow: 0px 8px 8px black;
 }
 
 .check {
-  width: 3%;
+  width: 5%;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .wrong {
-  width: 3%;
+  width: 5%;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .text-align {

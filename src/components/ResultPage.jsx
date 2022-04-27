@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../styles/ResultPage.css';
 import { Link } from 'react-router-dom';
 import he from 'he';
@@ -17,8 +17,6 @@ const resultTitle = {
   wrong: 'IL Y A DU BOULOT !',
 };
 
-const [check, setcheck] = useState(true);
-
 function ResultPage({ answers, questions }) {
   const countScore = (s, currentAnswer, index) =>
     currentAnswer === questions[index].correct_answer ? s + 1 : s;
@@ -34,11 +32,6 @@ function ResultPage({ answers, questions }) {
     if (answ < questions.length * 0.33) return resultTitle.wrong;
     if (answ < questions.length * 0.66) return resultTitle.middle;
     return resultTitle.great;
-  }
-
-  function goodOrWrong() {
-    if (check === answers.correct_answer) return setcheck;
-    return setcheck(false);
   }
 
   return (
@@ -57,15 +50,17 @@ function ResultPage({ answers, questions }) {
         {questions.map((question, i) => (
           <div className="text-align" key={question.question}>
             <p>
-              {i + 1} ={'>'} {he.decode(question.question)}
+              {i + 1} = {'>'} {he.decode(question.question)}
             </p>
             <p>Votre réponse : {answers[i]} .</p>
-            {goodOrWrong() ? (
+            {answers[i] === question.correct_answer ? (
               <img className="check" src={check2} alt="good" />
             ) : (
               <img className="wrong" src={wrong2} alt="wrong" />
             )}
-            <p>Bonne réponse : {question.correct_answer}.</p>
+            {answers[i] !== question.correct_answer ? (
+              <p>Bonne réponse : {question.correct_answer}.</p>
+            ) : null}
           </div>
         ))}
       </div>
