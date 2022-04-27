@@ -134,7 +134,7 @@ li {
   transform: rotate(-45deg);
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1000px) {
   .navbar_links {
     width: 100%;
     display: flex;
