@@ -14,3 +14,14 @@
   padding: 10px 20px;
   cursor: pointer;
 }
+
+.confetti-wrap {
+  background: #4919db;
+  padding: 20px;
+}
+
+.confetti-wrap h3 {
+  margin: 0;
+  color: #fff;
+  letter-spacing: 1.5px;
+}

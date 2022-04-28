@@ -1,26 +1,32 @@
 import React from 'react';
 import '../styles/jokesday.css';
-import Confetti from 'react-dom-confetti';
+import confetti from 'canvas-confetti';
+// import Confetti from 'react-dom-confetti';
+
+function frame() {
+  const colors = ['#bb0000', '#ffffff'];
+  confetti({
+    particleCount: 200,
+    angle: 0,
+    spread: 55,
+    origin: { x: 0 },
+    colors,
+  });
+  confetti({
+    particleCount: 200,
+    angle: 180,
+    spread: 55,
+    origin: { x: 1 },
+    colors,
+  });
+}
 
 function JokesDay({ jokes }) {
   const [jokeOpen, setJokeOpen] = React.useState(false);
 
-  const config = {
-    angle: '97',
-    spread: 360,
-    startVelocity: 40,
-    elementCount: 70,
-    dragFriction: 0.12,
-    duration: 3000,
-    stagger: 3,
-    width: '10px',
-    height: '10px',
-    perspective: '500px',
-    colors: ['#a864fd', '#29cdff', '#78ff44', '#ff718d', '#fdff6a'],
-  };
-
   const getJoke = () => {
     setJokeOpen(!jokeOpen);
+    requestAnimationFrame(frame);
   };
 
   return (
@@ -31,13 +37,7 @@ function JokesDay({ jokes }) {
           {' '}
           Réponse{' '}
         </button>
-        {jokeOpen ? (
-          <div>
-            {jokes.answer} <Confetti active={getJoke} config={config} />
-          </div>
-        ) : (
-          ''
-        )}
+        {jokeOpen ? <div>{jokes.answer} </div> : ''}
       </div>
     )
   );
