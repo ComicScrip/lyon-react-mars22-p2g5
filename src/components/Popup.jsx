@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Popup.css';
+import { useLocalStorage } from 'react-use';
 
 function Popup({ show, setShow }) {
-  const [nbQuestion, setNbQuestion] = useState(10);
-  const [difficulty, setDifficulty] = useState(1);
+  const [nbQuestion, setNbQuestion] = useLocalStorage('nbQuestion', '10');
+  const [difficulty, setDifficulty] = useLocalStorage('difficulty', '1');
   console.log(nbQuestion);
   console.log(difficulty);
   return (
