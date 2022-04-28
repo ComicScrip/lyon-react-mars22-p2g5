@@ -12,7 +12,7 @@ const animation = {
 };
 
 const resultTitle = {
-  great: 'BIEN JOUÉ ',
+  great: 'QUEL TALENT ',
   middle: 'PAS TROP MAL',
   wrong: 'IL Y A DU BOULOT !',
 };
@@ -63,6 +63,9 @@ function ResultPage({ answers, questions }) {
             ) : null}
           </div>
         ))}
+      </div>
+      <div className="register">
+        <input type="text" />
       </div>
       <Link to="/">
         <button className="restart" type="button">
