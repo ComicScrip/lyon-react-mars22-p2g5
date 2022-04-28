@@ -1,23 +1,24 @@
 import React from 'react';
 import '../styles/jokesday.css';
 import confetti from 'canvas-confetti';
-// import Confetti from 'react-dom-confetti';
 
 function frame() {
   const colors = ['#bb0000', '#ffffff'];
   confetti({
-    particleCount: 200,
-    angle: 0,
-    spread: 55,
+    particleCount: 2000,
+    angle: -90,
+    spread: 550,
     origin: { x: 0 },
     colors,
+    startVelocity: 60,
   });
   confetti({
-    particleCount: 200,
-    angle: 180,
-    spread: 55,
+    particleCount: 2000,
+    angle: 90,
+    spread: 550,
     origin: { x: 1 },
     colors,
+    startVelocity: 60,
   });
 }
 
