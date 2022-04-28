@@ -7,6 +7,8 @@ export default function Home() {
       <h1>INQUIZ'ITOR</h1>
       <div>
         <Link to="/Categories">
+
+
           <button className="letsGo" type="button">
             Let's Quizz
           </button>
