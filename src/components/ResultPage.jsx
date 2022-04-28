@@ -49,8 +49,8 @@ function ResultPage({ answers, questions }) {
       <div className="details">
         {questions.map((question, i) => (
           <div className="text-align" key={question.question}>
-            <p>
-              {i + 1} = {'>'} {he.decode(question.question)}
+            <p className="questionBold">
+              {i + 1}. {he.decode(question.question)}
             </p>
             <p>Votre réponse : {he.decode(answers[i])} .</p>
             {answers[i] === question.correct_answer ? (
