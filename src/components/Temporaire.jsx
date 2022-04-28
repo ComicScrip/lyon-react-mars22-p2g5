@@ -13,7 +13,7 @@
 //       }, 1000);
 //     }
 //     // if (currentQuestionIndex === quizQuestions.length) {
-//     //   setTimer(0);
+//     //   clearIneterval(interval);
 //     // }
 //     return () => clearInterval(interval);
 //   }, [timer]);
