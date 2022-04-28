@@ -1,0 +1,195 @@
+.popup {
+  opacity: 0.25;
+  visibility: hidden;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0, 0.4);
+  transition: 0.3s ease-in-out;
+}
+
+.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup__content {
+  width: 90vw;
+  /* height: 60vh; */
+  margin: 15% auto;
+  /* margin-top: 10vh; */
+  background-color: rgb(217, 232, 244, 0.8);
+  border-radius: 5px;
+  border: 2px solid black;
+  position: relative;
+  transition: ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(0);
+}
+
+.active .popup__content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.popup__header {
+  padding: 16px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.popup__body {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.popup__footer {
+  padding: 16px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.popup__close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: black;
+}
+
+.popup__close:hover {
+  font-size: 4rem;
+  top: 4px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4vh;
+  border-radius: 15px;
+  border: 2px solid black;
+  background: #ffffff;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 6vw;
+  height: 3.5vh;
+  border-radius: 50%;
+  background: #ff7240;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #ff7240;
+  cursor: pointer;
+}
+
+.sliderQuestion {
+  margin-bottom: 3vh;
+  margin-top: 4vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sliderDifficulty {
+  margin-bottom: 3vh;
+  margin-top: 4vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+label {
+  margin-top: 2vh;
+}
+
+button {
+  border: 0;
+  outline: 0;
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #4267b2;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btnGo {
+  width: 50vw;
+  height: 10vh;
+  border: 0;
+  outline: 0;
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+  font-family: 'organic_Relief';
+  font-size: 1.5rem;
+  color: black;
+  background-color: #fffdb9;
+  border: 2px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type='range'] {
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
+datalist {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: -23px;
+  margin-bottom: 1vh;
+  padding-top: 0px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+}
+option {
+  width: 2ex;
+  display: flex;
+  justify-content: center;
+  height: 42px;
+  align-items: end;
+  height: 4ex;
+  background-position-y: -15px;
+  background-position-x: center;
+  z-index: -1;
+}
+
+label {
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 800px) {
+  .popup__content {
+    width: 60vw;
+    height: 70vh;
+    margin-top: 10vh;
+  }
+  .slider::-webkit-slider-thumb {
+    width: 2vw;
+    height: 3.5vh;
+  }
+}
