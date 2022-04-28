@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Popup.css';
 
 function Popup({ show, setShow }) {
+  const [nbQuestion, setNbQuestion] = useState(10);
+  const [difficulty, setDifficulty] = useState(1);
+  console.log(nbQuestion);
+  console.log(difficulty);
   return (
     <div className={`popup ${show ? 'active' : ''}`}>
       <div className={`popup__content ${show ? 'active' : ''}`}>
@@ -30,14 +34,16 @@ function Popup({ show, setShow }) {
               step="5"
               list="tickmarksQuestion"
               className="slider slider-nbQuestion"
+              value={nbQuestion}
+              onChange={(e) => setNbQuestion(e.target.value)}
             />
             <label htmlFor="questions">Nombre de question</label>
           </div>
           <div className="sliderDifficulty">
             <datalist id="tickmarksDifficulty">
-              <option value="1" label="Easy" />
-              <option value="2" label="Medium" />
-              <option value="3" label="Difficult" />
+              <option value="easy" label="Easy" />
+              <option value="medium" label="Medium" />
+              <option value="hard" label="Hard" />
               <option value="4" label="Mix" />
             </datalist>
             <input
@@ -48,6 +54,8 @@ function Popup({ show, setShow }) {
               max="4"
               list="tickmarksDifficulty"
               className="slider slider-difficulty"
+              value={difficulty}
+              onChange={(e) => setDifficulty(e.target.value)}
             />
             <label htmlFor="difficulté" id="difficultyLabel">
               Difficulté
