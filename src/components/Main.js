@@ -3,6 +3,7 @@ import Home from './Home';
 import Contact from './Contact';
 import ResultPage from './ResultPage';
 import QuizAPI from './QuizAPI';
+import Categories from './Categories';
 
 export default function Main() {
   return (
@@ -12,6 +13,7 @@ export default function Main() {
         <Route path="/ContactPage" element={<Contact />} />
         <Route path="/ResultPage" element={<ResultPage />} />
         <Route path="/Quizz" element={<QuizAPI />} />
+        <Route path="/Categories" element={<Categories />} />
       </Routes>
     </main>
   );
