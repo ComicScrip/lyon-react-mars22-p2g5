@@ -68,18 +68,19 @@ function ResultPage({ answers, questions }) {
           </div>
         ))}
       </div>
-      <div className="register">
-        <label htmlFor="name">
+      <form className="champ">
+        <label className="label" htmlFor="name">
           Rentrez votre nom pour sauvegarder votre score
         </label>
         <input
           type="text"
-          id="name"
+          id="nameScore"
           name="name"
           placeholder="ex: Pierre"
           required="required"
         />
-      </div>
+        <input className="validation" type="submit" value="Valider" />
+      </form>
       <Link to="/">
         <button className="restart" type="button">
           Recommencer

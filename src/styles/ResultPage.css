@@ -71,6 +71,34 @@ img {
   margin-bottom: 25px;
 }
 
+.label {
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.champ {
+  width: 47%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#nameScore {
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 30%);
+  border: 1px solid black;
+  box-shadow: 2px 3px 3px rgb(85, 83, 83);
+}
+
+.validation {
+  background-color: rgba(59, 61, 65, 0.3);
+  border-radius: 5px;
+  border: 1px solid black;
+  box-shadow: 2px 3px 3px rgb(85, 83, 83);
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
 .restart {
   display: flex;
   justify-content: center;
@@ -100,5 +128,16 @@ img {
     font-weight: 600;
     line-height: 1.1em;
     padding: 20px;
+  }
+  .champ {
+    width: 50%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .validation {
+    width: 30%;
   }
 }
