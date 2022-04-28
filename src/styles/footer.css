@@ -1,0 +1,14 @@
+.logoImageFooter {
+  width: 30px;
+  height: 30px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+}
+
+.footerText {
+  padding-top: 6px;
+}
