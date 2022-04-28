@@ -53,7 +53,7 @@ export default function Header() {
               <li className="navbar_item">
                 <img src={categorie} alt={categorie} className="logoMenu" />
                 <NavLink
-                  to="/Categorie"
+                  to="/Categories"
                   className="navbar_link"
                   style={getActiveLinkStyle}
                   onClick={() => {
@@ -66,7 +66,7 @@ export default function Header() {
               <li className="navbar_item navbarAbout">
                 <img src={avatar} alt={avatar} className="logoMenu" />
                 <NavLink
-                  to="/ContactPage"
+                  to="/Contact"
                   className="navbar_link"
                   style={getActiveLinkStyle}
                   onClick={() => {
