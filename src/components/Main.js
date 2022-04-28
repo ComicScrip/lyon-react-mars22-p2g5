@@ -11,7 +11,7 @@ export default function Main() {
         <Route path="/" element={<Home />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/ResultPage" element={<ResultPage />} />
-        <Route path="/QuizAPI" element={<QuizAPI />} />
+        <Route path="/Quizz" element={<QuizAPI />} />
       </Routes>
     </main>
   );
