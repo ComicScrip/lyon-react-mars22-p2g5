@@ -22,7 +22,7 @@ export default function Home() {
       <div>
         <Link to="/Quizz">
           <button className="letsGo" type="button">
-            Let's Quizz
+            LET'S QUIZZ
           </button>
         </Link>
       </div>

@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'organic_relief';
+  src: url(../assets/organic_relief.ttf);
+}
+
 .homepage {
   display: flex;
   flex-direction: column;
@@ -9,15 +14,17 @@
 }
 
 .letsGo {
-  width: 600px;
-  height: 300px;
+  width: 500px;
+  height: 180px;
   border-radius: 50%;
-  margin-top: 30px;
-  background-color: #9dc9dc;
+  background-color: #78c0e0;
   margin-top: 200px;
-  font-size: large;
-  font-family: 'organic_Relief';
+  font-size: 1.5em;
+  font-weight: 400;
   cursor: pointer;
+  font-family: 'organic_Relief';
+  opacity: 0.7;
+  box-shadow: 0px 8px 8px black;
 }
 
 .letsGo:hover {
@@ -25,9 +32,24 @@
 }
 
 .letsGo:active {
-  box-shadow: inset 0px 20px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0px 0px 5px black;
 }
 
-.joke-of-the-day {
-  margin-top: 200px;
+@media screen and (max-width: 800px) {
+  .letsGo {
+    width: 350px;
+    height: 140px;
+    border-radius: 50%;
+    background-color: #78c0e0;
+    margin-top: 200px;
+    font-size: 2.5em;
+    font-weight: 700;
+  }
+  .letsGo:hover {
+    background-color: #30afe6;
+  }
+
+  .letsGo:active {
+    box-shadow: inset 0px 0px 5px black;
+  }
 }

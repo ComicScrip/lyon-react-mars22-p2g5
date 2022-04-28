@@ -1,14 +1,20 @@
 .containerStyle {
   height: 20;
-  width: 60vw;
-  background-color: #148718 /* #e0e0de */;
-  border-radius: 10px;
+  width: 80vw;
+  background-color: #148718;
+  border-radius: 5px;
+  border: 2px solid black;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 10vh;
+  justify-content: center;
+  grid-column: 1 / 3;
+  grid-row: 4 / 5;
+  height: 4vh;
 }
 
 .labelStyle {
   padding: 5;
-  color: white;
+  color: black;
   font-weight: bold;
 }
