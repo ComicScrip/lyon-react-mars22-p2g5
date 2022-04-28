@@ -52,7 +52,7 @@ function ResultPage({ answers, questions }) {
             <p>
               {i + 1} = {'>'} {he.decode(question.question)}
             </p>
-            <p>Votre réponse : {answers[i]} .</p>
+            <p>Votre réponse : {he.decode(answers[i])} .</p>
             {answers[i] === question.correct_answer ? (
               <img className="check" src={check2} alt="good" />
             ) : (
