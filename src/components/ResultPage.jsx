@@ -52,14 +52,18 @@ function ResultPage({ answers, questions }) {
             <p className="questionBold">
               {i + 1}. {he.decode(question.question)}
             </p>
-            <p>Votre réponse : {he.decode(answers[i])} .</p>
+            {answers[i] === '' ? (
+              <p>Vous n'avez pas répondu à la question</p>
+            ) : (
+              <p>Votre réponse : {he.decode(answers[i])}</p>
+            )}
             {answers[i] === question.correct_answer ? (
               <img className="check" src={check2} alt="good" />
             ) : (
               <img className="wrong" src={wrong2} alt="wrong" />
             )}
             {answers[i] !== question.correct_answer ? (
-              <p>Bonne réponse : {question.correct_answer}.</p>
+              <p>Bonne réponse : {question.correct_answer}</p>
             ) : null}
           </div>
         ))}
