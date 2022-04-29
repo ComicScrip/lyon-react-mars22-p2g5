@@ -57,13 +57,15 @@ img {
 }
 
 .check {
-  width: 5%;
+  width: 30px;
+  height: 30px;
   margin-top: 5px;
   margin-bottom: 5px;
 }
 
 .wrong {
-  width: 5%;
+  width: 30px;
+  height: 30px;
   margin-top: 5px;
   margin-bottom: 5px;
 }
