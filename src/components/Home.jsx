@@ -12,7 +12,7 @@ export default function Home() {
       .get('http://localhost:5000/jokes/random')
       .then((response) => response.data)
       .then((data) => {
-        setJokesOfTheDay(data[0]);
+        setJokesOfTheDay(data);
       });
   }, []);
 
