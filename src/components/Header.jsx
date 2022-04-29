@@ -57,9 +57,6 @@ export default function Header() {
                   to="/Categories"
                   className="navbar_link"
                   style={getActiveLinkStyle}
-                  onClick={() => {
-                    setActive(false);
-                  }}
                 >
                   Catégories
                 </NavLink>
@@ -78,12 +75,9 @@ export default function Header() {
               <li className="navbar_item navbarAbout">
                 <img src={avatar} alt={avatar} className="logoMenu" />
                 <NavLink
-                  to="/Contact"
+                  to="/ContactPage"
                   className="navbar_link"
                   style={getActiveLinkStyle}
-                  onClick={() => {
-                    setActive(false);
-                  }}
                 >
                   About Us
                 </NavLink>
