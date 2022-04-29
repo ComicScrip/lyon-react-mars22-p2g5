@@ -1,3 +1,10 @@
+.scorepage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .scoreTitle {
   font-size: 1.2em;
   font-weight: 500;
@@ -8,44 +15,70 @@
   height: 200px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  align-items: baseline;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 10px;
 }
 
 .coupe {
   width: 40px;
   height: auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .third {
-  width: 80px;
-  height: 100px;
+  width: 70px;
+  height: 85px;
   border-radius: 20px;
   background-color: #78c0e0;
+  margin-right: 30px;
 }
 
 .first {
-  width: 80px;
-  height: 200px;
-  border-radius: 20px;
-  background-color: #78c0e0;
-}
-
-.second {
-  width: 80px;
+  width: 70px;
   height: 150px;
   border-radius: 20px;
   background-color: #78c0e0;
 }
 
+.second {
+  width: 70px;
+  height: 110px;
+  border-radius: 20px;
+  background-color: #78c0e0;
+  margin-left: 30px;
+}
+
 .socle {
   width: 350px;
-  height: 80px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #78c0e0;
   border-radius: 20px;
-  margin-top: 20px;
-  margin-left: 20px;
+  margin-top: 10px;
+  margin-left: 8px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.scoreList {
+  margin-top: 30px;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.scoreList {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 50%;
+  border: solid black 2px;
+  border-radius: 40px;
+  background: rgba(255, 253, 185, 0.5);
+  text-align: justify;
+  font-weight: 600;
+  line-height: 1.8em;
+  padding: 50px;
+  box-shadow: 0px 8px 8px black;
 }
