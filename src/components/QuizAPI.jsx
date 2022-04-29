@@ -71,8 +71,6 @@ function QuizAPI() {
     console.log('randomenswer', randomAnswer);
   }, [currentQuestion, quizQuestions]);
 
-  // const randomAnswer = Math.floor(Math.random() * answerArray.length);
-
   return (
     <div>
       {quizEnded ? (
