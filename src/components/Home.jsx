@@ -20,7 +20,7 @@ export default function Home() {
     <div className="homepage">
       <h1>INQUIZ'ITOR</h1>
       <div>
-        <Link to="/Quizz">
+        <Link to="/Categories">
           <button className="letsGo" type="button">
             LET'S QUIZZ
           </button>
