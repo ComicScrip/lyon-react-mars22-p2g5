@@ -1,50 +1,56 @@
-import Select from 'react-select';
+/* eslint-disable indent */
 import React, { useState, useEffect } from 'react';
 import '../styles/Categories.css';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 function SelectBar() {
-  const categories = [
-    { label: 'General Knowledge', value: 1 },
-    { label: 'Entertainment: Books', value: 2 },
-    { label: 'Entertainment: Film', value: 3 },
-    { label: 'Entertainment: Music', value: 4 },
-    { label: 'Entertainment: Musicals & Theatres', value: 5 },
-    { label: 'Entertainment: Television', value: 6 },
-    { label: 'Entertainment: Video Games', value: 7 },
-    { label: 'Entertainment: Board Games', value: 8 },
-    { label: 'Science & Nature', value: 9 },
-    { label: 'Science: Computers', value: 10 },
-    { label: 'Science: Mathematics', value: 11 },
-    { label: 'Mythology', value: 12 },
-    { label: 'Sports', value: 13 },
-    { label: 'Celebrities', value: 14 },
-    { label: 'Animals', value: 15 },
-    { label: 'Vehicles', value: 16 },
-    { label: 'Entertainment: Comics', value: 17 },
-    { label: 'Science: Gadgets', value: 18 },
-    { label: 'Entertainment: Japanese Anime & Mangas', value: 19 },
-    { label: 'Entertainment: Cartoon & Animations', value: 20 },
-  ];
+  const [selectedCat, setSelectedCat] = useState([]);
+  const [category, getCategory] = useState(false);
 
-  const [selectedCat, setSelectedCat] = useState(categories.label);
+  const handleChange = (e) => {
+    const cat = e.target.value;
+    getCategory(cat);
+  };
 
   useEffect(() => {
-    console.log('Youhou you clicked');
-  });
-
-  const change = (e) => {
-    setSelectedCat(e.label, e.value);
-  };
+    axios
+      .get('https://opentdb.com/api_category.php')
+      .then((res) => setSelectedCat(res.data.trivia_categories));
+  }, []);
 
   return (
     <div>
-      <div className="select-bar">
-        <Select options={categories} onChange={change} />
+      <div>
+        <select
+          className="select-bar"
+          name="category-selection"
+          value={category}
+          onChange={handleChange}
+        >
+          <option key={''} value={''}>
+            --All--
+          </option>
+          {selectedCat.map((cat) => (
+            <option key={cat.id} value={cat.name}>
+              {cat.name}
+            </option>
+          ))}
+        </select>
       </div>
       <Link to="/QuizAPI">
-        <div className={!selectedCat ? '' : 'category-box'}>
-          <h1>{!selectedCat ? '' : `Quizz ${selectedCat}`}</h1>
+        <div className={!category ? '' : 'category-box'}>
+          <h1 className="category-title">{category}</h1>
+        </div>
+        <div className="box">
+          {!category
+            ? selectedCat.map((cat) => (
+                // eslint-disable-next-line react/jsx-indent
+                <div className="category-box">
+                  <h1 className="category-title">{cat.name}</h1>
+                </div>
+              ))
+            : ''}
         </div>
       </Link>
     </div>
