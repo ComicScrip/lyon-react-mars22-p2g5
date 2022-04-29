@@ -5,8 +5,6 @@ import { useLocalStorage } from 'react-use';
 function Popup({ show, setShow }) {
   const [nbQuestion, setNbQuestion] = useLocalStorage('nbQuestion', '10');
   const [difficulty, setDifficulty] = useLocalStorage('difficulty', '1');
-  console.log(nbQuestion);
-  console.log(difficulty);
   return (
     <div className={`popup ${show ? 'active' : ''}`}>
       <div className={`popup__content ${show ? 'active' : ''}`}>
