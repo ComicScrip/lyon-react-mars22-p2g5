@@ -58,19 +58,20 @@ function QuizAPI() {
   }, [timer, quizQuestions]);
 
   const answerArray = [];
+  let randomAnswer = [];
   useEffect(() => {
     if (currentQuestion) {
       answerArray.push(currentQuestion.correct_answer);
       currentQuestion.incorrect_answers.forEach((answer) => {
         answerArray.push(answer);
       });
+      randomAnswer = answerArray.sort(() => Math.random() - 0.5);
     }
+    console.log('answerarray', answerArray);
+    console.log('randomenswer', randomAnswer);
   }, [currentQuestion, quizQuestions]);
 
-  const randomAnswer = answerArray.sort(() => Math.floor(Math.random() - 0.5));
-
   // const randomAnswer = Math.floor(Math.random() * answerArray.length);
-  console.log(randomAnswer);
 
   return (
     <div>
