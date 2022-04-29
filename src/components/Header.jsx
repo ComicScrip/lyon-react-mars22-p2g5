@@ -4,6 +4,7 @@ import './Header.css';
 import logo from '../assets/logo.png';
 import accueil from '../assets/accueil.png';
 import categorie from '../assets/categorie.png';
+import evaluation from '../assets/evaluation.png';
 import avatar from '../assets/avatar.png';
 
 const getActiveLinkStyle = ({ isActive }) => ({
@@ -56,22 +57,26 @@ export default function Header() {
                   to="/Categories"
                   className="navbar_link"
                   style={getActiveLinkStyle}
-                  onClick={() => {
-                    setActive(false);
-                  }}
                 >
                   Catégories
+                </NavLink>
+              </li>
+              <li className="navbar_item">
+                <img src={evaluation} alt={evaluation} className="logoMenu" />
+                <NavLink
+                  to="/ResultPage"
+                  className="navbar_link"
+                  style={getActiveLinkStyle}
+                >
+                  Score
                 </NavLink>
               </li>
               <li className="navbar_item navbarAbout">
                 <img src={avatar} alt={avatar} className="logoMenu" />
                 <NavLink
-                  to="/Contact"
+                  to="/ContactPage"
                   className="navbar_link"
                   style={getActiveLinkStyle}
-                  onClick={() => {
-                    setActive(false);
-                  }}
                 >
                   About Us
                 </NavLink>
