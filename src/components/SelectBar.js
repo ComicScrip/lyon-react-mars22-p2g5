@@ -1,16 +1,30 @@
 /* eslint-disable indent */
 import React, { useState, useEffect } from 'react';
 import '../styles/Categories.css';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { useLocalStorage } from 'react-use';
 
 function SelectBar() {
   const [selectedCat, setSelectedCat] = useState([]);
-  const [category, getCategory] = useState(false);
+  const [category, getCategory] = React.useState(false);
+  const [storedCategory, getstoredCategory] = useLocalStorage('category');
 
   const handleChange = (e) => {
     const cat = e.target.value;
     getCategory(cat);
+  };
+
+  const handleClick = (e) => {
+    const newArray = [];
+    const cat = e.target.id;
+    // eslint-disable-next-line array-callback-return
+    selectedCat.map((array) => {
+      if (array.name.includes(cat)) {
+        newArray.push(array);
+      }
+    });
+    getstoredCategory(newArray);
+    localStorage.setItem(JSON.stringify(storedCategory));
   };
 
   useEffect(() => {
@@ -38,21 +52,23 @@ function SelectBar() {
           ))}
         </select>
       </div>
-      <Link to="/QuizAPI">
-        <div className={!category ? '' : 'category-box'}>
-          <h1 className="category-title">{category}</h1>
-        </div>
-        <div className="box">
-          {!category
-            ? selectedCat.map((cat) => (
-                // eslint-disable-next-line react/jsx-indent
-                <div className="category-box">
-                  <h1 className="category-title">{cat.name}</h1>
-                </div>
-              ))
-            : ''}
-        </div>
-      </Link>
+      <div
+        className={!category ? '' : 'category-box'}
+        id={category}
+        onClick={handleClick}
+      >
+        <h1 className="category-title">{category}</h1>
+      </div>
+      <div className="box">
+        {!category
+          ? selectedCat.map((cat) => (
+              // eslint-disable-next-line react/jsx-indent
+              <div className="category-box" id={cat.name} onClick={handleClick}>
+                <h1 className="category-title">{cat.name}</h1>
+              </div>
+            ))
+          : ''}
+      </div>
     </div>
   );
 }
