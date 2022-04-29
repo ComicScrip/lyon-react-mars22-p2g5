@@ -5,7 +5,7 @@
 }
 
 .carrousel-title {
-  margin-top: 90px;
+  margin-top: 40px;
   margin-bottom: -50px;
 }
 
@@ -23,6 +23,12 @@
   border: var(--input-border);
   box-shadow: var(--input-box-shadow);
   border-radius: 20px;
+  min-width: 250px;
+  min-height: 250px;
+}
+
+.category-title {
+  margin: auto;
 }
 
 .select-bar {
@@ -50,7 +56,23 @@
     margin-right: 30%;
     width: 40%;
   }
+  .box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 70px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 70px;
+  }
+
   .category-box {
-    margin: 10% 30%;
+    max-width: 200px;
+    margin: auto;
+    margin-top: 70px;
+  }
+
+  .carrousel-title {
+    margin-top: 90px;
+    margin-bottom: -50px;
   }
 }

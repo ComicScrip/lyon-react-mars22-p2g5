@@ -5,14 +5,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 function SelectBar() {
-  const sampleCategory = [
-    {
-      id: '',
-      name: '',
-    },
-  ];
-
-  const [selectedCat, setSelectedCat] = useState(sampleCategory);
+  const [selectedCat, setSelectedCat] = useState([]);
   const [category, getCategory] = useState(false);
 
   const handleChange = (e) => {
@@ -47,16 +40,18 @@ function SelectBar() {
       </div>
       <Link to="/QuizAPI">
         <div className={!category ? '' : 'category-box'}>
-          <h1>{category}</h1>
+          <h1 className="category-title">{category}</h1>
         </div>
-        {!category
-          ? selectedCat.map((cat) => (
-              // eslint-disable-next-line react/jsx-indent
-              <div className="category-box">
-                <h1>{cat.name}</h1>
-              </div>
-            ))
-          : ''}
+        <div className="box">
+          {!category
+            ? selectedCat.map((cat) => (
+                // eslint-disable-next-line react/jsx-indent
+                <div className="category-box">
+                  <h1 className="category-title">{cat.name}</h1>
+                </div>
+              ))
+            : ''}
+        </div>
       </Link>
     </div>
   );
