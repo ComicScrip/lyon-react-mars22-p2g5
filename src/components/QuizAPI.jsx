@@ -67,7 +67,7 @@ function QuizAPI() {
     }
   }, [currentQuestion, quizQuestions]);
 
-  const randomAnswer = answerArray.sort(() => Math.random() - 0.5);
+  const randomAnswer = answerArray.sort(() => Math.floor(Math.random() - 0.5));
 
   // const randomAnswer = Math.floor(Math.random() * answerArray.length);
   console.log(randomAnswer);
