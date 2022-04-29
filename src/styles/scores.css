@@ -3,5 +3,49 @@
   font-weight: 500;
 }
 
+.podium {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+.coupe {
+  width: 40px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.third {
+  width: 80px;
+  height: 100px;
+  border-radius: 20px;
+  background-color: #78c0e0;
+}
+
 .first {
+  width: 80px;
+  height: 200px;
+  border-radius: 20px;
+  background-color: #78c0e0;
+}
+
+.second {
+  width: 80px;
+  height: 150px;
+  border-radius: 20px;
+  background-color: #78c0e0;
+}
+
+.socle {
+  width: 350px;
+  height: 80px;
+  background-color: #78c0e0;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
 }
