@@ -19,6 +19,7 @@ function QuizAPI() {
       : currentQuestionIndex === quizQuestions.length;
   const initTime = 20;
   const [timer, setTimer] = useState(initTime);
+
   useEffect(() => {
     axios
       .get('https://opentdb.com/api.php?amount=5')
@@ -52,8 +53,25 @@ function QuizAPI() {
         }, 1000);
       }
     }
+
     return () => clearInterval(interval);
   }, [timer, quizQuestions]);
+
+  const answerArray = [];
+  useEffect(() => {
+    if (currentQuestion) {
+      answerArray.push(currentQuestion.correct_answer);
+      currentQuestion.incorrect_answers.forEach((answer) => {
+        answerArray.push(answer);
+      });
+    }
+  }, [currentQuestion, quizQuestions]);
+
+  const randomAnswer = answerArray.sort(() => Math.random() - 0.5);
+
+  // const randomAnswer = Math.floor(Math.random() * answerArray.length);
+  console.log(randomAnswer);
+
   return (
     <div>
       {quizEnded ? (
@@ -70,33 +88,33 @@ function QuizAPI() {
                   type="submit"
                   className="answers answerOne"
                   onClick={(event) => handleChoiceAnswer(event.target.value)}
-                  value={currentQuestion.correct_answer}
+                  value={randomAnswer[0]}
                 >
-                  {currentQuestion.correct_answer}
+                  {randomAnswer[0]}
                 </button>
                 <button
                   type="submit"
                   className="answers answerTwo"
                   onClick={(event) => handleChoiceAnswer(event.target.value)}
-                  value={currentQuestion.incorrect_answers[0]}
+                  value={randomAnswer[1]}
                 >
-                  {currentQuestion.incorrect_answers[0]}
+                  {randomAnswer[1]}
                 </button>
                 <button
                   type="submit"
                   className="answers answerThree"
                   onClick={(event) => handleChoiceAnswer(event.target.value)}
-                  value={currentQuestion.incorrect_answers[1]}
+                  value={randomAnswer[2]}
                 >
-                  {currentQuestion.incorrect_answers[1]}
+                  {randomAnswer[2]}
                 </button>
                 <button
                   type="submit"
                   className="answers answerFour"
                   onClick={(event) => handleChoiceAnswer(event.target.value)}
-                  value={currentQuestion.incorrect_answers[2]}
+                  value={randomAnswer[3]}
                 >
-                  {currentQuestion.incorrect_answers[2]}
+                  {randomAnswer[3]}
                 </button>
               </div>
               <ProgressBar bgColor="#FFFFFF" completed={timer} />
