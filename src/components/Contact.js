@@ -33,10 +33,26 @@ function Contact() {
     <div className="contact-form">
       <h1 className="about-us-title">About Us</h1>
       <div className="avatars">
-        <AboutUs name="Claire" img={avatar1} />
-        <AboutUs name="Jonathan" img={avatar2} />
-        <AboutUs name="Benjamin" img={avatar3} />
-        <AboutUs name="Timo" img={avatar4} />
+        <AboutUs
+          name="Claire"
+          img={avatar1}
+          lien="https://github.com/Claiirou"
+        />
+        <AboutUs
+          name="Jonathan"
+          img={avatar2}
+          lien="https://github.com/JBillault"
+        />
+        <AboutUs
+          name="Benjamin"
+          img={avatar3}
+          lien="https://github.com/Benjamin-Dervieux"
+        />
+        <AboutUs
+          name="Timo"
+          img={avatar4}
+          lien="https://github.com/timonicolaux"
+        />
       </div>
       <h1 className="contact-title">Contact</h1>
       <form className="form" onSubmit={onSubmit}>
