@@ -1,16 +1,27 @@
 /* eslint-disable indent */
 import React, { useState, useEffect } from 'react';
 import '../styles/Categories.css';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { useLocalStorage } from 'react-use';
+import Popup from './Popup';
 
 function SelectBar() {
   const [selectedCat, setSelectedCat] = useState([]);
-  const [category, getCategory] = useState(false);
+  const [category, getCategory] = React.useState(false);
+  const [storeCategory, setStoreCategory] = useLocalStorage('category', []);
+  const [showPopup, setShowPopup] = useState(false);
 
   const handleChange = (e) => {
     const cat = e.target.value;
     getCategory(cat);
+  };
+  const handleClick = (categoryName) => {
+    const newArray = selectedCat.filter(
+      (object) => object.name === categoryName
+    );
+    setStoreCategory(newArray);
+    setShowPopup(true);
+    console.log(storeCategory);
   };
 
   useEffect(() => {
@@ -38,21 +49,28 @@ function SelectBar() {
           ))}
         </select>
       </div>
-      <Link to="/QuizAPI">
-        <div className={!category ? '' : 'category-box'}>
-          <h1 className="category-title">{category}</h1>
-        </div>
-        <div className="box">
-          {!category
-            ? selectedCat.map((cat) => (
-                // eslint-disable-next-line react/jsx-indent
-                <div className="category-box">
-                  <h1 className="category-title">{cat.name}</h1>
-                </div>
-              ))
-            : ''}
-        </div>
-      </Link>
+      <div
+        className={!category ? '' : 'category-box'}
+        id={category}
+        // onClick={handleClick}
+      >
+        <h1 className="category-title">{category}</h1>
+      </div>
+      <div className="box">
+        {!category
+          ? selectedCat.map((cat) => (
+              // eslint-disable-next-line react/jsx-indent
+              <div
+                className="category-box"
+                id={cat.name}
+                onClick={() => handleClick(cat.name)}
+              >
+                <h1 className="category-title">{cat.name}</h1>
+              </div>
+            ))
+          : ''}
+      </div>
+      <Popup show={showPopup} setShow={setShowPopup} />
     </div>
   );
 }

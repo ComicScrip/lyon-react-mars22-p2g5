@@ -21,7 +21,7 @@
   width: 90vw;
   margin: 15% auto;
   background-color: rgb(217, 232, 244, 0.8);
-  border-radius: 5px;
+  border-radius: 20px;
   border: 2px solid black;
   position: relative;
   transition: ease-in-out;
@@ -152,6 +152,7 @@ datalist {
   padding-top: 0px;
   font-family: 'Raleway', sans-serif;
   font-weight: bold;
+  font-size: 1.3rem;
 }
 option {
   width: 2ex;
@@ -168,12 +169,13 @@ option {
 label {
   font-family: 'Raleway', sans-serif;
   font-weight: bold;
+  font-size: 2rem;
 }
 
 @media screen and (min-width: 800px) {
   .popup__content {
     width: 60vw;
-    height: 70vh;
+    height: 80vh;
     margin-top: 10vh;
   }
   .slider::-webkit-slider-thumb {

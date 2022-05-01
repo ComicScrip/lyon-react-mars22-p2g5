@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import { useLocalStorage } from 'react-use';
 import '../App.css';
 import '../styles/QuizPage.css';
 import he from 'he';
@@ -12,6 +13,10 @@ function QuizAPI() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const currentQuestion = quizQuestions[currentQuestionIndex];
   const [answerChoice, setAnswerChoice] = useState([]);
+  const [nbQuestion] = useLocalStorage('nbQuestion');
+  const [difficulty] = useLocalStorage('difficulty');
+  const [storeCategory] = useLocalStorage('category');
+  const difficultyArray = ['easy', 'medium', 'hard', ''];
   // eslint-disable-next-line operator-linebreak
   const quizEnded =
     quizQuestions.length === 0
@@ -21,7 +26,11 @@ function QuizAPI() {
   const [timer, setTimer] = useState(initTime);
   useEffect(() => {
     axios
-      .get('https://opentdb.com/api.php?amount=5')
+      .get(
+        `https://opentdb.com/api.php?amount=${nbQuestion}&category=${
+          storeCategory[0].id
+        }&difficulty=${difficultyArray[difficulty - 1]}&type=multiple`
+      )
       .then((response) => response.data)
       .then((data) => {
         setQuizQuestions(data.results);
