@@ -71,7 +71,7 @@ function QuizAPI() {
       randomAnswer = lodash.shuffle(answerArray);
     }
     console.log('answerarray', answerArray);
-    console.log('randomenswer', randomAnswer);
+    console.log('randomanswer', randomAnswer);
     console.log('1 item', randomAnswer[0]);
   }, [currentQuestion, quizQuestions]);
 
@@ -87,7 +87,7 @@ function QuizAPI() {
                 {he.decode(currentQuestion.question)}
               </div>
               <div className="reponses">
-                {lodash.shuffle(answerArray).map((answer) => (
+                {randomAnswer.map((answer) => (
                   <button
                     key={answer}
                     type="submit"
