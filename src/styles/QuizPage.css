@@ -35,14 +35,14 @@
   gap: 10px;
 }
 
-.answers {
+/* .answers {
   border: 1px solid black;
   border-radius: 5px;
   box-shadow: 3px 3px 3px black;
   background-color: rgb(250, 250, 241, 0.5);
   height: 100%;
   width: 100%;
-}
+} */
 
 button:hover {
   cursor: pointer;
@@ -54,7 +54,7 @@ button:active {
   background-color: chartreuse;
 }
 
-.answerOne {
+/* .answerOne {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
 }
@@ -72,7 +72,7 @@ button:active {
 .answerFour {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
-}
+} */
 
 .hiddenQuiz {
   visibility: hidden;

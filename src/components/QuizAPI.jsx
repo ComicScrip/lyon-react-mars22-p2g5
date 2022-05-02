@@ -7,6 +7,8 @@ import he from 'he';
 import ResultPage from './ResultPage';
 import ProgressBar from './progress-bar';
 
+const lodash = require('lodash');
+
 function QuizAPI() {
   const [quizQuestions, setQuizQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -65,10 +67,12 @@ function QuizAPI() {
       currentQuestion.incorrect_answers.forEach((answer) => {
         answerArray.push(answer);
       });
-      randomAnswer = answerArray.sort(() => Math.random() - 0.5);
+
+      randomAnswer = lodash.shuffle(answerArray);
     }
     console.log('answerarray', answerArray);
     console.log('randomenswer', randomAnswer);
+    console.log('1 item', randomAnswer[0]);
   }, [currentQuestion, quizQuestions]);
 
   return (
@@ -83,7 +87,18 @@ function QuizAPI() {
                 {he.decode(currentQuestion.question)}
               </div>
               <div className="reponses">
-                <button
+                {lodash.shuffle(answerArray).map((answer) => (
+                  <button
+                    key={answer}
+                    type="submit"
+                    className="answers"
+                    onClick={(event) => handleChoiceAnswer(event.target.value)}
+                    value={answer}
+                  >
+                    {answer}
+                  </button>
+                ))}
+                {/* <button
                   type="submit"
                   className="answers answerOne"
                   onClick={(event) => handleChoiceAnswer(event.target.value)}
@@ -114,7 +129,7 @@ function QuizAPI() {
                   value={randomAnswer[3]}
                 >
                   {randomAnswer[3]}
-                </button>
+                </button> */}
               </div>
               <ProgressBar bgColor="#FFFFFF" completed={timer} />
             </div>
