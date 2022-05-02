@@ -42,6 +42,7 @@ function JokesDay({ jokes }) {
   };
 
   const getNewJoke = () => {
+    setJokeOpen(false);
     axios
       .get('http://localhost:5000/jokes/random')
       .then((response) => response.data)
