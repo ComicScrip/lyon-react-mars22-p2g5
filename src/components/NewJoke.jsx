@@ -6,17 +6,17 @@ function NewJoke({ show, setShow }) {
   const [addNewAnswer, setAddNewAnswer] = useState('');
 
   return (
-    <div className={`newjoke ${show ? 'active' : ''} `}>
-      <div className={`popup_content ${show ? 'active' : ''}`}>
+    <div className={`popup ${show ? 'active' : ''} `}>
+      <div className={`popup__content ${show ? 'active' : ''}`}>
         {show && (
-          <span onClick={() => setShow(false)} className="popup_close">
+          <span onClick={() => setShow(false)} className="popup__close">
             &times;
           </span>
         )}
-        <div className="popup_header">
+        <div className="popup__header">
           <h1>Faites-nous rire !</h1>
         </div>
-        <div className="popup_body">
+        <div className="popup__body">
           <div className="sliderQuestion">
             <form>
               <label htmlFor="question" id="question">
@@ -48,7 +48,7 @@ function NewJoke({ show, setShow }) {
             </form>
           </div>
         </div>
-        <div className="popup_footer">
+        <div className="popup__footer">
           <button type="button" className="btnGo">
             ENVOYER
           </button>

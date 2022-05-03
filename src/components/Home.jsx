@@ -3,9 +3,15 @@ import '../styles/home.css';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import JokesDay from './JokesDay';
+import NewJoke from './NewJoke';
 
 export default function Home() {
   const [jokesOfTheDay, setJokesOfTheDay] = useState([]);
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleClick = () => {
+    setShowPopup(true);
+  };
 
   useEffect(() => {
     axios
@@ -28,6 +34,12 @@ export default function Home() {
       </div>
       <div className="joke-of-the-day" />
       <JokesDay jokes={jokesOfTheDay} />
+      <div>
+        <button onClick={handleClick} type="button">
+          +
+        </button>
+        <NewJoke show={showPopup} setShow={setShowPopup} />
+      </div>
     </div>
   );
 }
