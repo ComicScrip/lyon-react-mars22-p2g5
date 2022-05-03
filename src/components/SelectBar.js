@@ -3,28 +3,25 @@ import React, { useState, useEffect } from 'react';
 import '../styles/Categories.css';
 import axios from 'axios';
 import { useLocalStorage } from 'react-use';
+import Popup from './Popup';
 
 function SelectBar() {
   const [selectedCat, setSelectedCat] = useState([]);
   const [category, getCategory] = React.useState(false);
-  const [storedCategory, getstoredCategory] = useLocalStorage('category');
+  const [storeCategory, setStoreCategory] = useLocalStorage('category', []);
+  const [showPopup, setShowPopup] = useState(false);
 
   const handleChange = (e) => {
     const cat = e.target.value;
     getCategory(cat);
   };
-
-  const handleClick = (e) => {
-    const newArray = [];
-    const cat = e.target.id;
-    // eslint-disable-next-line array-callback-return
-    selectedCat.map((array) => {
-      if (array.name.includes(cat)) {
-        newArray.push(array);
-      }
-    });
-    getstoredCategory(newArray);
-    localStorage.setItem(JSON.stringify(storedCategory));
+  const handleClick = (categoryName) => {
+    const newArray = selectedCat.filter(
+      (object) => object.name === categoryName
+    );
+    setStoreCategory(newArray);
+    setShowPopup(true);
+    console.log(storeCategory);
   };
 
   useEffect(() => {
@@ -54,8 +51,8 @@ function SelectBar() {
       </div>
       <div
         className={!category ? '' : 'category-box'}
-        id={category}
-        onClick={handleClick}
+        id={category.toString()}
+        // onClick={handleClick}
       >
         <h1 className="category-title">{category}</h1>
       </div>
@@ -63,12 +60,18 @@ function SelectBar() {
         {!category
           ? selectedCat.map((cat) => (
               // eslint-disable-next-line react/jsx-indent
-              <div className="category-box" id={cat.name} onClick={handleClick}>
+              <div
+                key={cat.name}
+                className="category-box"
+                id={cat.name}
+                onClick={() => handleClick(cat.name)}
+              >
                 <h1 className="category-title">{cat.name}</h1>
               </div>
             ))
           : ''}
       </div>
+      <Popup show={showPopup} setShow={setShowPopup} />
     </div>
   );
 }
