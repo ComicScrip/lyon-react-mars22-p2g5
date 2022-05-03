@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import he from 'he';
 import check2 from '../assets/check2.png';
 import wrong2 from '../assets/wrong2.png';
+import swal from 'sweetalert';
 
 const animation = {
   good: 'https://media.giphy.com/media/l3q2XhfQ8oCkm1Ts4/giphy.gif',
@@ -32,6 +33,14 @@ function ResultPage({ answers, questions }) {
     if (answ < questions.length * 0.33) return resultTitle.wrong;
     if (answ < questions.length * 0.66) return resultTitle.middle;
     return resultTitle.great;
+  }
+
+  function handleClick(e) {
+    e.preventDefault();
+    return swal(
+      'Merci 🎉 ',
+      'Votre score sera affiché dans le tableau des scores.'
+    );
   }
 
   return (
@@ -76,12 +85,15 @@ function ResultPage({ answers, questions }) {
           type="text"
           id="nameScore"
           name="name"
-          placeholder="  ex: Pierre"
+          placeholder="ex: Pierre"
           required="required"
         />
-        <Link to="/Scores">
-          <input className="validation" type="submit" value="Valider" />
-        </Link>
+        <input
+          className="validation"
+          type="submit"
+          value="Valider"
+          onClick={handleClick}
+        />
       </form>
       <Link to="/" className="lienRestart">
         <button className="restart" type="button">

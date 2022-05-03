@@ -94,6 +94,7 @@ img {
   border: 1px solid black;
   box-shadow: 2px 3px 3px rgb(85, 83, 83);
   margin-left: 10px;
+  padding-left: 10px;
 }
 
 .validation {
@@ -103,7 +104,7 @@ img {
   border: 1px solid black;
   box-shadow: 2px 3px 3px rgb(85, 83, 83);
   cursor: pointer;
-  font-size: 0.8rem;
+  font-size: 1rem;
   margin-left: 10px;
 }
 
@@ -145,7 +146,7 @@ img {
     padding: 20px;
   }
   .champ {
-    width: 50%;
+    width: 70%;
     height: 100px;
     display: flex;
     flex-direction: column;
@@ -154,9 +155,13 @@ img {
   }
   #nameScore {
     margin-top: 10px;
+    padding-left: 10px;
   }
   .validation {
-    margin-top: 8px;
+    margin-top: 20px;
     width: 80px;
+  }
+  .restart {
+    margin-top: 30px;
   }
 }

@@ -34,11 +34,27 @@
   margin-right: 30px;
 }
 
+.coupeBronze {
+  width: 70px;
+  height: 85px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .first {
   width: 70px;
   height: 150px;
   border-radius: 20px;
   background-color: #78c0e0;
+}
+
+.coupeOr {
+  width: 70px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .second {
@@ -47,6 +63,14 @@
   border-radius: 20px;
   background-color: #78c0e0;
   margin-left: 30px;
+}
+
+.coupeArgent {
+  width: 70px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .socle {
@@ -62,7 +86,7 @@
   font-family: 'Raleway', sans-serif;
 }
 
-.scoreList {
+.scoreTitle {
   margin-top: 30px;
   font-size: 1.2em;
   font-weight: 500;
@@ -81,4 +105,5 @@
   line-height: 1.8em;
   padding: 50px;
   box-shadow: 0px 8px 8px black;
+  margin-top: 30px;
 }
