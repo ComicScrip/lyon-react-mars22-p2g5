@@ -1,0 +1,69 @@
+.popup__body {
+  padding: initial;
+}
+
+.popupBodyJoke {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.questionJoke {
+  margin: 10px;
+}
+
+.formQuestionJoke {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.formReponseJoke {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.btnGo {
+  width: initial;
+}
+
+.btnJoke {
+  font-size: small;
+  width: 100%;
+}
+
+input[placeholder='Votre question'] {
+  font-style: italic;
+  padding: 2px;
+  border-radius: 20px;
+  font-family: 'Raleway', sans-serif;
+}
+
+input[placeholder='Votre réponse'] {
+  font-style: italic;
+  padding: 2px;
+  border-radius: 20px;
+  font-family: 'Raleway', sans-serif;
+}
+
+@media screen and (min-width: 800px) {
+  .popupBodyJoke {
+    margin: 40px;
+  }
+
+  .input[placeholder='Votre question'] {
+    font-size: large;
+  }
+
+  input#question {
+    padding: 20px 140px;
+  }
+
+  input#reponse {
+    padding: 20px 140px;
+  }
+}

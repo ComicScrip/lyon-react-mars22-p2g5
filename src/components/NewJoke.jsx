@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/Popup.css';
+import '../styles/NewJoke.css';
 
 function NewJoke({ show, setShow }) {
   const [addNewQuestion, setAddNewQuestion] = useState('');
@@ -14,11 +15,11 @@ function NewJoke({ show, setShow }) {
           </span>
         )}
         <div className="popup__header">
-          <h1>Faites-nous rire !</h1>
+          <h1>FAITES-NOUS RIRE ! !</h1>
         </div>
-        <div className="popup__body">
-          <div className="sliderQuestion">
-            <form>
+        <div className="popup__body popupBodyJoke">
+          <div className="sliderQuestion questionJoke">
+            <form className="formQuestionJoke">
               <label htmlFor="question" id="question">
                 Question
               </label>
@@ -32,8 +33,8 @@ function NewJoke({ show, setShow }) {
               />
             </form>
           </div>
-          <div className="sliderReponse">
-            <form>
+          <div className="sliderReponse responseJoke">
+            <form className="formReponseJoke">
               <label htmlFor="reponse" id="reponse">
                 Réponse
               </label>
@@ -49,7 +50,7 @@ function NewJoke({ show, setShow }) {
           </div>
         </div>
         <div className="popup__footer">
-          <button type="button" className="btnGo">
+          <button type="button" className="btnGo bntJoke">
             ENVOYER
           </button>
         </div>
