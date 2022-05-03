@@ -85,6 +85,8 @@ img {
 .label {
   font-size: 1.2em;
   font-weight: 800;
+  margin: 5px;
+  padding-top: 10px;
 }
 
 #nameScore {

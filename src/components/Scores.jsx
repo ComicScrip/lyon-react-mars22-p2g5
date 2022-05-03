@@ -1,21 +1,21 @@
-// import axios from 'axios';
-import React /* useState */ from 'react';
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 import '../styles/scores.css';
 import or from '../assets/or.png';
 import argent from '../assets/argent.png';
 import bronze from '../assets/bronze.png';
 
 function Scores() {
-  // const [scores, setScores] = useState();
+  const [scores, setScores] = useState();
 
-  // useEffect(() => {
-  //   axios
-  //     .get(`${process.env.REACT_APP_API_URL}/scores`)
-  //     .then((response) => response.data)
-  //     .then((data) => {
-  //       setScores(data);
-  //     });
-  // }, []);
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_API_URL}/scores`)
+      .then((response) => response.data)
+      .then((data) => {
+        setScores(data);
+      });
+  }, []);
 
   return (
     <div className="scorepage">
@@ -43,9 +43,9 @@ function Scores() {
       <h1 className="scoreTitle">GAMERS LIST</h1>
       <div className="scoreList">
         <ul className="playersList" />
-        {/* {scores.map((scoreKey, score) => (
+        {scores.map((scoreKey, score) => (
           <li key={scoreKey}>{score}</li>
-        ))} */}
+        ))}
       </div>
     </div>
   );
