@@ -8,8 +8,6 @@ import ResultPage from './ResultPage';
 import ProgressBar from './progress-bar';
 
 function QuizAPI() {
-  const result = localStorage.getItem('category');
-  console.log(result);
   const [quizQuestions, setQuizQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const currentQuestion = quizQuestions[currentQuestionIndex];

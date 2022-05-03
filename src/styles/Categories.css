@@ -23,8 +23,8 @@
   border: var(--input-border);
   box-shadow: var(--input-box-shadow);
   border-radius: 20px;
-  min-width: 250px;
-  min-height: 250px;
+  min-width: 200px;
+  min-height: 200px;
 }
 
 .category-title {
@@ -66,8 +66,10 @@
   }
 
   .category-box {
-    max-width: 200px;
+    width: 250px;
+    height: 250px;
     margin: auto;
+    margin-bottom: 70px;
     margin-top: 70px;
   }
 
