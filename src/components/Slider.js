@@ -46,14 +46,17 @@ function Slider() {
       <BtnSlider moveSlide={prevSlide} direction={'prev'} />
 
       <div className="container-dots">
-        {Array.from({ length: 4 }).map((item, index) => (
-          // eslint-disable-next-line react/self-closing-comp
-          <div
-            onClick={() => moveDot(index + 1)}
-            className={slideIndex === index + 1 ? 'dot active' : 'dot'}
-            // eslint-disable-next-line react/jsx-closing-tag-location
-          ></div>
-        ))}
+        {Array.from({ length: 4 })
+          .map((_, i) => i)
+          .map((item, index) => (
+            // eslint-disable-next-line react/self-closing-comp
+            <div
+              key={item}
+              onClick={() => moveDot(index + 1)}
+              className={slideIndex === index + 1 ? 'dot active' : 'dot'}
+              // eslint-disable-next-line react/jsx-closing-tag-location
+            ></div>
+          ))}
       </div>
     </div>
   );
