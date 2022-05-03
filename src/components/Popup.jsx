@@ -18,6 +18,7 @@ function Popup({ show, setShow }) {
         </div>
         <div className="popup__body">
           <div className="sliderQuestion">
+            <label htmlFor="questions">Nombre de question</label>
             <datalist id="tickmarksQuestion">
               <option value="10" label="10" />
               <option value="15" label="15" />
@@ -35,9 +36,11 @@ function Popup({ show, setShow }) {
               value={nbQuestion}
               onChange={(e) => setNbQuestion(e.target.value)}
             />
-            <label htmlFor="questions">Nombre de question</label>
           </div>
           <div className="sliderDifficulty">
+            <label htmlFor="difficulté" id="difficultyLabel">
+              Difficulté
+            </label>
             <datalist id="tickmarksDifficulty">
               <option value="easy" label="Easy" />
               <option value="medium" label="Medium" />
@@ -55,9 +58,6 @@ function Popup({ show, setShow }) {
               value={difficulty}
               onChange={(e) => setDifficulty(e.target.value)}
             />
-            <label htmlFor="difficulté" id="difficultyLabel">
-              Difficulté
-            </label>
           </div>
         </div>
         <div className="popup__footer">

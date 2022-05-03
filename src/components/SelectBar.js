@@ -51,7 +51,7 @@ function SelectBar() {
       </div>
       <div
         className={!category ? '' : 'category-box'}
-        id={category}
+        id={category.toString()}
         // onClick={handleClick}
       >
         <h1 className="category-title">{category}</h1>
@@ -61,6 +61,7 @@ function SelectBar() {
           ? selectedCat.map((cat) => (
               // eslint-disable-next-line react/jsx-indent
               <div
+                key={cat.name}
                 className="category-box"
                 id={cat.name}
                 onClick={() => handleClick(cat.name)}

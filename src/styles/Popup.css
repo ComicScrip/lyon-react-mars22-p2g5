@@ -20,7 +20,7 @@
 .popup__content {
   width: 90vw;
   margin: 15% auto;
-  background-color: rgb(217, 232, 244, 0.9);
+  background-color: rgb(217, 232, 244, 0.97);
   border-radius: 20px;
   border: 2px solid black;
   position: relative;
@@ -117,7 +117,7 @@
   align-items: center;
 }
 label {
-  margin-top: 2vh;
+  margin-bottom: 2vh;
 }
 
 .btnGo {
