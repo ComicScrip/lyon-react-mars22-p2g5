@@ -70,7 +70,6 @@ function QuizAPI() {
   }, [timer, quizQuestions]);
 
   const answerArray = [];
-  // let randomAnswer = [];
   useEffect(() => {
     if (currentQuestion) {
       answerArray.push(currentQuestion.correct_answer);
@@ -78,10 +77,7 @@ function QuizAPI() {
         answerArray.push(answer);
       });
       setRandomAnswers(lodash.shuffle(answerArray));
-      // randomAnswer = lodash.shuffle(answerArray);
     }
-    console.log('answerarray', answerArray);
-    console.log('randomanswer', randomAnswers);
   }, [currentQuestion, quizQuestions]);
   return (
     <div>
@@ -106,38 +102,6 @@ function QuizAPI() {
                     {answer}
                   </button>
                 ))}
-                {/* <button
-                  type="submit"
-                  className="answers answerOne"
-                  onClick={(event) => handleChoiceAnswer(event.target.value)}
-                  value={randomAnswer[0]}
-                >
-                  {randomAnswer[0]}
-                </button>
-                <button
-                  type="submit"
-                  className="answers answerTwo"
-                  onClick={(event) => handleChoiceAnswer(event.target.value)}
-                  value={randomAnswer[1]}
-                >
-                  {randomAnswer[1]}
-                </button>
-                <button
-                  type="submit"
-                  className="answers answerThree"
-                  onClick={(event) => handleChoiceAnswer(event.target.value)}
-                  value={randomAnswer[2]}
-                >
-                  {randomAnswer[2]}
-                </button>
-                <button
-                  type="submit"
-                  className="answers answerFour"
-                  onClick={(event) => handleChoiceAnswer(event.target.value)}
-                  value={randomAnswer[3]}
-                >
-                  {randomAnswer[3]}
-                </button> */}
               </div>
               <ProgressBar bgColor="#FFFFFF" completed={timer} />
             </div>
