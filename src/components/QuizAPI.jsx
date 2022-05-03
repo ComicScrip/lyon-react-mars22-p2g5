@@ -14,6 +14,7 @@ function QuizAPI() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const currentQuestion = quizQuestions[currentQuestionIndex];
   const [answerChoice, setAnswerChoice] = useState([]);
+  const [randomAnswers, setRandomAnswers] = useState([]);
   // eslint-disable-next-line operator-linebreak
   const quizEnded =
     quizQuestions.length === 0
@@ -60,21 +61,19 @@ function QuizAPI() {
   }, [timer, quizQuestions]);
 
   const answerArray = [];
-  let randomAnswer = [];
+  // let randomAnswer = [];
   useEffect(() => {
     if (currentQuestion) {
       answerArray.push(currentQuestion.correct_answer);
       currentQuestion.incorrect_answers.forEach((answer) => {
         answerArray.push(answer);
       });
-
-      randomAnswer = lodash.shuffle(answerArray);
+      setRandomAnswers(lodash.shuffle(answerArray));
+      // randomAnswer = lodash.shuffle(answerArray);
     }
     console.log('answerarray', answerArray);
-    console.log('randomanswer', randomAnswer);
-    console.log('1 item', randomAnswer[0]);
+    console.log('randomanswer', randomAnswers);
   }, [currentQuestion, quizQuestions]);
-
   return (
     <div>
       {quizEnded ? (
@@ -87,7 +86,7 @@ function QuizAPI() {
                 {he.decode(currentQuestion.question)}
               </div>
               <div className="reponses">
-                {randomAnswer.map((answer) => (
+                {randomAnswers.map((answer) => (
                   <button
                     key={answer}
                     type="submit"
