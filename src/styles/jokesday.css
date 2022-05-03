@@ -13,6 +13,11 @@
   margin: 20px;
   padding: 10px 20px;
   cursor: pointer;
+  background-color: #78c0e0;
+  font-family: 'railway';
+  border-radius: 30px;
+  font-size: medium;
+  opacity: 80%;
 }
 
 .confetti-wrap {
