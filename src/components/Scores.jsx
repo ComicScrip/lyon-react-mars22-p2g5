@@ -6,11 +6,12 @@ import argent from '../assets/argent.png';
 import bronze from '../assets/bronze.png';
 
 function Scores() {
-  const [scores, setScores] = useState();
+  const [scores, setScores] = useState([]);
 
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/scores`)
+      // ${process.env.REACT_APP_API_URL}
+      .get('http://localhost:5000/scores')
       .then((response) => response.data)
       .then((data) => {
         setScores(data);
@@ -43,8 +44,11 @@ function Scores() {
       <h1 className="scoreTitle">GAMERS LIST</h1>
       <div className="scoreList">
         <ul className="playersList" />
-        {scores.map((scoreKey, score) => (
-          <li key={scoreKey}>{score}</li>
+        {scores.map((score) => (
+          <li key={score.id}>
+            {score.name}
+            {score.score}
+          </li>
         ))}
       </div>
     </div>
