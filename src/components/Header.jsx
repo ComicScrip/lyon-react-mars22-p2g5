@@ -47,6 +47,9 @@ export default function Header() {
                   to="/"
                   className="navbar_link active"
                   style={getActiveLinkStyle}
+                  onClick={() => {
+                    setActive(false);
+                  }}
                 >
                   Accueil
                 </NavLink>
@@ -57,6 +60,9 @@ export default function Header() {
                   to="/Categories"
                   className="navbar_link"
                   style={getActiveLinkStyle}
+                  onClick={() => {
+                    setActive(false);
+                  }}
                 >
                   Catégories
                 </NavLink>
@@ -68,6 +74,9 @@ export default function Header() {
                   to="/Scores"
                   className="navbar_link active"
                   style={getActiveLinkStyle}
+                  onClick={() => {
+                    setActive(false);
+                  }}
                 >
                   Scores
                 </NavLink>
@@ -78,6 +87,9 @@ export default function Header() {
                   to="/ContactPage"
                   className="navbar_link"
                   style={getActiveLinkStyle}
+                  onClick={() => {
+                    setActive(false);
+                  }}
                 >
                   About Us
                 </NavLink>

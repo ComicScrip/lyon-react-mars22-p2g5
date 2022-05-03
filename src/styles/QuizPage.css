@@ -54,26 +54,6 @@ button:active {
   background-color: chartreuse;
 }
 
-.answerOne {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-}
-
-.answerTwo {
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-}
-
-.answerThree {
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
-}
-
-.answerFour {
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
-}
-
 .hiddenQuiz {
   visibility: hidden;
 }
