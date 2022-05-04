@@ -15,7 +15,7 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5000/jokes/random')
+      .get(`${process.env.REACT_APP_API_URL}/jokes/random`)
       .then((response) => response.data)
       .then((data) => {
         setJokesOfTheDay(data);

@@ -18,7 +18,7 @@ function NewJoke({ show, setShow }) {
     e.preventDefault();
 
     axios
-      .post('http://localhost:5000/jokes', {
+      .post(`${process.env.REACT_APP_API_URL}/jokes`, {
         question,
         answer,
       })
