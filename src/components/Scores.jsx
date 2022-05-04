@@ -18,22 +18,30 @@ function Scores() {
       });
   }, []);
 
+  const [score1, score2, score3, ...otherScores] = scores;
+
   return (
     <div className="scorepage">
       <h1 className="scoreTitle">SCORE</h1>
       <div className="podium">
-        <div className="third">
-          <div className="coupeBronze">
+        <div className="box3">
+          <p className="playerScore3">{score3?.player}</p>
+          <div className="third">
+            <p className="scoreP3">{score3?.score} %</p>
             <img className="coupe" src={bronze} alt="coupe-bronze" />
           </div>
         </div>
-        <div className="first">
-          <div className="coupeOr">
+        <div className="box1">
+          <p className="playerScore1">{score1?.player}</p>
+          <div className="first">
+            <p className="scoreP1">{score1?.score} %</p>
             <img className="coupe" src={or} alt="coupe-or" />
           </div>
         </div>
-        <div className="second">
-          <div className="coupeArgent">
+        <div className="box2">
+          <p className="playerScore2">{score2?.player}</p>
+          <div className="second">
+            <p className="scoreP2">{score2?.score} %</p>
             <img className="coupe" src={argent} alt="coupe-argent" />
           </div>
         </div>
@@ -44,10 +52,9 @@ function Scores() {
       <h1 className="scoreTitle">GAMERS LIST</h1>
       <div className="scoreList">
         <ul className="playersList" />
-        {scores.map((score) => (
-          <li key={score.id}>
-            {score.name}
-            {score.score}
+        {otherScores.map((score) => (
+          <li className="eachScore" key={score.id}>
+            {score.player} : {score.score} %
           </li>
         ))}
       </div>

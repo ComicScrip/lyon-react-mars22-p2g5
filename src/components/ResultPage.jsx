@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/ResultPage.css';
 import { Link } from 'react-router-dom';
 import he from 'he';
 import check2 from '../assets/check2.png';
 import wrong2 from '../assets/wrong2.png';
 import swal from 'sweetalert';
+import axios from 'axios';
 
 const animation = {
   good: 'https://media.giphy.com/media/l3q2XhfQ8oCkm1Ts4/giphy.gif',
@@ -19,9 +20,11 @@ const resultTitle = {
 };
 
 function ResultPage({ answers, questions }) {
+  const [player, setPlayer] = useState('');
   const countScore = (s, currentAnswer, index) =>
     currentAnswer === questions[index].correct_answer ? s + 1 : s;
   const score = answers.reduce(countScore, 0);
+  const scorePourc = (score * 100) / questions.length;
 
   function gifanim(anim) {
     if (anim < questions.length * 0.33) return animation.bad;
@@ -37,10 +40,17 @@ function ResultPage({ answers, questions }) {
 
   function handleClick(e) {
     e.preventDefault();
-    return swal(
-      'Merci 🎉 ',
-      'Votre score sera affiché dans le tableau des scores.'
-    );
+    axios
+      .post('http://localhost:5000/scores', {
+        player,
+        scorePourc,
+      })
+      .then(
+        swal(
+          'Merci 🎉 ',
+          'Votre score sera affiché dans le tableau des scores.'
+        )
+      );
   }
 
   return (
@@ -77,7 +87,7 @@ function ResultPage({ answers, questions }) {
           </div>
         ))}
       </div>
-      <form className="champ">
+      <form className="champ" onSubmit={handleClick}>
         <label className="label" htmlFor="name">
           Rentrez votre nom pour sauvegarder votre score :
         </label>
@@ -87,13 +97,12 @@ function ResultPage({ answers, questions }) {
           name="name"
           placeholder="ex: Pierre"
           required="required"
+          value={player}
+          onChange={(e) => setPlayer(e.target.value)}
         />
-        <input
-          className="validation"
-          type="submit"
-          value="Valider"
-          onClick={handleClick}
-        />
+        <button className="validation" type="submit">
+          Valider
+        </button>
       </form>
       <Link to="/" className="lienRestart">
         <button className="restart" type="button">
