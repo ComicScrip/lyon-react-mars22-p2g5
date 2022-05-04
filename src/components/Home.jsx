@@ -41,7 +41,7 @@ export default function Home() {
 
         <NewJoke show={showPopup} setShow={setShowPopup} />
       </div>
-      <div classnName="ajoutBlague">
+      <div>
         <p className="textBlague">Ajout d'une nouvelle blague</p>
       </div>
     </div>
