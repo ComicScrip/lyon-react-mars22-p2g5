@@ -9,7 +9,12 @@
 }
 
 .questionJoke {
-  margin: 10px;
+  margin: 20px;
+}
+
+.responseJoke {
+  margin: 20px;
+  align-items: center;
 }
 
 .formQuestionJoke {
@@ -48,6 +53,26 @@ input[placeholder='Votre réponse'] {
   padding: 2px;
   border-radius: 20px;
   font-family: 'Raleway', sans-serif;
+}
+
+input#question {
+  padding: 20px 60px;
+}
+
+input#reponse {
+  padding: 20px 60px;
+}
+
+label#question {
+  text-align: center;
+}
+
+.sliderReponse {
+  margin-bottom: 0px;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media screen and (min-width: 800px) {
