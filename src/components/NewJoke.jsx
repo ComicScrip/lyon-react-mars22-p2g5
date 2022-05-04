@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import '../styles/Popup.css';
 import '../styles/NewJoke.css';
 import Klaxon from '../assets/Klaxon.mp3';
@@ -7,7 +8,7 @@ import swal from 'sweetalert';
 function NewJoke({ show, setShow }) {
   const [addNewQuestion, setAddNewQuestion] = useState('');
   const [addNewAnswer, setAddNewAnswer] = useState('');
-  // const [showPopup, setShowPopup] = useState(false);
+  const [form, setForm] = useState('');
 
   const sonKlaxon = new Audio(Klaxon);
 
@@ -15,10 +16,19 @@ function NewJoke({ show, setShow }) {
     sonKlaxon.play();
   };
 
-  const handleClick = () => {
-    start();
-    // showPopup(!setShowPopup);
+  const handleClick = (e) => {
+    e.preventDefault(
+      axios
+        .post(`${process.env.REACT_APP_API_URL}/jokes/random`, {
+          question: form.question,
+          answer: form.answer,
+        })
+        .then((res) => res.data)
+    );
+    setForm({ question: '', answer: '' });
     swal('Merci pour votre blague !');
+    start();
+    setShow(false);
   };
 
   return (
@@ -36,7 +46,7 @@ function NewJoke({ show, setShow }) {
           <div className="sliderQuestion questionJoke">
             <form className="formQuestionJoke">
               <label htmlFor="question" id="question">
-                Question
+                Votre Blague
               </label>
               <input
                 type="text"
@@ -51,7 +61,7 @@ function NewJoke({ show, setShow }) {
           <div className="sliderReponse responseJoke">
             <form className="formReponseJoke">
               <label htmlFor="reponse" id="reponse">
-                Réponse
+                Chute de votre Blague
               </label>
               <input
                 type="text"
