@@ -148,7 +148,7 @@ label {
 .bntJoke {
   font-size: medium;
   width: 100%;
-  height: 10vh;
+  height: 8vh;
   border: 0;
   outline: 0;
   padding: 10px 40px;
@@ -162,29 +162,25 @@ label {
   box-shadow: 5px 5px 5px black;
 }
 
-input[placeholder='Votre question'] {
+textarea[placeholder='Votre question'] {
   font-style: italic;
-  padding: 2px;
   border-radius: 20px;
   font-family: 'Raleway', sans-serif;
 }
 
-input[placeholder='Votre réponse'] {
+textarea[placeholder='Votre réponse'] {
   font-style: italic;
-  padding: 2px;
   border-radius: 20px;
   font-family: 'Raleway', sans-serif;
 }
 
-input#question {
-  padding: 20px 60px;
+textarea#question {
+  padding: 20px 40px;
+  text-align: center;
 }
 
-input#reponse {
-  padding: 20px 60px;
-}
-
-label#question {
+textarea#reponse {
+  padding: 20px 40px;
   text-align: center;
 }
 
@@ -204,24 +200,28 @@ label#reponse {
   font-size: x-large;
 }
 
+.popupFooterJoke {
+  margin: 10px 30px;
+}
+
 @media screen and (min-width: 800px) {
   .popupBodyJoke {
     margin: 20px;
   }
 
-  .input[placeholder='Votre question'] {
-    font-size: large;
+  textarea#question {
+    padding: 20px 100px;
   }
 
-  input#question {
-    padding: 20px 140px;
-  }
-
-  input#reponse {
-    padding: 20px 140px;
+  textarea#reponse {
+    padding: 20px 100px;
   }
 
   .titreJoke {
     font-size: xx-large;
+  }
+
+  .popupFooterJoke {
+    margin: initial;
   }
 }

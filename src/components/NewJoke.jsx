@@ -50,8 +50,8 @@ function NewJoke({ show, setShow }) {
               <label htmlFor="question" id="question">
                 Votre Blague
               </label>
-              <input
-                type="text"
+              <textarea
+                type="textarea"
                 id="question"
                 placeholder="Votre question"
                 required="required"
@@ -64,8 +64,8 @@ function NewJoke({ show, setShow }) {
               <label htmlFor="reponse" id="reponse">
                 Chute de votre Blague
               </label>
-              <input
-                type="text"
+              <textarea
+                type="texte"
                 id="reponse"
                 placeholder="Votre réponse"
                 required="required"
@@ -74,7 +74,7 @@ function NewJoke({ show, setShow }) {
               />
             </div>
           </div>
-          <div className="popup__footer">
+          <div className="popup__footer popupFooterJoke">
             <button type="submit" className="bntJoke">
               ENVOYER
             </button>
