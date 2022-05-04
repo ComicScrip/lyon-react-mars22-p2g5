@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import '../styles/Popup.css';
 import '../styles/NewJoke.css';
 import Klaxon from '../assets/Klaxon.mp3';
 import swal from 'sweetalert';
@@ -43,10 +42,10 @@ function NewJoke({ show, setShow }) {
           </span>
         )}
         <div className="popup__header">
-          <h1>FAITES-NOUS RIRE ! !</h1>
+          <h1 className="titreJoke">FAITES-NOUS RIRE ! !</h1>
         </div>
         <form className="formQuestionJoke" onSubmit={handleSubmit}>
-          <div className="popup__body popupBodyJoke">
+          <div className="popupBodyJoke">
             <div className="sliderQuestion questionJoke">
               <label htmlFor="question" id="question">
                 Votre Blague
@@ -76,7 +75,7 @@ function NewJoke({ show, setShow }) {
             </div>
           </div>
           <div className="popup__footer">
-            <button type="submit" className="btnGo bntJoke">
+            <button type="submit" className="bntJoke">
               ENVOYER
             </button>
           </div>
