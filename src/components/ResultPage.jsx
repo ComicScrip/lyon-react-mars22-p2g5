@@ -41,7 +41,7 @@ function ResultPage({ answers, questions }) {
   function handleClick(e) {
     e.preventDefault();
     axios
-      .post('http://localhost:5000/scores', {
+      .post(`${process.env.REACT_APP_API_URL}/scores`, {
         player,
         scorePourc,
       })

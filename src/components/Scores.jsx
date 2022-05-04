@@ -10,7 +10,6 @@ function Scores() {
 
   useEffect(() => {
     axios
-      // ${process.env.REACT_APP_API_URL}
       .get(`${process.env.REACT_APP_API_URL}/scores`)
       .then((response) => response.data)
       .then((data) => {
