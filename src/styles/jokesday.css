@@ -6,6 +6,8 @@
   font-style: italic;
   align-items: center;
   flex-direction: column;
+  margin-right: 10px;
+  margin-left: 20px;
 }
 
 .buttonAnswer {
