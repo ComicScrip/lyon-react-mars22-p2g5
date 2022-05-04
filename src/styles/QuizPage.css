@@ -6,7 +6,8 @@
   height: 80vh;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 2vh;
+  /* margin-top: 2vh; */
+  padding-top: 2vh;
 }
 
 .question {

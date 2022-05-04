@@ -5,13 +5,13 @@
   padding: 0;
 }
 
-html {
+/* html {
   background-image: url('./assets/backmobile.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
-}
+} */
 
 .main {
   margin-bottom: 30px;
@@ -38,9 +38,16 @@ h1 {
 }
 
 @media screen and (min-width: 1000px) {
-  html {
+  /* html {
     background-image: url('./assets/backdesktop.png');
     background-size: cover;
     background-repeat: no-repeat;
+  } */
+  footer {
+    background-image: url('./assets/backdesktop.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
   }
 }

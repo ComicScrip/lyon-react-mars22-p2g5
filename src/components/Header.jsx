@@ -6,6 +6,9 @@ import accueil from '../assets/accueil.png';
 import categorie from '../assets/categorie.png';
 import evaluation from '../assets/evaluation.png';
 import avatar from '../assets/avatar.png';
+import { useLocalStorage } from 'react-use';
+import nightBkg from '../assets/backdesktop-night.png';
+import dayBkg from '../assets/backdesktop.png';
 
 const getActiveLinkStyle = ({ isActive }) => ({
   textDecoration: isActive ? 'underline' : 'none',
@@ -13,12 +16,30 @@ const getActiveLinkStyle = ({ isActive }) => ({
 
 export default function Header() {
   const [active, setActive] = React.useState(false);
+  const [isNight, setIsNight] = useLocalStorage('isNight', false);
+  const pageLightStyle = {
+    backgroundImage: `url(${dayBkg})`,
+    backgroundSize: 'cover',
+    backgroundRepaeat: 'no-repeat',
+    backgroundPosition: 'center center',
+    backgroundAttachment: 'fixed',
+  };
+  const pageNightStyle = {
+    backgroundImage: `url(${nightBkg})`,
+    backgroundSize: 'cover',
+    backgroundRepaeat: 'no-repeat',
+    backgroundPosition: 'center center',
+    backgroundAttachment: 'fixed',
+  };
   const handleChangeClick = () => {
     setActive(!active);
   };
-
+  const handleNightMode = () => {
+    setIsNight(!isNight);
+    console.log('header', isNight);
+  };
   return (
-    <header>
+    <header style={isNight ? pageNightStyle : pageLightStyle}>
       <nav className="navbar">
         <div className="navbarLogo">
           <ul className="navbar_links">
@@ -26,6 +47,12 @@ export default function Header() {
               <NavLink to="/" style={getActiveLinkStyle}>
                 <img src={logo} alt={logo} className="logoImage" />
               </NavLink>
+              <div className="nightMode">
+                <input type="checkbox" id="toggle" onChange={handleNightMode} />
+                <label htmlFor="toggle" className="nightModeBtn">
+                  {' '}
+                </label>
+              </div>
             </div>
             <div className="burger-button">
               <NavLink
