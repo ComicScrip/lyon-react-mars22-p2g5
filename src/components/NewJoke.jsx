@@ -6,9 +6,8 @@ import Klaxon from '../assets/Klaxon.mp3';
 import swal from 'sweetalert';
 
 function NewJoke({ show, setShow }) {
-  const [addNewQuestion, setAddNewQuestion] = useState('');
-  const [addNewAnswer, setAddNewAnswer] = useState('');
-  const [form, setForm] = useState('');
+  const [question, setQuestion] = useState('');
+  const [answer, setAnswer] = useState('');
 
   const sonKlaxon = new Audio(Klaxon);
 
@@ -16,19 +15,23 @@ function NewJoke({ show, setShow }) {
     sonKlaxon.play();
   };
 
-  const handleClick = (e) => {
-    e.preventDefault(
-      axios
-        .post(`${process.env.REACT_APP_API_URL}/jokes/random`, {
-          question: form.question,
-          answer: form.answer,
-        })
-        .then((res) => res.data)
-    );
-    setForm({ question: '', answer: '' });
-    swal('Merci pour votre blague !');
-    start();
-    setShow(false);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    axios
+      .post('http://localhost:5000/jokes', {
+        question,
+        answer,
+      })
+      .then(() => {
+        setQuestion('');
+        setAnswer('');
+      })
+      .then(() => {
+        swal('Merci pour votre blague !');
+        start();
+        setShow(false);
+      });
   };
 
   return (
@@ -42,9 +45,9 @@ function NewJoke({ show, setShow }) {
         <div className="popup__header">
           <h1>FAITES-NOUS RIRE ! !</h1>
         </div>
-        <div className="popup__body popupBodyJoke">
-          <div className="sliderQuestion questionJoke">
-            <form className="formQuestionJoke">
+        <form className="formQuestionJoke" onSubmit={handleSubmit}>
+          <div className="popup__body popupBodyJoke">
+            <div className="sliderQuestion questionJoke">
               <label htmlFor="question" id="question">
                 Votre Blague
               </label>
@@ -53,13 +56,12 @@ function NewJoke({ show, setShow }) {
                 id="question"
                 placeholder="Votre question"
                 required="required"
-                value={addNewQuestion}
-                onChange={(e) => setAddNewQuestion(e.target.value)}
+                value={question}
+                onChange={(e) => setQuestion(e.target.value)}
               />
-            </form>
-          </div>
-          <div className="sliderReponse responseJoke">
-            <form className="formReponseJoke">
+            </div>
+
+            <div className="sliderReponse responseJoke">
               <label htmlFor="reponse" id="reponse">
                 Chute de votre Blague
               </label>
@@ -68,17 +70,17 @@ function NewJoke({ show, setShow }) {
                 id="reponse"
                 placeholder="Votre réponse"
                 required="required"
-                value={addNewAnswer}
-                onChange={(e) => setAddNewAnswer(e.target.value)}
+                value={answer}
+                onChange={(e) => setAnswer(e.target.value)}
               />
-            </form>
+            </div>
           </div>
-        </div>
-        <div className="popup__footer">
-          <button type="button" className="btnGo bntJoke" onClick={handleClick}>
-            ENVOYER
-          </button>
-        </div>
+          <div className="popup__footer">
+            <button type="submit" className="btnGo bntJoke">
+              ENVOYER
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );
