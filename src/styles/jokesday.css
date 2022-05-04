@@ -20,6 +20,10 @@
   opacity: 80%;
 }
 
+.buttonAnswer:hover {
+  background-color: #30afe6;
+}
+
 .confetti-wrap {
   background: #4919db;
   padding: 20px;

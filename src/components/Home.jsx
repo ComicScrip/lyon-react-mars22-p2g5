@@ -35,10 +35,14 @@ export default function Home() {
       <div className="joke-of-the-day" />
       <JokesDay jokes={jokesOfTheDay} />
       <div>
-        <button onClick={handleClick} type="button">
+        <button onClick={handleClick} type="button" className="btnAjout">
           +
         </button>
+
         <NewJoke show={showPopup} setShow={setShowPopup} />
+      </div>
+      <div classnName="ajoutBlague">
+        <p className="textBlague">Ajout d'une nouvelle blague</p>
       </div>
     </div>
   );

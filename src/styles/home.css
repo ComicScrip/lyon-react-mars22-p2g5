@@ -36,6 +36,23 @@
   box-shadow: inset 0px 0px 5px black;
 }
 
+.btnAjout {
+  background-color: #78c0e0;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btnAjout:hover {
+  background-color: #30afe6;
+}
+.textBlague {
+  font-family: 'railway';
+}
+
 @media screen and (max-width: 800px) {
   .letsGo {
     width: 350px;
