@@ -68,16 +68,17 @@ export default function Header() {
                 </NavLink>
               </li>
               <li className="navbar_item">
+                {' '}
                 <img src={evaluation} alt={evaluation} className="logoMenu" />
                 <NavLink
-                  to="/ResultPage"
-                  className="navbar_link"
+                  to="/Scores"
+                  className="navbar_link active"
                   style={getActiveLinkStyle}
                   onClick={() => {
                     setActive(false);
                   }}
                 >
-                  Score
+                  Scores
                 </NavLink>
               </li>
               <li className="navbar_item navbarAbout">
