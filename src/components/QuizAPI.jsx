@@ -7,15 +7,20 @@ import '../styles/QuizPage.css';
 import he from 'he';
 import ResultPage from './ResultPage';
 import ProgressBar from './progress-bar';
+import dataSlider from './DataSlider';
+
+const lodash = require('lodash');
 
 function QuizAPI() {
   const [quizQuestions, setQuizQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const currentQuestion = quizQuestions[currentQuestionIndex];
   const [answerChoice, setAnswerChoice] = useState([]);
+  const [randomAnswers, setRandomAnswers] = useState([]);
   const [nbQuestion] = useLocalStorage('nbQuestion');
   const [difficulty] = useLocalStorage('difficulty');
   const [storeCategory] = useLocalStorage('category');
+  const [storeSlider] = useLocalStorage('sliderCategory');
   const difficultyArray = ['easy', 'medium', 'hard', ''];
   // eslint-disable-next-line operator-linebreak
   const quizEnded =
@@ -24,12 +29,18 @@ function QuizAPI() {
       : currentQuestionIndex === quizQuestions.length;
   const initTime = 20;
   const [timer, setTimer] = useState(initTime);
+
+  const sliderArray = dataSlider.map((object) => object.link);
+  console.log(sliderArray);
+
   useEffect(() => {
     axios
       .get(
-        `https://opentdb.com/api.php?amount=${nbQuestion}&category=${
-          storeCategory[0].id
-        }&difficulty=${difficultyArray[difficulty - 1]}&type=multiple`
+        sliderArray.includes(storeSlider)
+          ? storeSlider
+          : `https://opentdb.com/api.php?amount=${nbQuestion}&category=${
+            storeCategory[0].id
+          }&difficulty=${difficultyArray[difficulty - 1]}&type=multiple`
       )
       .then((response) => response.data)
       .then((data) => {
@@ -61,8 +72,20 @@ function QuizAPI() {
         }, 1000);
       }
     }
+
     return () => clearInterval(interval);
   }, [timer, quizQuestions]);
+
+  const answerArray = [];
+  useEffect(() => {
+    if (currentQuestion) {
+      answerArray.push(currentQuestion.correct_answer);
+      currentQuestion.incorrect_answers.forEach((answer) => {
+        answerArray.push(answer);
+      });
+      setRandomAnswers(lodash.shuffle(answerArray));
+    }
+  }, [currentQuestion, quizQuestions]);
   return (
     <div>
       {quizEnded ? (
@@ -75,38 +98,17 @@ function QuizAPI() {
                 {he.decode(currentQuestion.question)}
               </div>
               <div className="reponses">
-                <button
-                  type="submit"
-                  className="answers answerOne"
-                  onClick={(event) => handleChoiceAnswer(event.target.value)}
-                  value={currentQuestion.correct_answer}
-                >
-                  {currentQuestion.correct_answer}
-                </button>
-                <button
-                  type="submit"
-                  className="answers answerTwo"
-                  onClick={(event) => handleChoiceAnswer(event.target.value)}
-                  value={currentQuestion.incorrect_answers[0]}
-                >
-                  {currentQuestion.incorrect_answers[0]}
-                </button>
-                <button
-                  type="submit"
-                  className="answers answerThree"
-                  onClick={(event) => handleChoiceAnswer(event.target.value)}
-                  value={currentQuestion.incorrect_answers[1]}
-                >
-                  {currentQuestion.incorrect_answers[1]}
-                </button>
-                <button
-                  type="submit"
-                  className="answers answerFour"
-                  onClick={(event) => handleChoiceAnswer(event.target.value)}
-                  value={currentQuestion.incorrect_answers[2]}
-                >
-                  {currentQuestion.incorrect_answers[2]}
-                </button>
+                {randomAnswers.map((answer) => (
+                  <button
+                    key={answer}
+                    type="submit"
+                    className="answers"
+                    onClick={(event) => handleChoiceAnswer(event.target.value)}
+                    value={answer}
+                  >
+                    {answer}
+                  </button>
+                ))}
               </div>
               <ProgressBar bgColor="#FFFFFF" completed={timer} />
             </div>
