@@ -6,6 +6,8 @@
   font-style: italic;
   align-items: center;
   flex-direction: column;
+  margin-right: 10px;
+  margin-left: 20px;
 }
 
 .buttonAnswer {
@@ -18,6 +20,10 @@
   border-radius: 30px;
   font-size: medium;
   opacity: 80%;
+}
+
+.buttonAnswer:hover {
+  background-color: #30afe6;
 }
 
 .confetti-wrap {

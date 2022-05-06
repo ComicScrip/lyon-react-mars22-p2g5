@@ -47,6 +47,9 @@ export default function Header() {
                   to="/"
                   className="navbar_link active"
                   style={getActiveLinkStyle}
+                  onClick={() => {
+                    setActive(false);
+                  }}
                 >
                   Accueil
                 </NavLink>
@@ -57,18 +60,25 @@ export default function Header() {
                   to="/Categories"
                   className="navbar_link"
                   style={getActiveLinkStyle}
+                  onClick={() => {
+                    setActive(false);
+                  }}
                 >
                   Catégories
                 </NavLink>
               </li>
               <li className="navbar_item">
+                {' '}
                 <img src={evaluation} alt={evaluation} className="logoMenu" />
                 <NavLink
-                  to="/ResultPage"
-                  className="navbar_link"
+                  to="/Scores"
+                  className="navbar_link active"
                   style={getActiveLinkStyle}
+                  onClick={() => {
+                    setActive(false);
+                  }}
                 >
-                  Score
+                  Scores
                 </NavLink>
               </li>
               <li className="navbar_item navbarAbout">
@@ -77,6 +87,9 @@ export default function Header() {
                   to="/ContactPage"
                   className="navbar_link"
                   style={getActiveLinkStyle}
+                  onClick={() => {
+                    setActive(false);
+                  }}
                 >
                   About Us
                 </NavLink>
