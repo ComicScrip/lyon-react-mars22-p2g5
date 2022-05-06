@@ -7,12 +7,12 @@ const dataSlider = [
   {
     id: 1,
     title: 'Quiz sur Lyon',
-    link: 'http://localhost:3001/lyonquiz',
+    link: 'https://lyon-react-mars22-p2g5-api.comicscrip.duckdns.org/lyonquiz',
   },
   {
     id: 2,
     title: 'Quiz de la Wild',
-    link: 'http://localhost:3001/wildquiz',
+    link: 'https://lyon-react-mars22-p2g5-api.comicscrip.duckdns.org/wildquiz',
   },
   {
     id: 3,
