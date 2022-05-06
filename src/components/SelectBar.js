@@ -52,7 +52,7 @@ function SelectBar() {
       <div
         className={!category ? '' : 'category-box'}
         id={category.toString()}
-        // onClick={handleClick}
+        onClick={() => handleClick(category)}
       >
         <h1 className="category-title">{category}</h1>
       </div>

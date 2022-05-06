@@ -3,9 +3,11 @@ import '../styles/Slider.css';
 import BtnSlider from './BtnSlider';
 import dataSlider from './DataSlider';
 import { Link } from 'react-router-dom';
+import { useLocalStorage } from 'react-use';
 
 function Slider() {
   const [slideIndex, setSlideIndex] = useState(1);
+  const [storeSlider, setStoreSlider] = useLocalStorage('category', '');
 
   const nextSlide = () => {
     if (slideIndex !== dataSlider.length) {
@@ -24,21 +26,27 @@ function Slider() {
 
   const moveDot = (index) => {
     setSlideIndex(index);
+    console.log(storeSlider);
   };
 
   return (
     <div className="container-slider">
       {dataSlider.map((obj, index) => (
-        <div
-          key={obj.id}
-          className={slideIndex === index + 1 ? 'slide active-anim' : 'slide'}
-        >
-          <h1 className="card-title">{obj.title}</h1>
+        <div>
           <Link to="/QuizAPI">
-            <img
-              src={`${process.env.PUBLIC_URL}/img/img${index + 1}.png`}
-              alt={'img'}
-            />{' '}
+            <div
+              key={obj.id}
+              className={
+                slideIndex === index + 1 ? 'slide active-anim' : 'slide'
+              }
+              onClick={() => setStoreSlider(obj.link)}
+            >
+              <h1 className="card-title">{obj.title}</h1>
+              <img
+                src={`${process.env.PUBLIC_URL}/img/img${index + 1}.png`}
+                alt={'img'}
+              />{' '}
+            </div>
           </Link>
         </div>
       ))}

@@ -6,17 +6,17 @@ const dataSlider = [
   },
   {
     id: 1,
-    title: 'Quiz sur la ville de Lyon',
-    link: 'Lorem',
+    title: 'Quiz sur Lyon',
+    link: 'https://lyon-react-mars22-p2g5-api.comicscrip.duckdns.org/lyonquiz',
   },
   {
     id: 2,
     title: 'Quiz de la Wild',
-    link: 'Lorem',
+    link: 'https://lyon-react-mars22-p2g5-api.comicscrip.duckdns.org/wildquiz',
   },
   {
     id: 3,
-    title: 'Quiz aléatoire très difficile',
+    title: 'Quiz aléatoire difficile',
     link: 'https://opentdb.com/api.php?amount=10&difficulty=hard&type=multiple',
   },
 ];

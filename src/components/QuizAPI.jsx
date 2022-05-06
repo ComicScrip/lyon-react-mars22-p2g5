@@ -7,6 +7,7 @@ import '../styles/QuizPage.css';
 import he from 'he';
 import ResultPage from './ResultPage';
 import ProgressBar from './progress-bar';
+import dataSlider from './DataSlider';
 
 const lodash = require('lodash');
 
@@ -28,12 +29,17 @@ function QuizAPI() {
   const initTime = 20;
   const [timer, setTimer] = useState(initTime);
 
+  const sliderArray = dataSlider.map((object) => object.link);
+  console.log(sliderArray);
+
   useEffect(() => {
     axios
       .get(
-        `https://opentdb.com/api.php?amount=${nbQuestion}&category=${
-          storeCategory[0].id
-        }&difficulty=${difficultyArray[difficulty - 1]}&type=multiple`
+        sliderArray.includes(storeCategory)
+          ? storeCategory
+          : `https://opentdb.com/api.php?amount=${nbQuestion}&category=${
+            storeCategory[0].id
+          }&difficulty=${difficultyArray[difficulty - 1]}&type=multiple`
       )
       .then((response) => response.data)
       .then((data) => {
