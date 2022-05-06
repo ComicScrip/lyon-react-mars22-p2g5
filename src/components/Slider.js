@@ -7,7 +7,7 @@ import { useLocalStorage } from 'react-use';
 
 function Slider() {
   const [slideIndex, setSlideIndex] = useState(1);
-  const [storeSlider, setStoreSlider] = useLocalStorage('sliderCategory', '');
+  const [storeSlider, setStoreSlider] = useLocalStorage('category', '');
 
   const nextSlide = () => {
     if (slideIndex !== dataSlider.length) {

@@ -20,7 +20,6 @@ function QuizAPI() {
   const [nbQuestion] = useLocalStorage('nbQuestion');
   const [difficulty] = useLocalStorage('difficulty');
   const [storeCategory] = useLocalStorage('category');
-  const [storeSlider] = useLocalStorage('sliderCategory');
   const difficultyArray = ['easy', 'medium', 'hard', ''];
   // eslint-disable-next-line operator-linebreak
   const quizEnded =
@@ -36,8 +35,8 @@ function QuizAPI() {
   useEffect(() => {
     axios
       .get(
-        sliderArray.includes(storeSlider)
-          ? storeSlider
+        sliderArray.includes(storeCategory)
+          ? storeCategory
           : `https://opentdb.com/api.php?amount=${nbQuestion}&category=${
             storeCategory[0].id
           }&difficulty=${difficultyArray[difficulty - 1]}&type=multiple`
