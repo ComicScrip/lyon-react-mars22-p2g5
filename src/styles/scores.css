@@ -1,0 +1,189 @@
+.scorepage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.scoreTitle {
+  font-size: x-large;
+  font-weight: 500;
+  margin-top: 30px;
+}
+
+.podium {
+  width: 40%;
+  height: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 60px;
+}
+
+.coupe {
+  width: 40px;
+  height: auto;
+}
+
+.box3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: x-large;
+}
+
+.scoreP3 {
+  font-size: x-large;
+  font-weight: 800;
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 10px;
+}
+
+.third {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background-color: #78c0e0;
+  box-shadow: 0px 8px 8px black;
+}
+
+.coupe {
+  width: 60px;
+  height: 60px;
+}
+
+.box1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: x-large;
+}
+
+.scoreP1 {
+  font-size: x-large;
+  font-weight: 800;
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 10px;
+}
+
+.first {
+  width: 200px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background-color: #78c0e0;
+  box-shadow: 0px 8px 8px black;
+}
+
+.box2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: x-large;
+}
+
+.scoreP2 {
+  font-size: x-large;
+  font-weight: 800;
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 10px;
+}
+
+.second {
+  width: 200px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background-color: #78c0e0;
+  box-shadow: 0px 8px 8px black;
+}
+
+.socle {
+  width: 45%;
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #78c0e0;
+  box-shadow: 0px 8px 8px black;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-left: 8px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.scoreList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  height: 50%;
+  border: solid black 2px;
+  border-radius: 40px;
+  background: rgba(255, 253, 185, 0.5);
+  text-align: justify;
+  font-weight: 600;
+  line-height: 1.8em;
+  padding: 50px;
+  box-shadow: 0px 8px 8px black;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.eachScore {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: x-large;
+  line-height: 1em;
+}
+
+@media screen and (max-width: 800px) {
+  .podium {
+    width: 85%;
+    height: 180px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 40px;
+  }
+  .third {
+    width: 70px;
+    height: 85px;
+  }
+  .coupe {
+    width: 50px;
+    height: 50px;
+  }
+  .first {
+    width: 70px;
+    height: 150px;
+  }
+  .second {
+    width: 70px;
+    height: 110px;
+  }
+  .socle {
+    width: 350px;
+    height: 70px;
+  }
+  .scoreList {
+    width: 80%;
+    height: 80%;
+    text-align: justify;
+    font-weight: 600;
+    font-size: x-large;
+    padding: 5px;
+  }
+}

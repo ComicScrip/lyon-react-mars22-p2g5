@@ -1,0 +1,95 @@
+.container-slider {
+  max-width: 700px;
+  height: 300px;
+  width: 90%;
+  position: relative;
+  margin: 100px auto 50px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: opacity ease-in-out 0.4s;
+  opacity: 0;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+.active-anim {
+  opacity: 1;
+}
+
+.btn-slide img {
+  width: 40px;
+  height: 40px;
+}
+
+.btn-slide {
+  border-radius: 50%;
+  background: transparent;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+}
+.prev {
+  top: 50%;
+  left: 20px;
+  transform: translateY(-60%);
+}
+.next {
+  top: 50%;
+  right: 20px;
+  transform: translateY(-60%);
+}
+
+.container-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3px solid #f1f1f1;
+  margin: 0 5px;
+  background: #f1f1f1;
+}
+
+.dot:hover {
+  cursor: pointer;
+}
+
+.dot.active {
+  background: rgb(32, 32, 32);
+}
+
+.card-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  z-index: 1;
+}
+
+@media screen and (min-width: 500px) {
+  .container-slider {
+    height: 500px;
+    width: 100%;
+  }
+}

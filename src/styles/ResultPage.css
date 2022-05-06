@@ -3,14 +3,17 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  font-family: 'Raleway', sans-serif;
 }
 
 .result-title {
-  font-size: x-large;
+  font-size: 1.2em;
+  font-weight: 500;
 }
 
 .scoreResult {
-  font-size: large;
+  font-size: 1.6em;
+  font-weight: 700;
 }
 
 .animation-quiz {
@@ -38,23 +41,73 @@ img {
   width: 50%;
   height: 50%;
   border: solid black 2px;
-  border-radius: 50px;
+  border-radius: 40px;
   background: rgba(255, 253, 185, 0.5);
   margin-bottom: 10px;
   text-align: justify;
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.8em;
-  padding: 10px;
+  padding: 50px;
+  box-shadow: 0px 8px 8px black;
 }
 
-.arrow {
-  width: 15px;
-  margin: 0;
-  padding-left: 5px;
+.questionBold {
+  font-weight: 800;
+  font-size: 1.2em;
+}
+
+.check {
+  width: 30px;
+  height: 30px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.wrong {
+  width: 30px;
+  height: 30px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .text-align {
   margin-bottom: 25px;
+}
+
+.champ {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.label {
+  font-size: 1.2em;
+  font-weight: 800;
+  margin: 5px;
+  padding-top: 10px;
+}
+
+#nameScore {
+  width: 200px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 30%);
+  border: 1px solid black;
+  box-shadow: 2px 3px 3px rgb(85, 83, 83);
+  margin-left: 10px;
+  padding-left: 10px;
+}
+
+.validation {
+  width: 100px;
+  background-color: #78c0e0;
+  border-radius: 5px;
+  border: 1px solid black;
+  box-shadow: 2px 3px 3px rgb(85, 83, 83);
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: 10px;
 }
 
 .restart {
@@ -64,11 +117,53 @@ img {
   width: 200px;
   height: 60px;
   border-radius: 50%;
-  margin-top: 30px;
   background-color: #78c0e0;
   cursor: pointer;
+  font-size: 1em;
+  font-weight: 400;
+  opacity: 0.7;
+  box-shadow: 0px 8px 8px black;
 }
 
 .restart:hover {
   background-color: #30afe6;
+}
+
+.lienRestart {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  height: 60px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 800px) {
+  .details {
+    width: 80%;
+    height: 80%;
+    text-align: justify;
+    font-weight: 600;
+    line-height: 1.1em;
+    padding: 20px;
+  }
+  .champ {
+    width: 70%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #nameScore {
+    margin-top: 10px;
+    padding-left: 10px;
+  }
+  .validation {
+    margin-top: 20px;
+    width: 80px;
+  }
+  .restart {
+    margin-top: 30px;
+  }
 }
