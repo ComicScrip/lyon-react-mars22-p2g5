@@ -212,7 +212,7 @@ li {
   cursor: pointer;
 }
 .nightModeBtn::after {
-  content: '';
+  content: '🌞';
   width: 30px;
   height: 30px;
   background-color: #ffe087;
@@ -229,7 +229,7 @@ li {
   transform: 1s ease-in;
 }
 #toggle:checked + .nightModeBtn::after {
-  content: '';
+  content: '🌜';
   background-color: #0b4064;
   transform: translateX(50px) rotate(360deg);
 }
