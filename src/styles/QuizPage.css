@@ -6,8 +6,8 @@
   height: 80vh;
   margin-left: auto;
   margin-right: auto;
-  /* margin-top: 2vh; */
   padding-top: 2vh;
+  font-size: 1.5rem;
 }
 
 .question {
@@ -43,6 +43,7 @@
   background-color: rgb(250, 250, 241, 0.5);
   height: 100%;
   width: 100%;
+  font-size: 1rem;
 }
 
 button:hover {
@@ -57,4 +58,13 @@ button:active {
 
 .hiddenQuiz {
   visibility: hidden;
+}
+
+@media screen and (min-width: 800px) {
+  .quiz {
+    font-size: 2rem;
+  }
+  .answers {
+    font-size: 1.5rem;
+  }
 }
