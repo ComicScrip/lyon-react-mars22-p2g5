@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import '../styles/Contact.css';
 import AboutUs from './AboutUs';
 import avatar1 from '../img/avatar1.png';
 import avatar2 from '../img/avatar2.png';
 import avatar3 from '../img/avatar3.png';
 import avatar4 from '../img/avatar4.png';
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 
 import { send } from 'emailjs-com';
 
@@ -15,15 +17,23 @@ function Contact() {
     message: '',
   });
 
+  const [openSuccess, setOpenSuccess] = React.useState(false);
+  const [openFailed, setOpenFailed] = React.useState(false);
+
   const onSubmit = (e) => {
     e.preventDefault();
     send('service_zxob1gs', 'template_n8t0wyg', toSend, 'O_9iw3wSnKCEaN8Pj')
-      .then((response) => {
-        alert('SUCCESS!', response.status, response.text);
+      .then(() => {
+        setOpenSuccess(true);
       })
-      .catch((err) => {
-        alert('FAILED...', err);
+      .catch(() => {
+        setOpenFailed(true);
       });
+  };
+
+  const handleClose = () => {
+    setOpenSuccess(false);
+    setOpenFailed(false);
   };
 
   const handleChange = (e) => {
@@ -33,10 +43,26 @@ function Contact() {
     <div className="contact-form">
       <h1 className="about-us-title">About Us</h1>
       <div className="avatars">
-        <AboutUs name="Claire" img={avatar1} />
-        <AboutUs name="Jonathan" img={avatar2} />
-        <AboutUs name="Benjamin" img={avatar3} />
-        <AboutUs name="Timo" img={avatar4} />
+        <AboutUs
+          name="Claire"
+          img={avatar1}
+          lien="https://github.com/Claiirou"
+        />
+        <AboutUs
+          name="Jonathan"
+          img={avatar2}
+          lien="https://github.com/JBillault"
+        />
+        <AboutUs
+          name="Benjamin"
+          img={avatar3}
+          lien="https://github.com/Benjamin-Dervieux"
+        />
+        <AboutUs
+          name="Timo"
+          img={avatar4}
+          lien="https://github.com/timonicolaux"
+        />
       </div>
       <h1 className="contact-title">Contact</h1>
       <form className="form" onSubmit={onSubmit}>
@@ -74,6 +100,52 @@ function Contact() {
         />
         <input type="submit" value="Envoyer" className="submit" />
       </form>
+      <Snackbar
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'center',
+        }}
+        open={openSuccess}
+        autoHideDuration={6000}
+        onClose={handleClose}
+      >
+        <Alert
+          onClose={handleClose}
+          severity="success"
+          sx={{
+            width: 300,
+            height: 50,
+            textAlign: 'center',
+            fontSize: '1.2rem',
+            mb: 2,
+          }}
+        >
+          E-mail envoyé !
+        </Alert>
+      </Snackbar>
+      <Snackbar
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'center',
+        }}
+        open={openFailed}
+        autoHideDuration={6000}
+        onClose={handleClose}
+      >
+        <Alert
+          onClose={handleClose}
+          severity="error"
+          sx={{
+            width: 300,
+            height: 50,
+            textAlign: 'center',
+            fontSize: '1.2rem',
+            mb: 2,
+          }}
+        >
+          Une erreur est survenue...
+        </Alert>
+      </Snackbar>
     </div>
   );
 }

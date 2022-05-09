@@ -24,8 +24,8 @@
   border: var(--input-border);
   box-shadow: var(--input-box-shadow);
   border-radius: 20px;
-  min-width: 250px;
-  min-height: 250px;
+  min-width: 200px;
+  min-height: 200px;
   cursor: pointer;
 }
 
@@ -50,6 +50,7 @@
   background-repeat: no-repeat;
   background-position: calc(100% - 10px) center;
   background-size: 35px;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 500px) {
@@ -68,8 +69,10 @@
   }
 
   .category-box {
-    max-width: 200px;
+    width: 250px;
+    height: 250px;
     margin: auto;
+    margin-bottom: 70px;
     margin-top: 70px;
   }
 
