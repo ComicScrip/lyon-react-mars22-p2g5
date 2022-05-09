@@ -1,10 +1,13 @@
+import React, { useContext } from 'react';
 import '../styles/footer.css';
 import logo from '../assets/logo.png';
 import { Link } from 'react-router-dom';
+import { NightModeContext } from '../contexts/nightModeContext';
 
 export default function Footer() {
+  const nightModeRendering = useContext(NightModeContext);
   return (
-    <footer>
+    <footer style={nightModeRendering.pageStyle}>
       <Link to="/">
         <img src={logo} alt="logo" className="logoImageFooter" />
       </Link>

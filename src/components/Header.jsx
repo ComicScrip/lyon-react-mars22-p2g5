@@ -6,23 +6,23 @@ import accueil from '../assets/accueil.png';
 import categorie from '../assets/categorie.png';
 import evaluation from '../assets/evaluation.png';
 import avatar from '../assets/avatar.png';
-import nightModeContext from '../contexts/nightModeContext';
+import { NightModeContext } from '../contexts/nightModeContext';
 
 const getActiveLinkStyle = ({ isActive }) => ({
   textDecoration: isActive ? 'underline' : 'none',
 });
 
 export default function Header() {
-  const { isNight, setIsNight, pageStyle } = useContext(nightModeContext);
+  const nightModeRendering = useContext(NightModeContext);
   const [active, setActive] = React.useState(false);
   const handleChangeClick = () => {
     setActive(!active);
   };
   const handleNightMode = () => {
-    setIsNight(!isNight);
+    nightModeRendering.setIsNight(!nightModeRendering.isNight);
   };
   return (
-    <header style={pageStyle}>
+    <header style={nightModeRendering.pageStyle}>
       <nav className="navbar">
         <div className="navbarLogo">
           <ul className="navbar_links">

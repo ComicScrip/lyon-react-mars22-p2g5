@@ -1,15 +1,10 @@
-import React, {
-  createContext,
-  useState,
-  useLocalStorage,
-  useMemo,
-} from 'react';
+import React, { createContext, useState, useMemo } from 'react';
 import nightBkg from '../assets/backdesktop-night.png';
 import dayBkg from '../assets/backdesktop.png';
 
-const NightModeContext = createContext();
+export const NightModeContext = createContext();
 
-export function NightModeContextProvider({ children }) {
+function NightModeContextProvider({ children }) {
   const pageDayStyle = {
     backgroundImage: `url(${dayBkg})`,
     backgroundSize: 'cover',
@@ -23,35 +18,20 @@ export function NightModeContextProvider({ children }) {
     backgroundRepaeat: 'no-repeat',
     backgroundPosition: 'center center',
     backgroundAttachment: 'fixed',
+    color: 'white',
   };
-  const [isNight, setIsNight] = useLocalStorage('isNight', false);
-  const [pageStyle, setPageStyle] = useState(pageDayStyle);
-  const nightModeRendering = useMemo(() => {
-    setIsNight(isNight);
-  }, [isNight]);
-  const pageStyleRendering = useMemo(() => {
-    setPageStyle(pageDayStyle);
-  }, [pageStyle]);
-  if (isNight) {
-    setPageStyle(pageNightStyle);
-  } else {
-    setPageStyle(pageDayStyle);
-  }
+  const [isNight, setIsNight] = useState(false);
+  const pageStyle = isNight ? pageNightStyle : pageDayStyle;
 
+  const nightModeRendering = useMemo(
+    () => ({ isNight, setIsNight, pageStyle }),
+    [isNight, pageStyle]
+  );
   return (
-    <NightModeContext.Provider
-      value={{
-        isNight,
-        setIsNight,
-        pageStyle,
-        setPageStyle,
-        nightModeRendering,
-        pageStyleRendering,
-      }}
-    >
+    <NightModeContext.Provider value={nightModeRendering}>
       {children}
     </NightModeContext.Provider>
   );
 }
 
-export default NightModeContext;
+export default NightModeContextProvider;
