@@ -1,9 +1,10 @@
 import axios from 'axios';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import '../styles/scores.css';
 import or from '../assets/or.png';
 import argent from '../assets/argent.png';
 import bronze from '../assets/bronze.png';
+import { NightModeContext } from '../contexts/nightModeContext';
 
 function Scores() {
   const [scores, setScores] = useState([]);
@@ -18,6 +19,7 @@ function Scores() {
   }, []);
 
   const [score1, score2, score3, ...otherScores] = scores;
+  const nightModeRendering = useContext(NightModeContext);
 
   return (
     <div className="scorepage">
@@ -49,7 +51,7 @@ function Scores() {
         <h2>Podium</h2>
       </div>
       <h1 className="scoreTitle">GAMERS LIST</h1>
-      <div className="scoreList">
+      <div className={`scoreList ${nightModeRendering.isNight && 'nightList'}`}>
         <ul className="playersList" />
         {otherScores.map((score) => (
           <li className="eachScore" key={score.id}>

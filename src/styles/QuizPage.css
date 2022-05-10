@@ -46,6 +46,10 @@
   font-size: 1rem;
 }
 
+.nightAnswer {
+  color: white;
+}
+
 button:hover {
   cursor: pointer;
   background-color: rgb(88, 182, 198, 0.5);

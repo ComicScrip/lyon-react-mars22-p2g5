@@ -51,6 +51,13 @@ img {
   box-shadow: 0px 8px 8px black;
 }
 
+.nightDetail {
+  background: rgba(0, 141, 188, 0.5);
+}
+
+.nightBtnResult {
+  color: white;
+}
 .questionBold {
   font-weight: 800;
   font-size: 1.2em;

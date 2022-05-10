@@ -1,6 +1,7 @@
-import React, { createContext, useState, useMemo } from 'react';
+import React, { createContext, useMemo } from 'react';
 import nightBkg from '../assets/backdesktop-night.png';
 import dayBkg from '../assets/backdesktop.png';
+import { useLocalStorage } from 'react-use';
 
 export const NightModeContext = createContext();
 
@@ -20,7 +21,7 @@ function NightModeContextProvider({ children }) {
     backgroundAttachment: 'fixed',
     color: 'white',
   };
-  const [isNight, setIsNight] = useState(false);
+  const [isNight, setIsNight] = useLocalStorage('isNight', false);
   const pageStyle = isNight ? pageNightStyle : pageDayStyle;
 
   const nightModeRendering = useMemo(

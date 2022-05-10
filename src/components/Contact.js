@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import '../styles/Contact.css';
 import AboutUs from './AboutUs';
 import avatar1 from '../img/avatar1.png';
@@ -7,6 +7,7 @@ import avatar3 from '../img/avatar3.png';
 import avatar4 from '../img/avatar4.png';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
+import { NightModeContext } from '../contexts/nightModeContext';
 
 import { send } from 'emailjs-com';
 
@@ -39,6 +40,7 @@ function Contact() {
   const handleChange = (e) => {
     setToSend({ ...toSend, [e.target.name]: e.target.value });
   };
+  const nightModeRendering = useContext(NightModeContext);
   return (
     <div className="contact-form">
       <h1 className="about-us-title">About Us</h1>
@@ -98,7 +100,11 @@ function Contact() {
           maxLength="400"
           style={{ resize: 'none' }}
         />
-        <input type="submit" value="Envoyer" className="submit" />
+        <input
+          type="submit"
+          value="Envoyer"
+          className={`submit ${nightModeRendering.isNight && 'nightAvatar'}`}
+        />
       </form>
       <Snackbar
         anchorOrigin={{

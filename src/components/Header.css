@@ -41,6 +41,13 @@ a {
   z-index: 1;
 }
 
+.nightHeader {
+  background-color: rgba(11, 64, 100, 0.95);
+}
+.nightText {
+  color: white;
+}
+
 .open {
   right: 0;
 }
@@ -126,6 +133,10 @@ li {
 }
 .toggle-button .bar2::after {
   transform: translateY(10px);
+}
+
+.nightBtn {
+  background-color: white;
 }
 
 /* ANIMATION CROIX */

@@ -10,6 +10,7 @@ function ProgressBar({ bgColor, completed }) {
     borderRadius: 'inherit',
     textAlign: 'right',
     transition: 'width 1s ease-in-out',
+    fontSize: '1rem',
   };
   return (
     <div className="containerStyle">
