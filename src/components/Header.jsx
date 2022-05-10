@@ -68,7 +68,9 @@ export default function Header() {
                   nightModeRendering.isNight && 'nightBtn'
                 }`}
               >
-                <span className="bar2" />
+                <span
+                  className={`bar2 ${nightModeRendering.isNight && 'nightBtn'}`}
+                />
               </NavLink>
             </div>
             <div

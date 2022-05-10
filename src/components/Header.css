@@ -117,6 +117,10 @@ li {
   transition: 0.5s ease;
 }
 
+.nightBtn .bar2 {
+  background-color: white;
+}
+
 .toggle-button .bar2::before,
 .toggle-button .bar2::after {
   content: '';
@@ -130,12 +134,14 @@ li {
 
 .toggle-button .bar2::before {
   transform: translateY(-10px);
+  /* background-color:pink; */
 }
 .toggle-button .bar2::after {
   transform: translateY(10px);
 }
 
-.nightBtn {
+.nightBtn .bar2::before,
+.nightBtn .bar2::after {
   background-color: white;
 }
 
