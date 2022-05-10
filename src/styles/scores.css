@@ -141,6 +141,11 @@
   margin-bottom: 30px;
 }
 
+.nightList {
+  background: rgba(0, 141, 188, 0.5);
+  color: white;
+}
+
 .eachScore {
   font-family: 'Raleway', sans-serif;
   font-weight: 600;

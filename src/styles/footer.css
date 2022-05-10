@@ -1,6 +1,7 @@
 .logoImageFooter {
   width: 30px;
   height: 30px;
+  padding-top: 15px;
 }
 
 footer {
@@ -10,5 +11,5 @@ footer {
 }
 
 .footerText {
-  padding-top: 6px;
+  padding-top: 20px;
 }

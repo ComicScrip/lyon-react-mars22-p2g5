@@ -1,13 +1,15 @@
 import { Link } from 'react-router-dom';
 import '../styles/home.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import JokesDay from './JokesDay';
 import NewJoke from './NewJoke';
+import { NightModeContext } from '../contexts/nightModeContext';
 
 export default function Home() {
   const [jokesOfTheDay, setJokesOfTheDay] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
+  const nightModeRendering = useContext(NightModeContext);
 
   const handleClick = () => {
     setShowPopup(true);
@@ -27,7 +29,10 @@ export default function Home() {
       <h1>INQUIZ'ITOR</h1>
       <div>
         <Link to="/Categories">
-          <button className="letsGo" type="button">
+          <button
+            className={nightModeRendering.isNight ? 'letsGo night' : 'letsGo'}
+            type="button"
+          >
             LET'S QUIZZ
           </button>
         </Link>
@@ -35,14 +40,24 @@ export default function Home() {
       <div className="joke-of-the-day" />
       <JokesDay jokes={jokesOfTheDay} />
       <div>
-        <button onClick={handleClick} type="button" className="btnAjout">
+        <button
+          onClick={handleClick}
+          type="button"
+          className={nightModeRendering.isNight ? 'btnAjout night' : 'btnAjout'}
+        >
           +
         </button>
 
         <NewJoke show={showPopup} setShow={setShowPopup} />
       </div>
       <div>
-        <p className="textBlague">Ajout d'une nouvelle blague</p>
+        <p
+          className={
+            nightModeRendering.isNight ? 'textBlague night' : 'textBlague'
+          }
+        >
+          Ajout d'une nouvelle blague
+        </p>
       </div>
     </div>
   );

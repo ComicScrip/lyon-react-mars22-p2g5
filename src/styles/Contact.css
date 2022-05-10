@@ -113,6 +113,9 @@
   font-size: 1.2rem;
   text-align: center;
 }
+.nightAvatar {
+  color: white;
+}
 
 @media screen and (min-width: 800px) {
   .form {
