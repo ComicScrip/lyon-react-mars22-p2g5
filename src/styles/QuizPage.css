@@ -57,3 +57,8 @@ button:active {
 .hiddenQuiz {
   visibility: hidden;
 }
+
+.nbrQuest {
+  text-align: center;
+  grid-column: 1/3;
+}
