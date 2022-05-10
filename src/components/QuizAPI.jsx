@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 /* eslint-disable max-len */
 import axios from 'axios';
 import React, { useState, useEffect, useContext } from 'react';
@@ -32,7 +33,6 @@ function QuizAPI() {
   const nightModeRendering = useContext(NightModeContext);
 
   const sliderArray = dataSlider.map((object) => object.link);
-  console.log(currentQuestionIndex);
 
   useEffect(() => {
     axios
@@ -40,8 +40,8 @@ function QuizAPI() {
         sliderArray.includes(storeCategory)
           ? storeCategory
           : `https://opentdb.com/api.php?amount=${nbQuestion}&category=${
-            storeCategory[0].id
-          }&difficulty=${difficultyArray[difficulty - 1]}&type=multiple`
+              storeCategory[0].id
+            }&difficulty=${difficultyArray[difficulty - 1]}&type=multiple`
       )
       .then((response) => response.data)
       .then((data) => {
@@ -87,6 +87,7 @@ function QuizAPI() {
       setRandomAnswers(lodash.shuffle(answerArray));
     }
   }, [currentQuestion, quizQuestions]);
+
   return (
     <div>
       {quizEnded ? (
@@ -114,6 +115,9 @@ function QuizAPI() {
                 ))}
               </div>
               <ProgressBar bgColor="#FFFFFF" completed={timer} />
+              <div className="nbrQuest">
+                {`${currentQuestionIndex + 1} / ${quizQuestions.length}`}
+              </div>
             </div>
           )}
         </div>

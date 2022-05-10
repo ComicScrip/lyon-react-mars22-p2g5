@@ -71,4 +71,8 @@ button:active {
   .answers {
     font-size: 1.5rem;
   }
+  .nbrQuest {
+    text-align: center;
+    grid-column: 1/3;
+  }
 }
