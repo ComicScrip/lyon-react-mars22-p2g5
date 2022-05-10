@@ -12,6 +12,8 @@ import evaluationNight from '../assets/evaluation_blanc.png';
 import avatar from '../assets/avatar.png';
 import avatarNight from '../assets/avatar_blanc.png';
 import { NightModeContext } from '../contexts/nightModeContext';
+import Jour from '../assets/JOUR.mp3';
+import Nuit from '../assets/NUIT.mp3';
 
 const getActiveLinkStyle = ({ isActive }) => ({
   textDecoration: isActive ? 'underline' : 'none',
@@ -20,11 +22,15 @@ const getActiveLinkStyle = ({ isActive }) => ({
 export default function Header() {
   const nightModeRendering = useContext(NightModeContext);
   const [active, setActive] = React.useState(false);
+  const sonJour = new Audio(Jour);
+  const sonNuit = new Audio(Nuit);
   const handleChangeClick = () => {
     setActive(!active);
   };
   const handleNightMode = () => {
     nightModeRendering.setIsNight(!nightModeRendering.isNight);
+    if (nightModeRendering.isNight === true) sonJour.play();
+    if (nightModeRendering.isNight === false) sonNuit.play();
   };
   return (
     <header style={nightModeRendering.pageStyle}>

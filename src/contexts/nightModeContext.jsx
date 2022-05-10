@@ -21,7 +21,7 @@ function NightModeContextProvider({ children }) {
     backgroundAttachment: 'fixed',
     color: 'white',
   };
-  const [isNight, setIsNight] = useLocalStorage('isNight', false);
+  const [isNight, setIsNight] = useLocalStorage('isNight', true);
   const pageStyle = isNight ? pageNightStyle : pageDayStyle;
 
   const nightModeRendering = useMemo(
