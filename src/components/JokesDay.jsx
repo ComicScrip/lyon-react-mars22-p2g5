@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import '../styles/jokesday.css';
 import confetti from 'canvas-confetti';
 import Klaxon from '../assets/Klaxon.mp3';
 import axios from 'axios';
+import { NightModeContext } from '../contexts/nightModeContext';
 
 function frame() {
   const colors = ['#bb0000', '#ffffff'];
@@ -28,6 +29,7 @@ function JokesDay({ jokes }) {
   const firstJoke = jokes;
   const [jokeOpen, setJokeOpen] = React.useState(false);
   const [newJoke, setNewJoke] = React.useState(firstJoke);
+  const nightModeRendering = useContext(NightModeContext);
 
   const sonKlaxon = new Audio(Klaxon);
 
@@ -57,15 +59,31 @@ function JokesDay({ jokes }) {
 
   return (
     jokes && (
-      <div className="jokesContainer">
+      <div
+        className={`jokesContainer ${
+          nightModeRendering.isNight && 'nightJoke'
+        }`}
+      >
         <div>{newJoke.question}</div>
         {jokeOpen ? (
-          <button type="button" className="buttonAnswer" onClick={getNewJoke}>
+          <button
+            type="button"
+            className={`buttonAnswer ${
+              nightModeRendering.isNight && 'nightJoke'
+            }`}
+            onClick={getNewJoke}
+          >
             {' '}
             Nouvelle Blague{' '}
           </button>
         ) : (
-          <button type="button" className="buttonAnswer" onClick={getJoke}>
+          <button
+            type="button"
+            className={`buttonAnswer ${
+              nightModeRendering.isNight && 'nightJoke'
+            }`}
+            onClick={getJoke}
+          >
             {' '}
             Réponse{' '}
           </button>

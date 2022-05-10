@@ -1,13 +1,21 @@
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Popup.css';
 import { useLocalStorage } from 'react-use';
+import { NightModeContext } from '../contexts/nightModeContext';
 
 function Popup({ show, setShow }) {
   const [nbQuestion, setNbQuestion] = useLocalStorage('nbQuestion', '10');
   const [difficulty, setDifficulty] = useLocalStorage('difficulty', '1');
+  const nightModeRendering = useContext(NightModeContext);
+
   return (
     <div className={`popup ${show ? 'active' : ''}`}>
-      <div className={`popup__content ${show ? 'active' : ''}`}>
+      <div
+        className={`popup__content ${show ? 'active' : ''} ${
+          nightModeRendering.isNight && 'nightPopup'
+        }`}
+      >
         {show && (
           <span onClick={() => setShow(false)} className="popup__close">
             &times;
@@ -62,7 +70,10 @@ function Popup({ show, setShow }) {
         </div>
         <div className="popup__footer">
           <Link to="/QuizAPI">
-            <button type="button" className="btnGo">
+            <button
+              type="button"
+              className={`btnGo ${nightModeRendering.isNight && 'nightBtnGo'}`}
+            >
               GO
             </button>
           </Link>

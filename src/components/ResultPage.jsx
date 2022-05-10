@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import '../styles/ResultPage.css';
 import { Link } from 'react-router-dom';
 import he from 'he';
@@ -6,6 +6,7 @@ import check2 from '../assets/check2.png';
 import wrong2 from '../assets/wrong2.png';
 import swal from 'sweetalert';
 import axios from 'axios';
+import { NightModeContext } from '../contexts/nightModeContext';
 
 const animation = {
   good: 'https://media.giphy.com/media/l3q2XhfQ8oCkm1Ts4/giphy.gif',
@@ -50,9 +51,10 @@ function ResultPage({ answers, questions }) {
           'Merci 🎉 ',
           'Votre score sera affiché dans le tableau des scores.'
         )
-      );
+      )
+      .then(setPlayer(''));
   }
-
+  const nightModeRendering = useContext(NightModeContext);
   return (
     <div className="resultpage">
       <h1 className="result-title">{resultSentence(score)}</h1>
@@ -65,7 +67,7 @@ function ResultPage({ answers, questions }) {
         <img src={gifanim(score)} alt=" animation end quiz" />
       </div>
       <h2 className="details-quiz">Détails de vos réponses</h2>
-      <div className="details">
+      <div className={`details ${nightModeRendering.isNight && 'nightDetail'}`}>
         {questions.map((question, i) => (
           <div className="text-align" key={question.question}>
             <p className="questionBold">
@@ -100,12 +102,22 @@ function ResultPage({ answers, questions }) {
           value={player}
           onChange={(e) => setPlayer(e.target.value)}
         />
-        <button className="validation" type="submit">
+        <button
+          className={`${
+            nightModeRendering.isNight && 'nightBtnResult'
+          } validation`}
+          type="submit"
+        >
           Valider
         </button>
       </form>
-      <Link to="/" className="lienRestart">
-        <button className="restart" type="button">
+      <Link to="/Categories" className="lienRestart">
+        <button
+          className={`${
+            nightModeRendering.isNight && 'nightBtnResult'
+          } restart`}
+          type="button"
+        >
           Recommencer
         </button>
       </Link>

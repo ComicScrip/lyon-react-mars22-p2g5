@@ -28,6 +28,10 @@
   box-shadow: 0px 8px 8px black;
 }
 
+.night {
+  color: white;
+}
+
 .letsGo:hover {
   background-color: #30afe6;
 }

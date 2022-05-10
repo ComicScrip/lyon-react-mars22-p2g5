@@ -30,6 +30,10 @@
   transform: translateY(0);
 }
 
+.nightPopup {
+  background-color: rgba(11, 64, 100, 0.97);
+}
+
 .active .popup__content {
   opacity: 1;
   visibility: visible;
@@ -135,6 +139,11 @@ label {
   border-radius: 5px;
   cursor: pointer;
   box-shadow: 5px 5px 5px black;
+}
+
+.nightBtnGo {
+  background-color: #008dbc;
+  color: white;
 }
 
 input[type='range'] {

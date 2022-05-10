@@ -1,12 +1,15 @@
+/* eslint-disable indent */
 /* eslint-disable max-len */
 import axios from 'axios';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useLocalStorage } from 'react-use';
 import '../App.css';
 import '../styles/QuizPage.css';
 import he from 'he';
 import ResultPage from './ResultPage';
 import ProgressBar from './progress-bar';
+import dataSlider from './DataSlider';
+import { NightModeContext } from '../contexts/nightModeContext';
 
 const lodash = require('lodash');
 
@@ -27,13 +30,18 @@ function QuizAPI() {
       : currentQuestionIndex === quizQuestions.length;
   const initTime = 20;
   const [timer, setTimer] = useState(initTime);
+  const nightModeRendering = useContext(NightModeContext);
+
+  const sliderArray = dataSlider.map((object) => object.link);
 
   useEffect(() => {
     axios
       .get(
-        `https://opentdb.com/api.php?amount=${nbQuestion}&category=${
-          storeCategory[0].id
-        }&difficulty=${difficultyArray[difficulty - 1]}&type=multiple`
+        sliderArray.includes(storeCategory)
+          ? storeCategory
+          : `https://opentdb.com/api.php?amount=${nbQuestion}&category=${
+              storeCategory[0].id
+            }&difficulty=${difficultyArray[difficulty - 1]}&type=multiple`
       )
       .then((response) => response.data)
       .then((data) => {
@@ -79,6 +87,7 @@ function QuizAPI() {
       setRandomAnswers(lodash.shuffle(answerArray));
     }
   }, [currentQuestion, quizQuestions]);
+
   return (
     <div>
       {quizEnded ? (
@@ -95,7 +104,9 @@ function QuizAPI() {
                   <button
                     key={answer}
                     type="submit"
-                    className="answers"
+                    className={`answers ${
+                      nightModeRendering.isNight && 'nightAnswer'
+                    }`}
                     onClick={(event) => handleChoiceAnswer(event.target.value)}
                     value={answer}
                   >
@@ -104,6 +115,9 @@ function QuizAPI() {
                 ))}
               </div>
               <ProgressBar bgColor="#FFFFFF" completed={timer} />
+              <div className="nbrQuest">
+                {`${currentQuestionIndex + 1} / ${quizQuestions.length}`}
+              </div>
             </div>
           )}
         </div>

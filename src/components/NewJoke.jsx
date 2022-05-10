@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import '../styles/NewJoke.css';
 import Klaxon from '../assets/Klaxon.mp3';
 import swal from 'sweetalert';
+import { NightModeContext } from '../contexts/nightModeContext';
 
 function NewJoke({ show, setShow }) {
   const [question, setQuestion] = useState('');
   const [answer, setAnswer] = useState('');
+  const nightModeRendering = useContext(NightModeContext);
 
   const sonKlaxon = new Audio(Klaxon);
 
@@ -35,7 +37,11 @@ function NewJoke({ show, setShow }) {
 
   return (
     <div className={`popup ${show ? 'active' : ''} `}>
-      <div className={`popup__content ${show ? 'active' : ''}`}>
+      <div
+        className={`popup__content ${show ? 'active' : ''} ${
+          nightModeRendering.isNight && 'nightPopup'
+        }`}
+      >
         {show && (
           <span onClick={() => setShow(false)} className="popup__close">
             &times;
@@ -75,7 +81,12 @@ function NewJoke({ show, setShow }) {
             </div>
           </div>
           <div className="popup__footer popupFooterJoke">
-            <button type="submit" className="bntJoke">
+            <button
+              type="submit"
+              className={`bntJoke ${
+                nightModeRendering.isNight && 'nightBntJoke'
+              }`}
+            >
               ENVOYER
             </button>
           </div>

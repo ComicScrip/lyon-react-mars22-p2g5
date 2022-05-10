@@ -41,6 +41,13 @@ a {
   z-index: 1;
 }
 
+.nightHeader {
+  background-color: rgba(11, 64, 100, 0.95);
+}
+.nightText {
+  color: white;
+}
+
 .open {
   right: 0;
 }
@@ -62,6 +69,11 @@ li {
   height: 60px;
   margin-left: 10px;
   margin-top: 5px;
+}
+
+.logoImageLogo {
+  display: flex;
+  align-items: center;
 }
 
 .navbar_link {
@@ -105,6 +117,10 @@ li {
   transition: 0.5s ease;
 }
 
+.nightBtn .bar2 {
+  background-color: white;
+}
+
 .toggle-button .bar2::before,
 .toggle-button .bar2::after {
   content: '';
@@ -121,6 +137,11 @@ li {
 }
 .toggle-button .bar2::after {
   transform: translateY(10px);
+}
+
+.nightBtn .bar2::before,
+.nightBtn .bar2::after {
+  background-color: white;
 }
 
 /* ANIMATION CROIX */
@@ -147,7 +168,6 @@ li {
   .toggle-button {
     display: none;
   }
-
   .logoImage {
     width: 80px;
     height: 80px;
@@ -186,4 +206,46 @@ li {
     display: flex;
     align-items: center;
   }
+}
+
+/* Night Mode Button */
+
+.nightMode {
+  margin-left: 1vw;
+  margin-top: 25px;
+  margin-bottom: auto;
+}
+#toggle {
+  display: none;
+}
+.nightModeBtn {
+  display: inline-block;
+  width: 80px;
+  height: 25px;
+  background-color: rgb(0, 0, 0, 0.4);
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+}
+.nightModeBtn::after {
+  content: '🌞';
+  width: 30px;
+  height: 30px;
+  background-color: #ffe087;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  top: -5px;
+  left: 0;
+  display: grid;
+  place-content: center;
+  line-height: 0;
+  transition: background-color 2s;
+  transform: 1s ease-in;
+}
+#toggle:checked + .nightModeBtn::after {
+  content: '🌜';
+  background-color: #0b4064;
+  transform: translateX(50px) rotate(360deg);
 }
