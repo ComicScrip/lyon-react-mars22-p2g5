@@ -68,7 +68,9 @@ function Contact() {
       </div>
       <h1 className="contact-title">Contact</h1>
       <form className="form" onSubmit={onSubmit}>
-        <label htmlFor="name">Nom :</label>
+        <label htmlFor="name" className="box-title">
+          Nom :
+        </label>
         <input
           type="text"
           id="name"
@@ -78,7 +80,9 @@ function Contact() {
           placeholder="ex: John Smith"
           required="required"
         />
-        <label htmlFor="email">E-mail :</label>
+        <label htmlFor="email" className="box-title">
+          E-mail :
+        </label>
         <input
           type="email"
           id="email"
@@ -89,7 +93,9 @@ function Contact() {
           required="required"
         />
 
-        <label htmlFor="text-area">Votre message :</label>
+        <label htmlFor="text-area" className="box-title">
+          Votre message :
+        </label>
         <textarea
           id="text-area"
           name="message"

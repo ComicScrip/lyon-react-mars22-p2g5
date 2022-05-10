@@ -110,7 +110,7 @@ function ResultPage({ answers, questions }) {
           Valider
         </button>
       </form>
-      <Link to="/" className="lienRestart">
+      <Link to="/Categories" className="lienRestart">
         <button
           className={`${
             nightModeRendering.isNight && 'nightBtnResult'
