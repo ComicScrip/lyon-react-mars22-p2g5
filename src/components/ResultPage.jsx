@@ -51,7 +51,8 @@ function ResultPage({ answers, questions }) {
           'Merci 🎉 ',
           'Votre score sera affiché dans le tableau des scores.'
         )
-      );
+      )
+      .then(setPlayer(''));
   }
   const nightModeRendering = useContext(NightModeContext);
   return (
