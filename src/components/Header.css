@@ -134,7 +134,6 @@ li {
 
 .toggle-button .bar2::before {
   transform: translateY(-10px);
-  /* background-color:pink; */
 }
 .toggle-button .bar2::after {
   transform: translateY(10px);

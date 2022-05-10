@@ -1,4 +1,3 @@
-// import React from "react";
 import '../styles/ProgressBar.css';
 
 function ProgressBar({ bgColor, completed }) {
@@ -6,7 +5,6 @@ function ProgressBar({ bgColor, completed }) {
     height: '100%',
     width: `${100 - completed * 5}%`,
     backgroundColor: bgColor,
-    /* backgroundImage: `linear-gradient(to right, ${bgColor} ${100 - (completed * 5)}%, green)`, */
     borderRadius: 'inherit',
     textAlign: 'right',
     transition: 'width 1s ease-in-out',
