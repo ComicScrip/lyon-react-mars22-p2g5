@@ -86,8 +86,6 @@ function QuizAPI() {
     }
   }, [currentQuestion, quizQuestions]);
 
-  console.log(quizQuestions.length);
-
   return (
     <div>
       {quizEnded ? (
