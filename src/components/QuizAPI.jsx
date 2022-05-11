@@ -33,6 +33,7 @@ function QuizAPI() {
   const nightModeRendering = useContext(NightModeContext);
 
   const sliderArray = dataSlider.map((object) => object.link);
+  console.log('');
 
   useEffect(() => {
     axios
