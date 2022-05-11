@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import '../styles/Contact.css';
 import AboutUs from './AboutUs';
 import avatar1 from '../img/avatar1.png';
@@ -7,8 +7,6 @@ import avatar3 from '../img/avatar3.png';
 import avatar4 from '../img/avatar4.png';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
-import { NightModeContext } from '../contexts/nightModeContext';
-
 import { send } from 'emailjs-com';
 
 function Contact() {
@@ -17,30 +15,35 @@ function Contact() {
     email: '',
     message: '',
   });
-
   const [openSuccess, setOpenSuccess] = React.useState(false);
   const [openFailed, setOpenFailed] = React.useState(false);
-
   const onSubmit = (e) => {
     e.preventDefault();
     send('service_zxob1gs', 'template_n8t0wyg', toSend, 'O_9iw3wSnKCEaN8Pj')
       .then(() => {
         setOpenSuccess(true);
+        setToSend({
+          name: '',
+          email: '',
+          message: '',
+        });
       })
       .catch(() => {
         setOpenFailed(true);
+        setToSend({
+          name: '',
+          email: '',
+          message: '',
+        });
       });
   };
-
   const handleClose = () => {
     setOpenSuccess(false);
     setOpenFailed(false);
   };
-
   const handleChange = (e) => {
     setToSend({ ...toSend, [e.target.name]: e.target.value });
   };
-  const nightModeRendering = useContext(NightModeContext);
   return (
     <div className="contact-form">
       <h1 className="about-us-title">About Us</h1>
@@ -92,7 +95,6 @@ function Contact() {
           placeholder="ex: john.smith@mail.com"
           required="required"
         />
-
         <label htmlFor="text-area" className="box-title">
           Votre message :
         </label>
@@ -106,11 +108,7 @@ function Contact() {
           maxLength="400"
           style={{ resize: 'none' }}
         />
-        <input
-          type="submit"
-          value="Envoyer"
-          className={`submit ${nightModeRendering.isNight && 'nightAvatar'}`}
-        />
+        <input type="submit" value="Envoyer" className="submit" />
       </form>
       <Snackbar
         anchorOrigin={{
@@ -161,5 +159,4 @@ function Contact() {
     </div>
   );
 }
-
 export default Contact;

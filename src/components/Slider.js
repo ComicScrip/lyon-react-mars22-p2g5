@@ -8,7 +8,6 @@ import { useLocalStorage } from 'react-use';
 function Slider() {
   const [slideIndex, setSlideIndex] = useState(1);
   const [storeSlider, setStoreSlider] = useLocalStorage('category', '');
-
   const nextSlide = () => {
     if (slideIndex !== dataSlider.length) {
       setSlideIndex(slideIndex + 1);
@@ -23,36 +22,35 @@ function Slider() {
       setSlideIndex(dataSlider.length);
     }
   };
-
   const moveDot = (index) => {
     setSlideIndex(index);
     console.log(storeSlider);
   };
-
   return (
     <div className="container-slider">
       {dataSlider.map((obj, index) => (
-        <div>
-          <Link to="/QuizAPI">
+        <Link to="/QuizAPI" key={`${obj.id}1`}>
+          <div>
             <div
-              key={obj.id}
+              key={`${obj.id}2`}
               className={
                 slideIndex === index + 1 ? 'slide active-anim' : 'slide'
               }
               onClick={() => setStoreSlider(obj.link)}
             >
-              <h1 className="card-title">{obj.title}</h1>
+              <h1 key={`${obj.id}3`} className="card-title">
+                {obj.title}
+              </h1>
               <img
                 src={`${process.env.PUBLIC_URL}/img/img${index + 1}.png`}
                 alt={'img'}
               />{' '}
             </div>
-          </Link>
-        </div>
+          </div>
+        </Link>
       ))}
       <BtnSlider moveSlide={nextSlide} direction={'next'} />
       <BtnSlider moveSlide={prevSlide} direction={'prev'} />
-
       <div className="container-dots">
         {Array.from({ length: 4 })
           .map((_, i) => i)
@@ -69,5 +67,4 @@ function Slider() {
     </div>
   );
 }
-
 export default Slider;
