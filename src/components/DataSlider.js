@@ -6,7 +6,7 @@ const dataSlider = [
   },
   {
     id: 1,
-    title: 'Quiz sur Lyon',
+    title: 'Quiz sur la ville de Lyon',
     link: `${process.env.REACT_APP_API_URL}/lyonquiz`,
   },
   {
@@ -16,7 +16,7 @@ const dataSlider = [
   },
   {
     id: 3,
-    title: 'Quiz aléatoire difficile',
+    title: 'Quiz aléatoire très difficile',
     link: 'https://opentdb.com/api.php?amount=10&difficulty=hard&type=multiple',
   },
 ];

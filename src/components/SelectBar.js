@@ -10,7 +10,6 @@ function SelectBar() {
   const [category, getCategory] = React.useState(false);
   const [storeCategory, setStoreCategory] = useLocalStorage('category', []);
   const [showPopup, setShowPopup] = useState(false);
-
   const handleChange = (e) => {
     const cat = e.target.value;
     getCategory(cat);
@@ -23,13 +22,11 @@ function SelectBar() {
     setShowPopup(true);
     console.log(storeCategory);
   };
-
   useEffect(() => {
     axios
       .get('https://opentdb.com/api_category.php')
       .then((res) => setSelectedCat(res.data.trivia_categories));
   }, []);
-
   return (
     <div>
       <div>
@@ -75,5 +72,4 @@ function SelectBar() {
     </div>
   );
 }
-
 export default SelectBar;
